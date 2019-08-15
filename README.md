@@ -3,4 +3,5 @@ SEI42 collaborative project - Lost the plot
 
 ## Collaborators
 
-FreddieHoy
+Sian Alcock
+Freddie Hoy
