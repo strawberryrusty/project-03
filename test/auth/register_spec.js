@@ -7,7 +7,7 @@ const testData = {
   passwordConfirmation: 'test'
 }
 
-describe('POST /register', () => {
+xdescribe('POST /register', () => {
 
   afterEach(done => {
     User.remove({})

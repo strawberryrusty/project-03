@@ -4,9 +4,10 @@ const User = require('../../models/User')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../../config/environment')
 const testUser = {
-  username: 'seed',
-  email: 'seed@seed.seed',
-  password: 'seed'
+  username: 'test',
+  email: 'test@test.test',
+  password: 'test',
+  passwordConfirmation: 'test'
 }
 const testData = {
   name: 'Jeffs plot',
@@ -14,6 +15,7 @@ const testData = {
   streetAddress: '65 Jeff street',
   latitude: 51.515,
   longitude: -0.08,
+  image: 'hvkgiyg',
   postCode: 'FD5 GH7',
   sizeInMeters: 6,
   numOfSlots: 12,
@@ -89,6 +91,7 @@ describe('POST /plots', () => {
           'sizeInMeters',
           'numOfSlots',
           'slotsAvailable',
+          'bioWasteAccepted',
           'facilities',
           'costInvolved',
           'costPerAnnum',
