@@ -50,7 +50,7 @@ describe('GET /plots', () => {
             'streetAddress',
             'postCode',
             'latitude',
-            'sizeInMeters',
+            'bioWasteAccepted',
             'numOfSlots',
             'slotsAvailable',
             'facilities',
@@ -58,10 +58,8 @@ describe('GET /plots', () => {
             'costPerAnnum',
             'ConditionsForUse',
             'Volunteer',
-            'comments',
             'primaryContactName',
-            'primaryContactEmail',
-            'user'
+            'primaryContactEmail'
           ])
         })
         done()
@@ -75,22 +73,19 @@ describe('GET /plots', () => {
           expect(plot._id).to.be.a('string')
           expect(plot.name).to.be.a('string')
           expect(plot.streetAddress).to.be.a('string')
-          expect(plot.plotType).to.deep.eq('string')
+          expect(plot.plotType).to.be.a('string')
           expect(plot.postCode).to.be.a('string')
           expect(plot.latitude).to.be.a('number')
           expect(plot.longitude).to.be.a('number')
-          expect(plot.sizeInMeters).to.be.a('number')
           expect(plot.numOfSlots).to.be.a('number')
           expect(plot.slotsAvailable).to.be.a('boolean')
-          expect(plot.facilities).to.deep.eq('array')
+          expect(plot.facilities).to.be.an('array')
           expect(plot.costInvolved).to.be.a('boolean')
           expect(plot.costPerAnnum).to.be.a('number')
-          expect(plot.ConditionsForUse).to.deep.eq('array')
+          expect(plot.ConditionsForUse).to.be.an('array')
           expect(plot.Volunteer).to.be.a('boolean')
-          expect(plot.comments).to.deep.eq('array')
           expect(plot.primaryContactName).to.be.a('string')
           expect(plot.primaryContactEmail).to.be.a('string')
-          expect(plot.user).to.deep.eq('object')
         })
         done()
       })

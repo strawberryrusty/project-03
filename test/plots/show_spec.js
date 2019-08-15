@@ -45,7 +45,7 @@ describe('GET /plots/:id', () => {
           'streetAddress',
           'postCode',
           'latitude',
-          'sizeInMeters',
+          'bioWasteAccepted',
           'numOfSlots',
           'slotsAvailable',
           'facilities',
@@ -53,10 +53,8 @@ describe('GET /plots/:id', () => {
           'costPerAnnum',
           'ConditionsForUse',
           'Volunteer',
-          'comments',
           'primaryContactName',
-          'primaryContactEmail',
-          'user'
+          'primaryContactEmail'
         ])
         done()
       })
@@ -72,18 +70,16 @@ describe('GET /plots/:id', () => {
         expect(res.body.postCode).to.be.a('string')
         expect(res.body.latitude).to.be.a('number')
         expect(res.body.longitude).to.be.a('number')
-        expect(res.body.sizeInMeters).to.be.a('number')
         expect(res.body.numOfSlots).to.be.a('number')
         expect(res.body.slotsAvailable).to.be.a('boolean')
+        expect(res.body.bioWasteAccepted).to.be.a('boolean')
         expect(res.body.facilities).to.be.an('array')
         expect(res.body.costInvolved).to.be.a('boolean')
         expect(res.body.costPerAnnum).to.be.a('number')
         expect(res.body.ConditionsForUse).to.be.a('array')
         expect(res.body.Volunteer).to.be.a('boolean')
-        expect(res.body.comments).to.be.an('array')
         expect(res.body.primaryContactName).to.be.a('string')
         expect(res.body.primaryContactEmail).to.be.a('string')
-        expect(res.body.user).to.be.an('object')
         done()
       })
   })

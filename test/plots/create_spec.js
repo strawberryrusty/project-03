@@ -15,9 +15,9 @@ const testData = {
   latitude: 51.515,
   longitude: -0.08,
   postCode: 'FD5 GH7',
-  sizeInMeters: 6,
   numOfSlots: 12,
   slotsAvailable: true,
+  bioWasteAccepted: false,
   facilities: ['water', 'sunlight', 'standard m8'],
   costInvolved: true,
   costPerAnnum: 3,
@@ -86,7 +86,7 @@ describe('POST /plots', () => {
           'streetAddress',
           'postCode',
           'latitude',
-          'sizeInMeters',
+          'bioWasteAccepted',
           'numOfSlots',
           'slotsAvailable',
           'facilities',
@@ -94,10 +94,8 @@ describe('POST /plots', () => {
           'costPerAnnum',
           'ConditionsForUse',
           'Volunteer',
-          'comments',
           'primaryContactName',
-          'primaryContactEmail',
-          'user'
+          'primaryContactEmail'
         ])
         done()
       })
@@ -114,7 +112,7 @@ describe('POST /plots', () => {
         expect(res.body.postCode).to.eq(testData.postCode)
         expect(res.body.latitude).to.eq(testData.latitude)
         expect(res.body.longitude).to.eq(testData.longitude)
-        expect(res.body.sizeInMeters).to.eq(testData.sizeInMeters)
+        expect(res.body.bioWasteAccepted).to.eq(testData.bioWasteAccepted)
         expect(res.body.numOfSlots).to.eq(testData.numOfSlots)
         expect(res.body.slotsAvailable).to.eq(testData.slotsAvailable)
         expect(res.body.facilities).to.deep.eq(testData.facilities)
@@ -122,10 +120,8 @@ describe('POST /plots', () => {
         expect(res.body.costPerAnnum).to.eq(testData.costPerAnnum)
         expect(res.body.ConditionsForUse).to.deep.eq(testData.ConditionsForUse)
         expect(res.body.Volunteer).to.eq(testData.Volunteer)
-        expect(res.body.comments).to.deep.eq(testData.comments)
         expect(res.body.primaryContactName).to.eq(testData.primaryContactName)
         expect(res.body.primaryContactEmail).to.eq(testData.primaryContactEmail)
-        expect(res.body.user).to.deep.eq(testData.user)
         done()
       })
   })

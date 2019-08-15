@@ -19,7 +19,7 @@ const plotSchema = new mongoose.Schema({
   numOfSlots: {type: Number},
   slotsAvailable: {type: Boolean, default: false},
   bioWasteAccepted: {type: Boolean, default: false},
-  facilities: { type: [String], required: true },
+  facilities: { type: [String], required: false },
   costInvolved: {type: Boolean, default: false},
   costPerAnnum: {type: Number},
   ConditionsForUse: {type: [String]},

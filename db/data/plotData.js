@@ -12,7 +12,7 @@ module.exports = [{
   facilities: [],
   costInvolved: 'true',
   costPerAnnum: '40',
-  ConditionsForUse: 'waiting list is currently 14 years long.',
+  ConditionsForUse: ['waiting list is currently 14 years long.'],
   Volunteer: 'false',
   primaryContactName: 'Islington Council',
   primaryContactEmail: 'contact@islington.gov.uk'
@@ -30,7 +30,7 @@ module.exports = [{
   facilities: ['Access to water'],
   costInvolved: 'false',
   costPerAnnum: '0',
-  ConditionsForUse: 'Owner request plot tenants mow the lawn once a month',
+  ConditionsForUse: ['Owner request plot tenants mow the lawn once a month'],
   Volunteer: 'false',
   primaryContactName: 'Eva Green',
   primaryContactEmail: 'eva@gmail.com'
@@ -48,7 +48,7 @@ module.exports = [{
   facilities: [],
   costInvolved: 'false',
   costPerAnnum: '0',
-  ConditionsForUse: '',
+  ConditionsForUse: [],
   Volunteer: 'true',
   primaryContactName: 'Mrs. Smith',
   primaryContactEmail: 'info@ladbrokesquaregarden.com'
