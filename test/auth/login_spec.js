@@ -9,7 +9,7 @@ const testData = {
   passwordConfirmation: 'test'
 }
 
-xdescribe('POST /login', () => {
+describe('POST /login', () => {
 
   beforeEach(done => {
     User.create(testData)
