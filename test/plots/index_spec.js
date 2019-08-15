@@ -43,7 +43,7 @@ describe('GET /plots', () => {
     api.get('/api/plots')
       .end((err, res) => {
         res.body.forEach(plot => {
-          expect(plot).to.contains.keys([
+          expect(plot).to.includes.keys([
             '_id',
             'name',
             'plotType',
