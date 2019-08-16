@@ -14,7 +14,7 @@ import Navbar from './components/common/Navbar'
 // import PlotsNew from './components/plots/New'
 //
 // import Register from './components/auth/Register'
-// import Login from './components/auth/Login'
+import Login from './components/auth/Login'
 
 // import 'react-toastify/dist/ReactToastify.css'
 import 'bulma'
@@ -27,7 +27,9 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Switch>
+          <Route path="/login" component={Login} />
           <Route path="/" component={Home} />
+
         </Switch>
       </HashRouter>
     )
