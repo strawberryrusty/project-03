@@ -11,7 +11,7 @@ import Navbar from './components/common/Navbar'
 // import PlotsIndex from './components/plots/Index'
 // import PlotsShow from './components/plots/Show'
 // import PlotsEdit from './components/plots/Edit'
-// import PlotsNew from './components/plots/New'
+import PlotsNew from './components/plots/New'
 //
 import Register from './components/auth/Register'
 // import Login from './components/auth/Login'
@@ -30,6 +30,7 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Switch>
+          <Route path="/plots" component={PlotsNew} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/" component={Home} />
