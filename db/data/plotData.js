@@ -1,7 +1,7 @@
 module.exports = [{
   name: 'Islington Allotment Plots',
   plotType: 'Allotment',
-  image: 'https://imgur.com/StAigg2',
+  image: 'https://imgur.com/StAigg2.jpg',
   streetAddress: 'Evershot Road',
   postCode: 'N4',
   latitude: '51.568568',
@@ -19,7 +19,7 @@ module.exports = [{
 },{
   name: 'The Holly Trees',
   plotType: 'Private Plot',
-  image: 'https://imgur.com/StAigg2',
+  image: 'https://imgur.com/StAigg2.jpg',
   streetAddress: 'Putney Bridge Road',
   postCode: 'SW15 2NY',
   latitude: '51.462101',
@@ -37,7 +37,7 @@ module.exports = [{
 },{
   name: 'Communal Gardens of the Ladbroke Estate',
   plotType: 'Community Garden',
-  image: 'https://imgur.com/UsHNtW2',
+  image: 'https://imgur.com/UsHNtW2.png',
   streetAddress: 'Ladbroke Square Garden',
   postCode: 'W11 2PY',
   latitude: '51.5107',
