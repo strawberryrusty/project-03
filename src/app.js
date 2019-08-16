@@ -15,6 +15,9 @@ import Navbar from './components/common/Navbar'
 //
 import Register from './components/auth/Register'
 // import Login from './components/auth/Login'
+// import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+
 
 // import 'react-toastify/dist/ReactToastify.css'
 import 'bulma'
@@ -28,6 +31,7 @@ class App extends React.Component {
         <Navbar />
         <Switch>
           <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
           <Route path="/" component={Home} />
 
         </Switch>
