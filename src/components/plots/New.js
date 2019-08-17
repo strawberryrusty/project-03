@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/Auth'
 
-class New extends React.Component {
+class PlotsNew extends React.Component {
 
   constructor() {
     super()
@@ -65,8 +65,6 @@ class New extends React.Component {
 
 
   render() {
-    console.log(this.state.formData)
-    console.log(this.state.errors)
     return (
       <section className="section">
         <div className="container">
@@ -120,7 +118,7 @@ class New extends React.Component {
                 type="string"
                 placeholder="Enter URL here"
                 value={this.state.formData.image || ''}
-                onChange={this.handleArrayChange}
+                onChange={this.handleChange}
               />
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
             </div>
@@ -314,4 +312,4 @@ class New extends React.Component {
   }
 }
 
-export default New
+export default PlotsNew
