@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import _ from 'lodash'
+const _ = require('lodash').runInContext()
 
 import Card from '../common/Card'
 
@@ -12,48 +12,61 @@ class PlotsIndex extends React.Component {
     this.state = {
       searchTerm: '',
       sortTerm: 'name|asc',
-      conditions: []
+      conditions: [],
+      volunteerBoolean: false,
+      bioWasteBoolean: false,
+      costInvolvedBoolean: false,
+      plotType: 'All'
     }
 
     this.handleSearchKeyUp = this.handleSearchKeyUp.bind(this)
     this.handleSortChange = this.handleSortChange.bind(this)
-    // this.handleClick = this.handleClick.bind(this)
-    // this.applySort = this.applySort.bind(this)
+    this.handlePlotType = this.handlePlotType.bind(this)
     this.handleVolunteerBoolean = this.handleVolunteerBoolean.bind(this)
     this.handleBioWasteBoolean = this.handleBioWasteBoolean.bind(this)
+    this.handleCostInvolvedBoolean = this.handleCostInvolvedBoolean.bind(this)
     this.combineFiltersAndSort = this.combineFiltersAndSort.bind(this)
   }
 
   componentDidMount() {
     axios.get('/api/plots')
-      .then(res => this.setState({ plots: res.data, plotsToDisplay: res.data }))
+      .then(res => this.setState({ allPlots: res.data, plotsToDisplay: res.data }))
   }
 
   handleSearchKeyUp(e){
     console.log(e.target.value)
-    const re= new RegExp(e.target.value, 'i')
-    const filter =_.filter(this.state.plots, plot => {
-      return re.test(plot.name)
-    })
-    this.setState({plotsToDisplay: filter}, () => this.combineFiltersAndSort(filter))
-
+    this.setState({
+      searchTerm: e.target.value
+    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
   }
+
 
   handleSortChange(e){
     this.setState({ sortTerm: e.target.value }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
   }
 
+  handleCostInvolvedBoolean(e) {
+    this.setState({
+      costInvolvedBoolean: e.target.checked
+    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+  }
+
   handleVolunteerBoolean(e) {
     this.setState({
-      // volunteer: e.target.value,
       volunteerBoolean: e.target.checked
     }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
   }
 
   handleBioWasteBoolean(e) {
     this.setState({
-      // bioWaste: e.target.value,
       bioWasteBoolean: e.target.checked
+    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+  }
+
+  handlePlotType(e) {
+    console.log(e.target.value)
+    this.setState({
+      plotType: e.target.value
     }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
   }
 
@@ -61,24 +74,58 @@ class PlotsIndex extends React.Component {
 
     let filteredByVolunteer
     let filteredByBioWaste
+    let filteredByCostsInvolved
+    let filteredByPlotType
+    let filterBySearchText
+
+
+    // Create filter based on Regular expression of the search term
+    const re= new RegExp(this.state.searchTerm, 'i')
+
+    if(!this.state.searchTerm) {
+      filterBySearchText = this.state.allPlots
+    } else {
+      filterBySearchText = this.state.allPlots.filter(plot => re.test(plot.name))
+    }
+
+
+
+    if(this.state.plotType === 'All') {
+      filteredByPlotType = this.state.allPlots
+    } else {
+      filteredByPlotType = this.state.plotsToDisplay.filter(plot => plot.plotType === this.state.plotType)
+
+      console.log(this.state.plotType)
+      console.log(filteredByPlotType)
+    }
+
+    if(this.state.costInvolvedBoolean) {
+      filteredByCostsInvolved = this.state.plotsToDisplay.filter(plot => !plot.costInvolved)
+      console.log(filteredByCostsInvolved)
+    } else {
+      filteredByCostsInvolved = this.state.allPlots
+    }
 
 
     if(this.state.volunteerBoolean) {
       filteredByVolunteer = this.state.plotsToDisplay.filter(plot => plot.Volunteer)
+      console.log(filteredByVolunteer)
+    } else {
+      filteredByVolunteer = this.state.allPlots
     }
-
 
     if(this.state.bioWasteBoolean) {
       filteredByBioWaste = this.state.plotsToDisplay.filter(plot => plot.bioWasteAccepted)
+      console.log(filteredByBioWaste)
+    } else {
+      filteredByBioWaste = this.state.allPlots
     }
 
-    this.setState({ filteredByVolunteer: filteredByVolunteer, filteredByBioWaste: filteredByBioWaste})
+    //The lodash intersection function did not work at first because array of objects - this code works
 
-    console.log(this.state.filteredByVolunteer, this.state.filteredByBioWaste)
+    _.indexOf = _.findIndex
+    filteredPlots = _.intersection(this.state.allPlots, filteredByVolunteer, filteredByBioWaste, filteredByCostsInvolved, filteredByPlotType, filterBySearchText)
 
-    const newFilteredPlots = _.intersection(this.state.filteredByVolunteer, this.state.filteredByBioWaste)
-
-    console.log(newFilteredPlots)
 
     const [field, order] = this.state.sortTerm.split('|')
     const sortedPlots = _.orderBy(filteredPlots, [field], [order])
@@ -87,17 +134,8 @@ class PlotsIndex extends React.Component {
 
 
 
-  // applySort(filteredPlots) {
-  //   const [field, order] = this.state.sortTerm.split('|')
-  //   console.log(field, order)
-  //   const sortedPlots = _.orderBy(filteredPlots, [field], [order])
-  //   console.log('sorted plots:', sortedPlots)
-  //   return this.setState({plotsToDisplay: sortedPlots})
-  // }
-
-
   render() {
-    console.log(this.state.plotsToDisplay)
+    if(!this.state.allPlots) return <h2 className="title is-2">Loading ...</h2>
     return(
       <section className="section">
         <div className="container">
@@ -116,22 +154,59 @@ class PlotsIndex extends React.Component {
               </select>
             </div>
           </div>
-          <div className="field">
-            <label className="checkbox" >
-              <input type="checkbox" value="Volunteer" onClick={this.handleVolunteerBoolean} />
-              Volunteer opportunities
-            </label>
-          </div>
-          <div className="field">
-            <label className="checkbox" >
-              <input type="checkbox" value="bioWasteAccepted" onClick={this.handleBioWasteBoolean}/>
-              Bio-waste accepted
-            </label>
+          <div className="columns">
+            <div className="column is-half">
+              <div className="field">
+                <label className="checkbox" >
+                  <input type="checkbox" value="costInvolved" onClick={this.handleCostInvolvedBoolean} />
+                  No costs involved
+                </label>
+              </div>
+              <div className="field">
+                <label className="checkbox" >
+                  <input type="checkbox" value="Volunteer" onClick={this.handleVolunteerBoolean} />
+                  Volunteer opportunities
+                </label>
+              </div>
+              <div className="field">
+                <label className="checkbox" >
+                  <input type="checkbox" value="bioWasteAccepted" onClick={this.handleBioWasteBoolean}/>
+                  Bio-waste accepted
+                </label>
+              </div>
+            </div>
+            <hr />
+            <div className="column is-half">
+              <div className="field">
+                <label className="radio" >
+                  <input type="radio" name="plotType" value="All" defaultChecked onClick={this.handlePlotType} />
+                All plot types
+                </label>
+              </div>
+              <div className="field">
+                <label className="radio" >
+                  <input type="radio" name="plotType" value="Community Garden" onClick={this.handlePlotType} />
+                  Community Garden
+                </label>
+              </div>
+              <div className="field">
+                <label className="radio" >
+                  <input type="radio" name="plotType" value="Private Plot" onClick={this.handlePlotType} />
+                  Share of private garden
+                </label>
+              </div>
+              <div className="field">
+                <label className="radio" >
+                  <input type="radio" name="plotType" value="Allotment" onClick={this.handlePlotType}/>
+                  Allotment
+                </label>
+              </div>
+            </div>
           </div>
 
           <div className="columns is-multiline">
 
-            {!this.state.plots && <h2 className="title is-2">Loading ...</h2>}
+            {!this.state.allPlots && <h2 className="title is-2">Loading ...</h2>}
             {this.state.plotsToDisplay && this.state.plotsToDisplay.map(plot =>
               <div className="column is-one-third-desktop" key={plot._id}>
                 <Link to={`/plots/${plot._id}`}>
