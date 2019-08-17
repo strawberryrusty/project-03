@@ -1,6 +1,12 @@
 import React from 'react'
 import axios from 'axios'
 import StarRatingComponent from 'react-star-rating-component'
+import ReactMapboxGl, { Marker, ZoomControl } from 'react-mapbox-gl'
+
+const Map = ReactMapboxGl({
+  accessToken: process.env.MAPBOX_TOKEN
+})
+>>>>>>> e74a5772fa92fe3a24b6f1ace1468d066fdbe12c
 
 
 import { Link } from 'react-router-dom'
@@ -16,7 +22,6 @@ class ShowPlots extends React.Component {
       formData: {
         rating: 3,
         content: ''
-        // yesOrNo: 'No'
       }
 
     }
@@ -67,12 +72,6 @@ class ShowPlots extends React.Component {
       .then(res => this.setState({ plot: res.data }))
   }
 
-  // decide() {
-  //   if (bioWasteAccepted) this.state.yesOrNo = 'YES'
-  //   else yesOrNo = 'No'
-  // }
-
-
   render() {
     return (
       <section className="section">
@@ -92,36 +91,62 @@ class ShowPlots extends React.Component {
                 <button className="button is-danger"
                   onClick={this.handleDelete}>Delete</button>
               </div>}
-              <hr />
             </header>
             <hr />
-            <div className="columns">
-              <div className="column">
+            <div className="columns is-multiline">
+              <div className="column is-one-third">
                 <img src={this.state.plot.image} alt={this.state.plot.name}/>
               </div>
-              <div className="column">
-                <p>Number of Slots:{this.state.plot.numOfSlots}</p>
-                <p>Bio Waste accepted?{this.state.bioWasteAccepted ? '✅' : '❌'}</p>
-                <p>Costs involved?{this.state.plot.costInvolved ? '✅' : '❌'}</p>
-                <p>Volunteers needed?{this.state.plot.Volunteer ? '✅' : '❌'}</p>
+              <div className="column is-one-third">
+                <p>Plot Type: {this.state.plot.plotType}</p>
+                <p>Facilities: {this.state.plot.facilities.map(thing => thing)}</p>
+                <p>Number of Slots: {this.state.plot.numOfSlots}</p>
+                <p>Bio Waste accepted? {this.state.bioWasteAccepted ? '✅' : '❌'}</p>
+                <p>Costs involved? {this.state.plot.costInvolved ? '✅' : '❌'}</p>
+                <p>Volunteers needed? {this.state.plot.Volunteer ? '✅' : '❌'}</p>
               </div>
-              <div className="column">
+              <div className="column is-one-third">
                 <p> Name:{this.state.plot.primaryContactName}</p>
                 <p> Email:{this.state.plot.primaryContactEmail}</p>
-              </div>
-              <div className="column">
+                <hr/>
                 <h1> Address </h1>
                 <p>{this.state.plot.streetAddress}</p>
                 <p> {this.state.plot.postCode}</p>
               </div>
-              <div className="column">
+            </div>
+
+            <div className="container">
+              <h1> Location</h1>
+              <Map
+                style="mapbox://styles/mapbox/streets-v9"
+                scrollZoom= {true}
+                containerStyle={{
+                  height: '40vh',
+                  width: '100%'
+                }}
+                center={[this.state.plot.longitude, this.state.plot.latitude]}
+              >
+                <Marker
+                  coordinates={[this.state.plot.longitude, this.state.plot.latitude]}
+                >
+                  <img src={'https://image.flaticon.com/icons/svg/135/135687.svg'}
+                    height='50'
+                    width='50'
+                  />
+                </Marker>
+                <ZoomControl
+                  isEnabled= 'true' />
+              </Map>
+            </div>
+
+            <div className="column is-full">
+              <div className="column is-full">
                 {this.state.plot.comments.map(comment =>
                   <Comment key={comment._id} {...comment}
                     handleDeleteComment={this.handleDeleteComment} />
                 )}
-
-
                 {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
+
                   <hr />
                   <div className="field">
                     <label className="label">Comment</label>
@@ -147,6 +172,7 @@ class ShowPlots extends React.Component {
                 </form>}
               </div>
             </div>
+
           </div>}
 
         </div>
