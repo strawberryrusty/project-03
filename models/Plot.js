@@ -9,24 +9,24 @@ const commentSchema = new mongoose.Schema({
 })
 
 const plotSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-  plotType: { type: String, required: true, enum: ['Allotment', 'Private Plot', 'Community Garden'] },
-  image: { type: String, required: true },
-  streetAddress: { type: String, required: true },
-  postCode: { type: String, required: true },
-  latitude: { type: Number,  required: true },
-  longitude: { type: Number, required: true },
+  name: { type: String, required: 'Please provide a {PATH}', unique: true },
+  plotType: { type: String, required: 'Please provide a {PATH}', enum: ['Allotment', 'Private Plot', 'Community Garden'] },
+  image: { type: String, required: 'Please provide a {PATH}' },
+  streetAddress: { type: String, required: 'Please provide a {PATH}' },
+  postCode: { type: String, required: 'Please provide a {PATH}' },
+  latitude: { type: Number,  required: 'Please provide a {PATH}' },
+  longitude: { type: Number, required: 'Please provide a {PATH}' },
   numOfSlots: {type: Number},
   slotsAvailable: {type: Boolean, default: false},
   bioWasteAccepted: {type: Boolean, default: false},
-  facilities: { type: [String], required: false },
+  facilities: { type: [String], required: 'Please provide a {PATH}' },
   costInvolved: {type: Boolean, default: false},
   costPerAnnum: {type: Number},
   ConditionsForUse: {type: [String]},
   Volunteer: {type: Boolean, default: false},
   comments: [ commentSchema ],
-  primaryContactName: {type: String},
-  primaryContactEmail: {type: String},
+  primaryContactName: {type: String, required: 'Please provide a {PATH}'},
+  primaryContactEmail: {type: String, required: 'Please provide a {PATH}'},
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 })
 module.exports = mongoose.model('Plot', plotSchema)
