@@ -6,10 +6,10 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import Home from './components/pages/Home'
 import Navbar from './components/common/Navbar'
-// import SecureRoute from './components/common/SecureRoute'
+import SecureRoute from './components/common/SecureRoute'
 //
 import PlotsIndex from './components/plots/Index'
-import PlotsShow from './components/plots/Show'
+import ShowPlots from './components/plots/Show'
 // import PlotsEdit from './components/plots/Edit'
 import PlotsNew from './components/plots/New'
 //
@@ -30,8 +30,8 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Switch>
-          <Route path="/plots/:id" component={PlotsShow} />
-          <Route path="/plots/new" component={PlotsNew} />
+          <SecureRoute path="/plots/new" component={PlotsNew} />
+          <Route path="/plots/:id" component={ShowPlots} />
           <Route path="/plots" component={PlotsIndex} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
