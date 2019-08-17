@@ -6920,7 +6920,7 @@ supercluster@3.0.2:
   dependencies:
     kdbush "^1.0.1"
 
-supercluster@^6.0.1:
+supercluster@^6.0.1, supercluster@^6.0.2:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-6.0.2.tgz#aa2eaae185ef97872f388c683ec29f6991721ee3"
   integrity sha512-aa0v2HURjBTOpbcknilcfxGDuArM8khklKSmZ/T8ZXL0BuRwb5aRw95lz+2bmWpFvCXDX/+FzqHxmg0TIaJErw==
