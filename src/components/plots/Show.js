@@ -1,10 +1,13 @@
 import React from 'react'
 import axios from 'axios'
+import StarRatingComponent from 'react-star-rating-component'
 import ReactMapboxGl, { Marker, ZoomControl } from 'react-mapbox-gl'
 
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_TOKEN
 })
+>>>>>>> e74a5772fa92fe3a24b6f1ace1468d066fdbe12c
+
 
 import { Link } from 'react-router-dom'
 
@@ -17,7 +20,7 @@ class ShowPlots extends React.Component {
     super()
     this.state = {
       formData: {
-        rating: 1,
+        rating: 3,
         content: ''
       }
 
@@ -26,13 +29,18 @@ class ShowPlots extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
-    this.handleDeleteComment = this.handleCommentDelete.bind(this)
-
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
+    this.handleStarClick = this.handleStarClick.bind(this)
   }
 
   componentDidMount() {
     axios.get(`/api/plots/${this.props.match.params.id}`)
       .then(res => this.setState({ plot: res.data }))
+  }
+
+  handleStarClick(nextValue) {
+    const formData = {...this.state.formData, rating: nextValue }
+    this.setState({ formData })
   }
 
   handleChange(e) {
@@ -49,15 +57,14 @@ class ShowPlots extends React.Component {
       .then(res => this.setState({ plot: res.data, formData: { rating: 1, content: ''} }))
   }
 
-  handleDelete(e){
-    console.log(e.target)
+  handleDelete(){
     axios.delete(`/api/plots/${this.props.match.params.id}`,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
       .then(()=> this.props.history.push('/api/plots'))
   }
 
-  handleCommentDelete(e){
+  handleDeleteComment(e){
     console.log(e.target.id)
     axios.delete(`/api/plots/${this.props.match.params.id}/comments/${e.target.id}`, {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
@@ -66,7 +73,6 @@ class ShowPlots extends React.Component {
   }
 
   render() {
-    // console.log(this.state)
     return (
       <section className="section">
         <div className="container">
@@ -152,15 +158,13 @@ class ShowPlots extends React.Component {
                       value={this.state.formData.content}
                     />
                   </div>
-                  <div className="field">
-                    <label className="label">Rating (1-5)</label>
-                    <input
-                      name = "rating"
-                      className="input"
-                      type="range"
-                      min="1"
-                      max="5"
-                      onChange ={this.handleChange}
+                  <div>
+                    <h2>Rating:{this.state.formData.rating}</h2>
+                    <StarRatingComponent
+                      name="rating"
+                      renderStarIcon={() => <span></span>}
+                      starCount={5}
+                      onStarClick={this.handleStarClick}
                       value={this.state.formData.rating}
                     />
                   </div>

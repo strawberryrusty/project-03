@@ -1,20 +1,31 @@
 import React from 'react'
 import Auth from '../../lib/Auth'
+import StarRatingComponent from 'react-star-rating-component'
 
 
-const Comment = ({ user, createdAt, content, _id, handleDeleteComment }) => {
-  console.log(user)
+const Comment = ({ user, createdAt, content, _id, handleDeleteComment, rating}) => {
   return (
     <article className="media">
       <div className="media-content">
         <div className="content">
-          <p>
+          <div>
             <strong>{user.username}</strong>
             {' '}
             <small>{(new Date(createdAt)).toLocaleDateString()}</small>
             <br />
+            <small>Rating:</small>
+            <div>
+              <StarRatingComponent
+                name="rate2"
+                editing={false}
+                renderStarIcon={() => <span></span>}
+                starCount={5}
+                value={rating}
+              />
+            </div>
+            <br />
             {content}
-          </p>
+          </div>
         </div>
       </div>
       {Auth.isAuthenticated() && <div className="media-right">
