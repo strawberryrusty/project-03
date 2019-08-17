@@ -1,10 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+import StarRatingComponent from 'react-star-rating-component'
 import ReactMapboxGl, { Marker, ZoomControl } from 'react-mapbox-gl'
 
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_TOKEN
 })
+
 
 import { Link } from 'react-router-dom'
 
@@ -17,7 +19,7 @@ class ShowPlots extends React.Component {
     super()
     this.state = {
       formData: {
-        rating: 1,
+        rating: 3,
         content: ''
       }
 
@@ -26,13 +28,18 @@ class ShowPlots extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
-    this.handleDeleteComment = this.handleCommentDelete.bind(this)
-
+    this.handleCommentDelete = this.handleCommentDelete.bind(this)
+    this.handleStarClick = this.handleStarClick.bind(this)
   }
 
   componentDidMount() {
     axios.get(`/api/plots/${this.props.match.params.id}`)
       .then(res => this.setState({ plot: res.data }))
+  }
+
+  handleStarClick(nextValue) {
+    const formData = {...this.state.formData, rating: nextValue }
+    this.setState({ formData })
   }
 
   handleChange(e) {
@@ -96,7 +103,7 @@ class ShowPlots extends React.Component {
                 <p>Costs involved? {this.state.plot.costInvolved ? '✅' : '❌'}</p>
                 <p>Volunteers needed? {this.state.plot.Volunteer ? '✅' : '❌'}</p>
 
-                <big>{this.state.plot.averageRating}</big>
+                <big> Average Rating: {this.state.plot.averageRating}</big>
 
               </div>
               <div className="column is-one-third">
@@ -152,15 +159,13 @@ class ShowPlots extends React.Component {
                       value={this.state.formData.content}
                     />
                   </div>
-                  <div className="field">
-                    <label className="label">Rating (1-5)</label>
-                    <input
-                      name = "rating"
-                      className="input"
-                      type="range"
-                      min="1"
-                      max="5"
-                      onChange ={this.handleChange}
+                  <div>
+                    <h2>Rating:{this.state.formData.rating}</h2>
+                    <StarRatingComponent
+                      name="rating"
+                      renderStarIcon={() => <span></span>}
+                      starCount={5}
+                      onStarClick={this.handleStarClick}
                       value={this.state.formData.rating}
                     />
                   </div>

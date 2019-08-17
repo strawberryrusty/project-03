@@ -143,7 +143,7 @@ class PlotsNew extends React.Component {
             </div>
             {this.state.errors.plotType && <small className="help is-danger">{this.state.errors.plotType}</small>}
             <hr />
-            <h2 className="subtitle is-4">Using the plot.</h2>
+            <h2 className="subtitle is-4">Using the plot</h2>
             <div className="columns">
               <div className="column field">
                 <label className="checkbox">
