@@ -16,20 +16,16 @@ class Navbar extends React.Component {
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/plots" className="navbar-item">All plots</Link>
             <Link to="/" className="navbar-item">Home</Link>
-            <Link to="/register" className="navbar-item">Register</Link>
+            <Link to="/plots" className="navbar-item">All plots</Link>
+            <Link to="/plots/new" className="navbar-item">Add Plot</Link>
             <Link to="/login" className="navbar-item">Login</Link>
+            <Link to="/register" className="navbar-item">Register</Link>
           </div>
         </div>
       </nav>
-
     )
   }
-
-
-
-
 }
 
 export default withRouter(Navbar)
