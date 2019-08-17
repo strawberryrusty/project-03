@@ -6,7 +6,6 @@ import ReactMapboxGl, { Marker, ZoomControl } from 'react-mapbox-gl'
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_TOKEN
 })
->>>>>>> e74a5772fa92fe3a24b6f1ace1468d066fdbe12c
 
 
 import { Link } from 'react-router-dom'
