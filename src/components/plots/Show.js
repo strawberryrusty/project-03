@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import StarRatingComponent from 'react-star-rating-component'
 
 import { Link } from 'react-router-dom'
 
@@ -22,8 +23,8 @@ class ShowPlots extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
-    this.handleDeleteComment = this.handleCommentDelete.bind(this)
-
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
+    this.handleStarClick = this.handleStarClick.bind(this)
   }
 
   componentDidMount() {
@@ -35,6 +36,12 @@ class ShowPlots extends React.Component {
     const formData = {...this.state.formData, [e.target.name]: e.target.value}
     this.setState({ formData})
   }
+
+  handleStarClick(nextValue, prevValue, name) {
+
+    this.setState({rating: nextValue, prevValue, name})
+  }
+
 
   handleSubmit(e) {
     e.preventDefault()
@@ -53,7 +60,7 @@ class ShowPlots extends React.Component {
       .then(()=> this.props.history.push('/api/plots'))
   }
 
-  handleCommentDelete(e){
+  handleDeleteComment(e){
     console.log(e.target.id)
     axios.delete(`/api/plots/${this.props.match.params.id}/comments/${e.target.id}`, {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
@@ -69,7 +76,9 @@ class ShowPlots extends React.Component {
 
   render() {
     // console.log(this.state)
+    const { rating } = this.state
     return (
+
       <section className="section">
         <div className="container">
 
@@ -128,16 +137,15 @@ class ShowPlots extends React.Component {
                       value={this.state.formData.content}
                     />
                   </div>
-                  <div className="field">
-                    <label className="label">Rating (1-5)</label>
-                    <input
-                      name = "rating"
-                      className="input"
-                      type="range"
-                      min="1"
-                      max="5"
-                      onChange ={this.handleChange}
-                      value={this.state.formData.rating}
+                  <div>
+                    <h2>Rating: {rating}</h2>
+                    <StarRatingComponent
+                      name="rating"
+                      type ="range"
+                      renderStarIcon={() => <span></span>}
+                      starCount={5}
+                      onStarClick={this.handleStarClick}
+                      value={rating}
                     />
                   </div>
                   <button className="button is-info">Submit</button>
