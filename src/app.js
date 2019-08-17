@@ -10,7 +10,7 @@ import SecureRoute from './components/common/SecureRoute'
 //
 import PlotsIndex from './components/plots/Index'
 import ShowPlots from './components/plots/Show'
-// import PlotsEdit from './components/plots/Edit'
+import PlotsEdit from './components/plots/Edit'
 import PlotsNew from './components/plots/New'
 //
 import Register from './components/auth/Register'
@@ -30,6 +30,7 @@ class App extends React.Component {
       <HashRouter>
         <Navbar />
         <Switch>
+          <SecureRoute path="/plots/:id/edit" component={PlotsEdit} />
           <SecureRoute path="/plots/new" component={PlotsNew} />
           <Route path="/plots/:id" component={ShowPlots} />
           <Route path="/plots" component={PlotsIndex} />
