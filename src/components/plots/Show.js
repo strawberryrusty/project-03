@@ -12,8 +12,8 @@ class ShowPlots extends React.Component {
   constructor() {
     super()
     this.state = {
+      rating: 1,
       formData: {
-        rating: 1,
         content: ''
         // yesOrNo: 'No'
       }
@@ -145,7 +145,7 @@ class ShowPlots extends React.Component {
                       renderStarIcon={() => <span></span>}
                       starCount={5}
                       onStarClick={this.handleStarClick}
-                      value={rating}
+                      value={this.state.rating}
                     />
                   </div>
                   <button className="button is-info">Submit</button>
