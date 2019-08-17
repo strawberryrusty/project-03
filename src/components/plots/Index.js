@@ -147,8 +147,8 @@ class PlotsIndex extends React.Component {
               <select onChange={this.handleSortChange}>
                 <option value="name|asc">Name A-Z</option>
                 <option value="name|desc">Name Z-A</option>
-                <option value="numSlots|asc">No. slots Lo-Hi</option>
-                <option value="numSlots|desc">No. slots Hi-Lo</option>
+                <option value="numSlots|asc">Number of slots Lo-Hi</option>
+                <option value="numSlots|desc">Number of slots Hi-Lo</option>
                 <option value="cost|asc">Cost Lo-Hi</option>
                 <option value="cost|desc">Cost Hi-Lo</option>
               </select>
@@ -177,25 +177,25 @@ class PlotsIndex extends React.Component {
             </div>
             <hr />
             <div className="column is-half">
-              <div className="field">
+              <div className="control">
                 <label className="radio" >
                   <input type="radio" name="plotType" value="All" defaultChecked onClick={this.handlePlotType} />
                 All plot types
                 </label>
               </div>
-              <div className="field">
+              <div className="control">
                 <label className="radio" >
                   <input type="radio" name="plotType" value="Community Garden" onClick={this.handlePlotType} />
                   Community Garden
                 </label>
               </div>
-              <div className="field">
+              <div className="control">
                 <label className="radio" >
                   <input type="radio" name="plotType" value="Private Plot" onClick={this.handlePlotType} />
                   Share of private garden
                 </label>
               </div>
-              <div className="field">
+              <div className="control">
                 <label className="radio" >
                   <input type="radio" name="plotType" value="Allotment" onClick={this.handlePlotType}/>
                   Allotment
