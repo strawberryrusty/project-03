@@ -49,8 +49,7 @@ class ShowPlots extends React.Component {
       .then(res => this.setState({ plot: res.data, formData: { rating: 1, content: ''} }))
   }
 
-  handleDelete(e){
-    console.log(e.target)
+  handleDelete(){
     axios.delete(`/api/plots/${this.props.match.params.id}`,{
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
@@ -58,7 +57,6 @@ class ShowPlots extends React.Component {
   }
 
   handleCommentDelete(e){
-    console.log(e.target.id)
     axios.delete(`/api/plots/${this.props.match.params.id}/comments/${e.target.id}`, {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
@@ -66,7 +64,6 @@ class ShowPlots extends React.Component {
   }
 
   render() {
-    // console.log(this.state)
     return (
       <section className="section">
         <div className="container">
@@ -98,6 +95,9 @@ class ShowPlots extends React.Component {
                 <p>Bio Waste accepted? {this.state.bioWasteAccepted ? '✅' : '❌'}</p>
                 <p>Costs involved? {this.state.plot.costInvolved ? '✅' : '❌'}</p>
                 <p>Volunteers needed? {this.state.plot.Volunteer ? '✅' : '❌'}</p>
+
+                <big>{this.state.plot.averageRating}</big>
+
               </div>
               <div className="column is-one-third">
                 <p> Name:{this.state.plot.primaryContactName}</p>
@@ -108,9 +108,9 @@ class ShowPlots extends React.Component {
                 <p> {this.state.plot.postCode}</p>
               </div>
             </div>
-
+            <hr />
             <div className="container">
-              <h1> Location</h1>
+              <h1 className="title is-4">Location</h1>
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 scrollZoom= {true}

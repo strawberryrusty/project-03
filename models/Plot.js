@@ -23,10 +23,19 @@ const plotSchema = new mongoose.Schema({
   costInvolved: {type: Boolean, default: false},
   costPerAnnum: {type: Number},
   ConditionsForUse: {type: [String]},
-  Volunteer: {type: Boolean, default: false},
+  volunteer: {type: Boolean, default: false},
   comments: [ commentSchema ],
   primaryContactName: {type: String, required: 'Please provide a {PATH}'},
   primaryContactEmail: {type: String, required: 'Please provide a {PATH}'},
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+}, {
+  toJSON: { virtuals: true }
 })
+
+plotSchema.virtual('averageRating')
+  .get(function getAverageRating() {
+    if(!this.comments) return null
+    return this.comments.reduce((total, comment) => comment.rating + total, 0) / this.comments.length
+  })
+
 module.exports = mongoose.model('Plot', plotSchema)

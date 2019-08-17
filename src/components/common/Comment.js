@@ -3,7 +3,6 @@ import Auth from '../../lib/Auth'
 
 
 const Comment = ({ user, createdAt, content, _id, handleDeleteComment }) => {
-  console.log(user)
   return (
     <article className="media">
       <div className="media-content">
