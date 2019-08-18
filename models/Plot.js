@@ -22,7 +22,7 @@ const plotSchema = new mongoose.Schema({
   facilities: { type: [String], required: 'Please provide a {PATH}' },
   costInvolved: {type: Boolean, default: false},
   costPerAnnum: {type: Number},
-  ConditionsForUse: {type: [String]},
+  conditionsForUse: {type: [String]},
   volunteer: {type: Boolean, default: false},
   comments: [ commentSchema ],
   primaryContactName: {type: String, required: 'Please provide a {PATH}'},

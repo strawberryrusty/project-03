@@ -51,7 +51,7 @@ describe('GET /plots/:id', () => {
           'facilities',
           'costInvolved',
           'costPerAnnum',
-          'ConditionsForUse',
+          'conditionsForUse',
           'Volunteer',
           'primaryContactName',
           'primaryContactEmail'
@@ -76,7 +76,7 @@ describe('GET /plots/:id', () => {
         expect(res.body.facilities).to.be.an('array')
         expect(res.body.costInvolved).to.be.a('boolean')
         expect(res.body.costPerAnnum).to.be.a('number')
-        expect(res.body.ConditionsForUse).to.be.a('array')
+        expect(res.body.conditionsForUse).to.be.a('array')
         expect(res.body.Volunteer).to.be.a('boolean')
         expect(res.body.primaryContactName).to.be.a('string')
         expect(res.body.primaryContactEmail).to.be.a('string')

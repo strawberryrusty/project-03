@@ -56,7 +56,7 @@ describe('GET /plots', () => {
             'facilities',
             'costInvolved',
             'costPerAnnum',
-            'ConditionsForUse',
+            'conditionsForUse',
             'Volunteer',
             'primaryContactName',
             'primaryContactEmail'
@@ -82,7 +82,7 @@ describe('GET /plots', () => {
           expect(plot.facilities).to.be.an('array')
           expect(plot.costInvolved).to.be.a('boolean')
           expect(plot.costPerAnnum).to.be.a('number')
-          expect(plot.ConditionsForUse).to.be.an('array')
+          expect(plot.conditionsForUse).to.be.an('array')
           expect(plot.Volunteer).to.be.a('boolean')
           expect(plot.primaryContactName).to.be.a('string')
           expect(plot.primaryContactEmail).to.be.a('string')
