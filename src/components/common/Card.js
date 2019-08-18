@@ -1,4 +1,5 @@
 import React from 'react'
+import StarRatingComponent from 'react-star-rating-component'
 
 const Card = (props) => {
   return (
@@ -11,6 +12,16 @@ const Card = (props) => {
         </figure>
       </div>
       <div className="card-content">
+        <div>
+          <StarRatingComponent
+            name="rate2"
+            editing={false}
+            renderStarIcon={() => <span></span>}
+            starCount={5}
+            value={props.rating}
+          />
+        </div>
+        <p className="notes">{props.plotType}</p>
         <p className="notes">{props.postCode}</p>
       </div>
     </div>

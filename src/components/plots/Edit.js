@@ -206,12 +206,12 @@ class Edit extends React.Component {
               <input
                 className="input"
                 type="string"
-                name="ConditionsForUse"
+                name="conditionsForUse"
                 onChange={this.handleChange}
-                value={this.state.formData.ConditionsForUse || ''}
+                value={this.state.formData.conditionsForUse || ''}
                 placeholder="put water"
               />
-              {this.state.errors.ConditionsForUse && <small className="help is-danger">{this.state.errors.ConditionsForUse}</small>}
+              {this.state.errors.conditionsForUse && <small className="help is-danger">{this.state.errors.conditionsForUse}</small>}
             </div>
 
             <div className="field">
