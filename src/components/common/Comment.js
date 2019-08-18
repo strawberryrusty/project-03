@@ -3,7 +3,7 @@ import Auth from '../../lib/Auth'
 import StarRatingComponent from 'react-star-rating-component'
 
 
-const Comment = ({ user, createdAt, content, _id, handleDeleteComment, rating}) => {
+const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) => {
   return (
     <article className="media">
       <div className="media-content">
@@ -29,7 +29,7 @@ const Comment = ({ user, createdAt, content, _id, handleDeleteComment, rating}) 
         </div>
       </div>
       {Auth.isAuthenticated() && <div className="media-right">
-        <button className="delete" id={_id} onClick= {handleDeleteComment}></button>
+        <button className="delete" id={_id} onClick= {handleCommentDelete}></button>
       </div>}
     </article>
   )

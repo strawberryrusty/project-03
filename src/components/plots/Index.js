@@ -19,6 +19,7 @@ class PlotsIndex extends React.Component {
       plotType: 'All'
     }
 
+    this.truncate = this.truncate.bind(this)
     this.handleSearchKeyUp = this.handleSearchKeyUp.bind(this)
     this.handleSortChange = this.handleSortChange.bind(this)
     this.handlePlotType = this.handlePlotType.bind(this)
@@ -31,6 +32,18 @@ class PlotsIndex extends React.Component {
   componentDidMount() {
     axios.get('/api/plots')
       .then(res => this.setState({ allPlots: res.data, plotsToDisplay: res.data }))
+  }
+
+  truncate(str, limit) {
+    const stringLimit = limit
+    const truncated = _.truncate(str, {length: stringLimit, separator: /,? +/, omission: ''})
+    if(str === undefined) {
+      return ''
+    } else if (stringLimit < str.length) {
+      return `${truncated} ...`
+    } else {
+      return truncated
+    }
   }
 
   handleSearchKeyUp(e){
@@ -158,19 +171,19 @@ class PlotsIndex extends React.Component {
             <div className="column is-half">
               <div className="field">
                 <label className="checkbox" >
-                  <input type="checkbox" value="costInvolved" onClick={this.handleCostInvolvedBoolean} />
+                  <input type="checkbox"  className="checkboxRadio" value="costInvolved" onClick={this.handleCostInvolvedBoolean} />
                   No costs involved
                 </label>
               </div>
               <div className="field">
                 <label className="checkbox" >
-                  <input type="checkbox" value="Volunteer" onClick={this.handleVolunteerBoolean} />
+                  <input type="checkbox"  className="checkboxRadio" value="Volunteer" onClick={this.handleVolunteerBoolean} />
                   Volunteer opportunities
                 </label>
               </div>
               <div className="field">
                 <label className="checkbox" >
-                  <input type="checkbox" value="bioWasteAccepted" onClick={this.handleBioWasteBoolean}/>
+                  <input type="checkbox"  className="checkboxRadio" value="bioWasteAccepted" onClick={this.handleBioWasteBoolean}/>
                   Bio-waste accepted
                 </label>
               </div>
@@ -179,25 +192,25 @@ class PlotsIndex extends React.Component {
             <div className="column is-half">
               <div className="control">
                 <label className="radio" >
-                  <input type="radio" name="plotType" value="All" defaultChecked onClick={this.handlePlotType} />
+                  <input type="radio" name="plotType" className="checkboxRadio" value="All" defaultChecked onClick={this.handlePlotType} />
                 All plot types
                 </label>
               </div>
               <div className="control">
                 <label className="radio" >
-                  <input type="radio" name="plotType" value="Community Garden" onClick={this.handlePlotType} />
+                  <input type="radio" name="plotType"  className="checkboxRadio" value="Community Garden" onClick={this.handlePlotType} />
                   Community Garden
                 </label>
               </div>
               <div className="control">
                 <label className="radio" >
-                  <input type="radio" name="plotType" value="Private Plot" onClick={this.handlePlotType} />
+                  <input type="radio" name="plotType"  className="checkboxRadio" value="Private Plot" onClick={this.handlePlotType} />
                   Share of private garden
                 </label>
               </div>
               <div className="control">
                 <label className="radio" >
-                  <input type="radio" name="plotType" value="Allotment" onClick={this.handlePlotType}/>
+                  <input type="radio" name="plotType"  className="checkboxRadio" value="Allotment" onClick={this.handlePlotType}/>
                   Allotment
                 </label>
               </div>
@@ -211,8 +224,10 @@ class PlotsIndex extends React.Component {
               <div className="column is-one-third-desktop" key={plot._id}>
                 <Link to={`/plots/${plot._id}`}>
                   <Card
-                    name={plot.name}
+                    name={this.truncate(plot.name, 30)}
+                    plotType={plot.plotType}
                     image={plot.image}
+                    averageRating={plot.averageRating}
                     postCode={plot.postCode}
                   />
                 </Link>
