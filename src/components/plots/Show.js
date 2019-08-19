@@ -99,7 +99,7 @@ class PlotsShow extends React.Component {
               </div>
               <div className="column is-one-third">
                 <p>Plot Type: {this.state.plot.plotType}</p>
-                <p>Facilities: {this.state.plot.facilities.map(thing => thing)}</p>
+                <p>Facilities: {this.state.plot.facilities.map(thing => thing + ' ')}</p>
                 <p>Number of Slots: {this.state.plot.numOfSlots}</p>
                 <p>Bio Waste accepted? {this.state.bioWasteAccepted ? '✅' : '❌'}</p>
                 <p>Costs involved? {this.state.plot.costInvolved ? '✅' : '❌'}</p>
