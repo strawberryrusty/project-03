@@ -35,7 +35,7 @@ const plotSchema = new mongoose.Schema({
 
 plotSchema.virtual('averageRating')
   .get(function getAverageRating() {
-    if(!this.comments) return null
+    if(this.comments.length === 0) return 0
     return this.comments.reduce((total, comment) => comment.rating + total, 0) / this.comments.length
   })
 

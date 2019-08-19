@@ -3,7 +3,6 @@ const Plot = require('../models/Plot')
 function indexRoute(req, res, next) {
   // get all the plots from the database: MONGOOSE
   Plot.find(req.query)
-    .select('-comments') // remove the comments from this route ONLY
     .then(plots => res.json(plots)) // send them as JSON: EXPRESS
     .catch(next)
 }
