@@ -16,6 +16,7 @@ const app = express() // create a HTTP request handler: EXPRESS
 // Connect to a specific database: MONGOOSE
 mongoose.connect(dbURI, { useNewUrlParser: true })
 
+app.use(express.static(`${__dirname}/dist`))
 // app.use() - tells the app to use this piece of middleware: EXPRESS
 // bodyParser.json() - tells bodyParser to handle JSON data: BODY-PARSER
 app.use(bodyParser.json())
