@@ -22,6 +22,7 @@ import Login from './components/auth/Login'
 import 'bulma'
 import './style.scss'
 
+
 class App extends React.Component {
 
 

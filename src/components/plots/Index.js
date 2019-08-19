@@ -80,7 +80,7 @@ class PlotsIndex extends React.Component {
     console.log(e.target.value)
     this.setState({
       plotType: e.target.value
-    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+    }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
 
   combineFiltersAndSort(filteredPlots) {
@@ -106,7 +106,7 @@ class PlotsIndex extends React.Component {
     if(this.state.plotType === 'All') {
       filteredByPlotType = this.state.allPlots
     } else {
-      filteredByPlotType = this.state.plotsToDisplay.filter(plot => plot.plotType === this.state.plotType)
+      filteredByPlotType = this.state.allPlots.filter(plot => plot.plotType === this.state.plotType)
 
       console.log(this.state.plotType)
       console.log(filteredByPlotType)
@@ -121,14 +121,14 @@ class PlotsIndex extends React.Component {
 
 
     if(this.state.volunteerBoolean) {
-      filteredByVolunteer = this.state.plotsToDisplay.filter(plot => plot.volunteer)
+      filteredByVolunteer = this.state.allPlots.filter(plot => plot.volunteer)
       console.log(filteredByVolunteer)
     } else {
       filteredByVolunteer = this.state.allPlots
     }
 
     if(this.state.bioWasteBoolean) {
-      filteredByBioWaste = this.state.plotsToDisplay.filter(plot => plot.bioWasteAccepted)
+      filteredByBioWaste = this.state.allPlots.filter(plot => plot.bioWasteAccepted)
       console.log(filteredByBioWaste)
     } else {
       filteredByBioWaste = this.state.allPlots

@@ -3,6 +3,7 @@ import axios from 'axios'
 import StarRatingComponent from 'react-star-rating-component'
 import ReactMapboxGl, { Marker, ZoomControl } from 'react-mapbox-gl'
 
+
 const Map = ReactMapboxGl({
   accessToken: process.env.MAPBOX_TOKEN
 })
