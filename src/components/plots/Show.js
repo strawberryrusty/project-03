@@ -19,7 +19,7 @@ class ShowPlots extends React.Component {
     super()
     this.state = {
       formData: {
-        rating: 3,
+        rating: 1,
         content: ''
       }
 
@@ -28,7 +28,7 @@ class ShowPlots extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
-    this.handleCommentDelete = this.handleCommentDelete.bind(this)
+    this.handleDeleteComment = this.handleDeleteComment.bind(this)
     this.handleStarClick = this.handleStarClick.bind(this)
   }
 
@@ -63,7 +63,7 @@ class ShowPlots extends React.Component {
       .then(()=> this.props.history.push('/api/plots'))
   }
 
-  handleCommentDelete(e){
+  handleDeleteComment(e){
     axios.delete(`/api/plots/${this.props.match.params.id}/comments/${e.target.id}`, {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })

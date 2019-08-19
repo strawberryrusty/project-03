@@ -6,6 +6,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom'
 // import { ToastContainer } from 'react-toastify'
 
 import Home from './components/pages/Home'
+import About from './components/pages/About'
 import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/SecureRoute'
 //
@@ -13,10 +14,8 @@ import PlotsIndex from './components/plots/Index'
 import ShowPlots from './components/plots/Show'
 import PlotsEdit from './components/plots/Edit'
 import PlotsNew from './components/plots/New'
-//
 import Register from './components/auth/Register'
-// import Login from './components/auth/Login'
-// import Register from './components/auth/Register'
+
 import Login from './components/auth/Login'
 
 
@@ -38,6 +37,7 @@ class App extends React.Component {
           <Route path="/plots" component={PlotsIndex} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
+          <Route path="/about" component={About} />
           <Route path="/" component={Home} />
         </Switch>
       </HashRouter>
