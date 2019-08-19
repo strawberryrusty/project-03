@@ -217,7 +217,7 @@ module.exports = [{
 },{
   name: 'Watham Forest',
   plotType: 'Allotment',
-  image: '',
+  image: 'rgfsdfs',
   streetAddress: '6 Church Lane Leytonstone',
   postCode: 'E11 1HG',
   latitude: '51.585136',
