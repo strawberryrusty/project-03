@@ -8,7 +8,8 @@ const Card = (props) => {
         <div className="card-header-title">{props.name}</div>
       </div>
       <div className="card-image">
-        <figure className="image" style={{backgroundImage: `url(${props.image}`}}>
+        <figure className="image is-3by2">
+          <img src={props.image} alt={props.name} />
         </figure>
       </div>
       <div className="card-content">
@@ -18,7 +19,7 @@ const Card = (props) => {
             editing={false}
             renderStarIcon={() => <span></span>}
             starCount={5}
-            value={props.rating}
+            value={props.averageRating}
           />
         </div>
         <p className="notes">{props.plotType}</p>

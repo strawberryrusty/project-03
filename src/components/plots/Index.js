@@ -121,7 +121,7 @@ class PlotsIndex extends React.Component {
 
 
     if(this.state.volunteerBoolean) {
-      filteredByVolunteer = this.state.plotsToDisplay.filter(plot => plot.Volunteer)
+      filteredByVolunteer = this.state.plotsToDisplay.filter(plot => plot.volunteer)
       console.log(filteredByVolunteer)
     } else {
       filteredByVolunteer = this.state.allPlots
