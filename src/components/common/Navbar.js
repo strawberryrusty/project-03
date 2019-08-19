@@ -61,6 +61,7 @@ class Navbar extends React.Component {
               <Link to="/plots" className="navbar-item">Our plots 🥬</Link>
 
               {Auth.isAuthenticated() && <Link to="/plots/new" className="navbar-item">Add Plot 🧱</Link>}
+              <Link to="/about" className="navbar-item">About 🌶</Link>
             </div>
 
             <div className="navbar-end">

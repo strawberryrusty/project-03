@@ -36,6 +36,9 @@ function updateRoute(req, res, next) {
   Plot.findById(req.params.id) // get the plot from the database: MONGOOSE
     .then(plot => {
       if(!plot) return res.sendStatus(404) // return a 404: EXPRESS
+
+      if(!req.currentUser.equals(plot.user)) return res.sendStatus(401)
+      
       return plot.set(req.body) // update the plot with the request data
     })
     .then(plot => plot.save()) // save the plot: MONGOOSE
@@ -47,6 +50,8 @@ function deleteRoute(req, res, next) {
   Plot.findById(req.params.id) // get the plot from the database: MONGOOSE
     .then(plot => {
       if(!plot) return res.sendStatus(404) // return a 404: EXPRESS
+
+      if(!req.currentUser.equals(plot.user)) return res.sendStatus(401)
 
       return plot.remove() // remove the plot: MONGOOSE
         .then(() => res.sendStatus(204)) // return a 204: EXPRESS

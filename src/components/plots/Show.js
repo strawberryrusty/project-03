@@ -72,6 +72,7 @@ class PlotsShow extends React.Component {
   }
 
   render() {
+    console.log(this.state.plot)
     return (
       <section className="section">
         <div className="container">
@@ -81,7 +82,7 @@ class PlotsShow extends React.Component {
           {this.state.plot && <div>
             <header>
               <h1 className="title is-2">{this.state.plot.name}</h1>
-              {Auth.isAuthenticated() && <div className="buttons">
+              {Auth.isCurrentUser(this.state.plot.user) && <div className="buttons">
                 <Link
                   className="button"
                   to={`/plots/${this.state.plot._id}/edit`}
@@ -114,7 +115,6 @@ class PlotsShow extends React.Component {
                     value={this.state.plot.averageRating}
                   />
                 </div>
-
               </div>
               <div className="column is-one-third">
                 <p> Name: {this.state.plot.primaryContactName}</p>
@@ -125,7 +125,15 @@ class PlotsShow extends React.Component {
                 <p> {this.state.plot.postCode}</p>
               </div>
             </div>
-            <hr />
+            <hr/>
+
+            <div>
+              <h1> Description </h1>
+              <p>{this.state.plot.description}</p>
+            </div>
+
+            <hr/>
+
             <div className="container">
               <h1 className="title is-4">Location</h1>
               <Map

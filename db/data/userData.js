@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [{
   username: 'test',
   email: 'test@test.test',
   password: 'test',
@@ -23,4 +23,4 @@ module.exports = {
   email: 'freddiehoy@hotmail.com',
   password: 'test',
   passwordConfirmation: 'test'
-}
+}]
