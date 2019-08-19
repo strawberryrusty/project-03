@@ -7,12 +7,14 @@ const AboutCard = (props) => {
         <div className="card-header-title">{props.name}</div>
       </div>
       <div className="card-image">
-        <figure className="image" style={{backgroundImage: `url(${props.image}`}}>
+        <figure className="image">
+          <img src={props.image} alt={props.name}/>
         </figure>
       </div>
     </div>
   )
 }
+
 
 
 
