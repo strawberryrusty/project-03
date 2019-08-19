@@ -110,6 +110,21 @@ class PlotsNew extends React.Component {
                 {this.state.errors.postCode && <small className="help is-danger">{this.state.errors.postCode}</small>}
               </div>
             </div>
+            <div>
+              <div className="field">
+                <label className="label">Description</label>
+                <input
+                  className="input"
+                  type="string"
+                  name="description"
+                  placeholder="A lovley private garden in South london. Looking to get help with growing cabbages and carrots..."
+                  value={this.state.formData.description || ''}
+                  onChange={this.handleChange}
+                />
+                {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
+              </div>
+            </div>
+            <br />
             <div className="field">
               <label className="label">Image</label>
               <input

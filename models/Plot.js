@@ -10,6 +10,7 @@ const commentSchema = new mongoose.Schema({
 
 const plotSchema = new mongoose.Schema({
   name: { type: String, required: 'Please provide a {PATH}', unique: true },
+  description: { type: String, required: 'Please provide a {PATH}'},
   plotType: { type: String, required: 'Please provide a {PATH}', enum: ['Allotment', 'Private Plot', 'Community Garden'] },
   image: { type: String, required: 'Please provide a {PATH}' },
   streetAddress: { type: String, required: 'Please provide a {PATH}' },
