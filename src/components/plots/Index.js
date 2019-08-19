@@ -142,6 +142,7 @@ class PlotsIndex extends React.Component {
 
     const [field, order] = this.state.sortTerm.split('|')
     const sortedPlots = _.orderBy(filteredPlots, [field], [order])
+    console.log('sorted plts', sortedPlots)
     return this.setState({ plotsToDisplay: sortedPlots })
   }
 
@@ -160,10 +161,10 @@ class PlotsIndex extends React.Component {
               <select onChange={this.handleSortChange}>
                 <option value="name|asc">Name A-Z</option>
                 <option value="name|desc">Name Z-A</option>
-                <option value="numSlots|asc">Number of slots Lo-Hi</option>
-                <option value="numSlots|desc">Number of slots Hi-Lo</option>
-                <option value="cost|asc">Cost Lo-Hi</option>
-                <option value="cost|desc">Cost Hi-Lo</option>
+                <option value="numOfSlots|asc">Number of slots Lo-Hi</option>
+                <option value="numOfSlots|desc">Number of slots Hi-Lo</option>
+                <option value="costPerAnnum|asc">Cost Lo-Hi</option>
+                <option value="costPerAnnum|desc">Cost Hi-Lo</option>
               </select>
             </div>
           </div>
