@@ -216,7 +216,7 @@ module.exports = [{
   primaryContactEmail: ' info@wimbledonguild.co.uk'
 },{
   name: 'Watham Forest',
-  plotType: 'Community Garden',
+  plotType: 'Allotment',
   image: 'https://i.imgur.com/iNCvyFv.png',
   streetAddress: '6 Church Lane Leytonstone',
   postCode: 'E11 1HG',
@@ -270,7 +270,7 @@ module.exports = [{
   primaryContactEmail: 'tabardgrowers@gmail.com'
 },{
   name: 'Martin Way Allotment Gardens',
-  plotType: 'Allotments',
+  plotType: 'Allotment',
   image: 'http://maga.org.uk/media/content/20180818_1009201.jpg',
   streetAddress: 'Raynes Park, Martin Way',
   postCode: 'SW20 9BS',
@@ -288,7 +288,7 @@ module.exports = [{
   primaryContactEmail: 'sue_tickner@yahoo.co.uk'
 },{
   name: 'Grange Lane Allotments',
-  plotType: 'Allotments',
+  plotType: 'Allotment',
   image: 'http://www.allotment-garden.org/wp-content/uploads/2016/04/allotment-july.jpg',
   streetAddress: 'Raynes Park, Martin Way',
   postCode: 'SE21 7LH',
@@ -452,7 +452,7 @@ module.exports = [{
 
 },{
   name: 'Kessington Gardens Allotment',
-  plotType: 'Allotment Garden',
+  plotType: 'Allotment',
   image: 'https://www.royalparks.org.uk/_media/images/kensington-gardens/the-allotment-in-kensington-gardens/Allotment-volunteer-at-harvest-festival.jpg/w_1200.jpg',
   streetAddress: 'The Storeyard, Kensington Gardens, Hyde Park, London',
   postCode: 'W2 2AR',
