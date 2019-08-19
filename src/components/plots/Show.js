@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom'
 import Auth from '../../lib/Auth'
 import Comment from '../common/Comment'
 
-class ShowPlots extends React.Component {
+class PlotsShow extends React.Component {
 
   constructor() {
     super()
@@ -182,4 +182,4 @@ class ShowPlots extends React.Component {
   }
 }
 
-export default ShowPlots
+export default PlotsShow

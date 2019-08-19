@@ -20,7 +20,7 @@ const testData = {
   facilities: ['water', 'sunlight', 'standard m8'],
   costInvolved: true,
   costPerAnnum: 3,
-  ConditionsForUse: ['sick', 'one', 'mate'],
+  conditionsForUse: ['sick', 'one', 'mate'],
   Volunteer: false,
   primaryContactEmail: 'seed@seed.seed',
   primaryContactName: 'Mr Seed'
@@ -96,7 +96,7 @@ describe('PUT /plots/:id', () => {
           'facilities',
           'costInvolved',
           'costPerAnnum',
-          'ConditionsForUse',
+          'conditionsForUse',
           'Volunteer',
           'primaryContactName',
           'primaryContactEmail'
@@ -122,7 +122,7 @@ describe('PUT /plots/:id', () => {
         expect(res.body.facilities).to.deep.eq(testData.facilities)
         expect(res.body.costInvolved).to.eq(testData.costInvolved)
         expect(res.body.costPerAnnum).to.eq(testData.costPerAnnum)
-        expect(res.body.ConditionsForUse).to.deep.eq(testData.ConditionsForUse)
+        expect(res.body.conditionsForUse).to.deep.eq(testData.conditionsForUse)
         expect(res.body.Volunteer).to.eq(testData.Volunteer)
         expect(res.body.primaryContactName).to.eq(testData.primaryContactName)
         expect(res.body.primaryContactEmail).to.eq(testData.primaryContactEmail)
