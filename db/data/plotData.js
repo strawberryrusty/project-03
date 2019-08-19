@@ -216,7 +216,7 @@ module.exports = [{
   primaryContactEmail: ' info@wimbledonguild.co.uk'
 },{
   name: 'Watham Forest',
-  plotType: 'Allotment',
+  plotType: 'Community Garden',
   image: 'https://i.imgur.com/iNCvyFv.png',
   streetAddress: '6 Church Lane Leytonstone',
   postCode: 'E11 1HG',
