@@ -8,7 +8,7 @@
     "serve:backend": "nodemon",
     "serve:frontend": "webpack-dev-server --mode development",
     "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
-    "build": "wepback -p",
+    "build": "webpack -p",
     "start": "yarn build && node index"
   },
   "dependencies": {
