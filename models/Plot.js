@@ -10,6 +10,7 @@ const commentSchema = new mongoose.Schema({
 
 const plotSchema = new mongoose.Schema({
   name: { type: String, required: 'Please provide a {PATH}', unique: true },
+  description: { type: String, required: 'Please provide a {PATH}'},
   plotType: { type: String, required: 'Please provide a {PATH}', enum: ['Allotment', 'Private Plot', 'Community Garden'] },
   image: { type: String, required: 'Please provide a {PATH}' },
   streetAddress: { type: String, required: 'Please provide a {PATH}' },
@@ -34,7 +35,7 @@ const plotSchema = new mongoose.Schema({
 
 plotSchema.virtual('averageRating')
   .get(function getAverageRating() {
-    if(!this.comments) return null
+    if(this.comments.length === 0) return 0
     return this.comments.reduce((total, comment) => comment.rating + total, 0) / this.comments.length
   })
 

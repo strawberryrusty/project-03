@@ -102,9 +102,18 @@ class PlotsShow extends React.Component {
                 <p>Number of Slots: {this.state.plot.numOfSlots}</p>
                 <p>Bio Waste accepted? {this.state.bioWasteAccepted ? '✅' : '❌'}</p>
                 <p>Costs involved? {this.state.plot.costInvolved ? '✅' : '❌'}</p>
-                <p>Volunteers needed? {this.state.plot.Volunteer ? '✅' : '❌'}</p>
+                <p>Volunteers needed? {this.state.plot.volunteer ? '✅' : '❌'}</p>
 
-                <big> Average Rating: {this.state.plot.averageRating}</big>
+                <div>
+                  <p>Average rating:</p>
+                  <StarRatingComponent
+                    name="Average rating"
+                    editing={false}
+                    renderStarIcon={() => <span></span>}
+                    starCount={5}
+                    value={this.state.plot.averageRating}
+                  />
+                </div>
 
                 <hr/>
 
@@ -115,10 +124,10 @@ class PlotsShow extends React.Component {
 
               </div>
               <div className="column is-one-third">
-                <p> Name:{this.state.plot.primaryContactName}</p>
-                <p> Email:{this.state.plot.primaryContactEmail}</p>
+                <p> Name: {this.state.plot.primaryContactName}</p>
+                <p> Email: {this.state.plot.primaryContactEmail}</p>
                 <hr/>
-                <h1> Address </h1>
+                <h1>Address</h1>
                 <p>{this.state.plot.streetAddress}</p>
                 <p> {this.state.plot.postCode}</p>
               </div>
@@ -160,7 +169,7 @@ class PlotsShow extends React.Component {
                   <div className="field">
                     <label className="label">Comment</label>
                     <textarea
-                      name = "content"
+                      name="content"
                       className="textarea"
                       placeholder="Add a comment..."
                       onChange={this.handleChange}
@@ -168,7 +177,7 @@ class PlotsShow extends React.Component {
                     />
                   </div>
                   <div>
-                    <h2>Rating:{this.state.formData.rating}</h2>
+                    <h2>Rating: {this.state.formData.rating}</h2>
                     <StarRatingComponent
                       name="rating"
                       renderStarIcon={() => <span></span>}
