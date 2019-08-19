@@ -50,30 +50,30 @@ class PlotsIndex extends React.Component {
     console.log(e.target.value)
     this.setState({
       searchTerm: e.target.value
-    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+    }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
 
 
   handleSortChange(e){
-    this.setState({ sortTerm: e.target.value }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+    this.setState({ sortTerm: e.target.value }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
 
   handleCostInvolvedBoolean(e) {
     this.setState({
       costInvolvedBoolean: e.target.checked
-    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+    }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
 
   handleVolunteerBoolean(e) {
     this.setState({
       volunteerBoolean: e.target.checked
-    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+    }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
 
   handleBioWasteBoolean(e) {
     this.setState({
       bioWasteBoolean: e.target.checked
-    }, () => this.combineFiltersAndSort(this.state.plotsToDisplay))
+    }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
 
   handlePlotType(e) {
