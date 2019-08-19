@@ -18,7 +18,9 @@ const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) 
               <StarRatingComponent
                 name="rate2"
                 editing={false}
-                renderStarIcon={() => <span></span>}
+                renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
+                starColor={'rgb(255,140,0)'}
+                emptyStarColor={'rgb(192,192,192)'}
                 starCount={5}
                 value={rating}
               />

@@ -17,8 +17,10 @@ const Card = (props) => {
           <StarRatingComponent
             name="rate2"
             editing={false}
-            renderStarIcon={() => <span></span>}
+            renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
             starCount={5}
+            starColor={'rgb(255,140,0)'}
+            emptyStarColor={'rgb(192,192,192)'}
             value={props.averageRating}
           />
         </div>

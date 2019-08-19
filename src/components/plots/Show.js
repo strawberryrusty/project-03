@@ -110,8 +110,10 @@ class PlotsShow extends React.Component {
                   <StarRatingComponent
                     name="Average rating"
                     editing={false}
-                    renderStarIcon={() => <span></span>}
+                    renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
                     starCount={5}
+                    starColor={'rgb(255,140,0)'}
+                    emptyStarColor={'rgb(192,192,192)'}
                     value={this.state.plot.averageRating}
                   />
                 </div>
@@ -181,9 +183,11 @@ class PlotsShow extends React.Component {
                     <h2>Rating: {this.state.formData.rating}</h2>
                     <StarRatingComponent
                       name="rating"
-                      renderStarIcon={() => <span></span>}
+                      renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
                       starCount={5}
                       onStarClick={this.handleStarClick}
+                      starColor={'rgb(255,140,0)'}
+                      emptyStarColor={'rgb(192,192,192)'}
                       value={this.state.formData.rating}
                     />
                   </div>

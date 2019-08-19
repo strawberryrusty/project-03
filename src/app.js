@@ -20,6 +20,7 @@ import About from './components/pages/About'
 
 
 // import 'react-toastify/dist/ReactToastify.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 import 'bulma'
 import './style.scss'
 
