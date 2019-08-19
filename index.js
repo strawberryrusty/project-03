@@ -9,7 +9,7 @@ const bodyParser = require('body-parser')
 const router = require('./config/routes')
 // const queryHandler = require('./lib/queryHandler')
 const errorHandler = require('./lib/errorHandler')
-const { dbURI } = require('./config/environment')
+const { port, dbURI } = require('./config/environment')
 
 const app = express() // create a HTTP request handler: EXPRESS
 
@@ -30,6 +30,6 @@ app.use('/api', router) // all endpoints prefixed with `/api`
 app.use(errorHandler)
 
 // Tell the API to listen to port 4000 for incoming requests: EXPRESS
-app.listen(4000, () => console.log('Mind the gap on port 4000'))
+app.listen(port, () => console.log('listening ...'))
 
 module.exports = app // Export the app for testing
