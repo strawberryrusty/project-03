@@ -71,24 +71,6 @@ module.exports = [{
   primaryContactName: 'Katie Shaw',
   primaryContactEmail: 'info@hcga.org.uk'
 },{
-  name: 'Bonnington Square Garden',
-  plotType: 'Community Garden',
-  image: 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjJmIH04ozkAhXOCOwKHd_cDlgQjRx6BAgBEAQ&url=https%3A%2F%2Fnineelmslondon.com%2Fhighlights%2Fbonnington-square-garden%2F&psig=AOvVaw2UB1mREpRVnieVc5-bO8Ml&ust=1566229817425071',
-  streetAddress: '11C Bonnington Square, Vauxhal',
-  postCode: 'SW8 1TE',
-  latitude: '51.484317',
-  longitude: '0.120530',
-  numOfSlots: '20',
-  slotsAvailable: true,
-  bioWasteAccepted: true,
-  facilities: ['Soil', 'Drainage & irrigation', 'Advice', 'Meetings'],
-  costInvolved: false,
-  costPerAnnum: '0',
-  ConditionsForUse: ['Act inline with the garden rules'],
-  volunteer: true,
-  primaryContactName: 'BSGA',
-  primaryContactEmail: 'BSGA FaceBook page'
-},{
   name: 'Communal Gardens of the Ladbroke Estate',
   plotType: 'Community Garden',
   image: 'https://imgur.com/UsHNtW2.png',
@@ -117,7 +99,7 @@ module.exports = [{
   numOfSlots: '0',
   slotsAvailable: false,
   bioWasteAccepted: false,
-  facilities: [],
+  facilities: ['Soil', 'Drainage & irrigation', 'Advice', 'Meetings'],
   costInvolved: false,
   costPerAnnum: '0',
   conditionsForUse: ['No fires, BBQs, camping stoves or fireworks are allowed in the garden'],
