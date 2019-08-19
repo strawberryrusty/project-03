@@ -109,7 +109,7 @@ module.exports = [{
 },{
   name: 'Communal Gardens of the Ladbroke Estate',
   plotType: 'Community Garden',
-  image: '',
+  image: 'https://i.imgur.com/iNCvyFv.png',
   streetAddress: '24 - 30 Dalston Lane,Hackney',
   postCode: 'E8 3AZ',
   latitude: '51.546230',
@@ -217,7 +217,7 @@ module.exports = [{
 },{
   name: 'Watham Forest',
   plotType: 'Allotment',
-  image: 'rgfsdfs',
+  image: 'https://i.imgur.com/iNCvyFv.png',
   streetAddress: '6 Church Lane Leytonstone',
   postCode: 'E11 1HG',
   latitude: '51.585136',
