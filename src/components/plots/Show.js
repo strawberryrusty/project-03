@@ -114,14 +114,6 @@ class PlotsShow extends React.Component {
                     value={this.state.plot.averageRating}
                   />
                 </div>
-
-                <hr/>
-
-                <h1> Description </h1>
-                <p>{this.state.plot.description}</p>
-
-
-
               </div>
               <div className="column is-one-third">
                 <p> Name: {this.state.plot.primaryContactName}</p>
@@ -132,7 +124,15 @@ class PlotsShow extends React.Component {
                 <p> {this.state.plot.postCode}</p>
               </div>
             </div>
-            <hr />
+            <hr/>
+
+            <div>
+              <h1> Description </h1>
+              <p>{this.state.plot.description}</p>
+            </div>
+
+            <hr/>
+
             <div className="container">
               <h1 className="title is-4">Location</h1>
               <Map
