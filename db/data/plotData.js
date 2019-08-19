@@ -17,7 +17,7 @@ module.exports = [{
   primaryContactName: 'Mageret Smith',
   primaryContactEmail: 'Facebook: groups/217195791772788/'
 },{
-  name: 'Kessington Gardens Allotment',
+  name: 'Jubilee Gardens Allotment',
   plotType: 'Community Garden',
   image: 'https://www.royalparks.org.uk/_media/images/kensington-gardens/the-allotment-in-kensington-gardens/Allotment-volunteer-at-harvest-festival.jpg/w_1200.jpg',
   streetAddress: 'The Storeyard, Kensington Gardens, Hyde Park, London',
@@ -430,26 +430,6 @@ module.exports = [{
   volunteer: false,
   primaryContactName: 'Asif Mammadov',
   primaryContactEmail: 'amdooby@memail.com'
-},{
-
-  name: 'Edible Landscapes London',
-  plotType: 'Community Garden',
-  image: 'https://imgur.com/UsHNtW2.png',
-  streetAddress: 'Finsbury Park (use entrance by Manor House Underground Station), N4 1BY',
-  postCode: 'N4 2NQ ',
-  latitude: '51.571099',
-  longitude: '-0.096713',
-  numOfSlots: '35',
-  slotsAvailable: false,
-  bioWasteAccepted: true,
-  facilities: ['Bee house', 'Compost Bay'],
-  costInvolved: false,
-  costPerAnnum: '50',
-  ConditionsForUse: [],
-  volunteer: true,
-  primaryContactName: 'Mageret Smith',
-  primaryContactEmail: 'Facebook: groups/217195791772788/'
-
 },{
   name: 'Kessington Gardens Allotment',
   plotType: 'Allotment',

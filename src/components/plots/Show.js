@@ -28,7 +28,7 @@ class PlotsShow extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
-    this.handleDeleteComment = this.handleDeleteComment.bind(this)
+    this.handleCommentDelete = this.handleCommentDelete.bind(this)
     this.handleStarClick = this.handleStarClick.bind(this)
   }
 
@@ -63,7 +63,7 @@ class PlotsShow extends React.Component {
       .then(()=> this.props.history.push('/api/plots'))
   }
 
-  handleDeleteComment(e){
+  handleCommentDelete(e){
     axios.delete(`/api/plots/${this.props.match.params.id}/comments/${e.target.id}`, {
       headers: {Authorization: `Bearer ${Auth.getToken()}`}
     })
@@ -144,7 +144,7 @@ class PlotsShow extends React.Component {
               <div className="column is-full">
                 {this.state.plot.comments.map(comment =>
                   <Comment key={comment._id} {...comment}
-                    handleDeleteComment={this.handleDeleteComment} />
+                    handleCommentDelete={this.handleCommentDelete} />
                 )}
                 {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
 
