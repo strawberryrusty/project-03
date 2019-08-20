@@ -2,7 +2,7 @@ import React from 'react'
 import ReactMapboxGl, { Layer, Feature, ZoomControl, Popup } from 'react-mapbox-gl'
 import axios from 'axios'
 import icon from '../../assets/Carrot.png'
-console.log(icon)
+
 
 
 const Map = ReactMapboxGl({

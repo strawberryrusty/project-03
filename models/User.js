@@ -1,11 +1,14 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-
+const axios = require('axios')
 
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true },
   email: { type: String, unique: true, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  postCode: { type: String, required: 'Please provide a {PATH}' },
+  latitude: { type: Number, required: 'Could not find your {PATH}' },
+  longitude: { type: Number, required: 'Could not find your {PATH}' }
 },{
   toJSON: {
     transform(doc, json) {
@@ -17,15 +20,19 @@ const userSchema = new mongoose.Schema({
   }
 })
 
-// userSchema.virtual('fullname')
-//   .get(function getFullName() {
-//     return `${this.firstname} ${this.lastname}`
-//   })
-//   .set(function setFullName(fullname) {
-//     const [ firstname, lastname ] = fullname.split(' ')
-//     this.firstname = firstname
-//     this.lastname = lastname
-//   })
+userSchema.pre('validate', function getGeolocation(done) {
+  if(!this.isModified('postCode')) return done()
+
+  axios.post('https://postcodes.io/postcodes?filter=longitude,latitude', { postcodes: [this.postCode] })
+    .then((res) => {
+      if(!res.data.result[0].result) return done()
+      const { latitude, longitude } = res.data.result[0].result
+      this.latitude = latitude
+      this.longitude = longitude
+
+      done()
+    })
+})
 
 // A virtual is data we need but don't want to store in the database
 userSchema.virtual('passwordConfirmation')
