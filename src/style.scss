@@ -9,7 +9,7 @@ $box-color: #FFFFFF;
 $text: #FFFFFF;
 $table-background-color: #2F4F4F;
 $table-color: #FFFFFF;
-$dark: #FFFFFF;
+// $dark: #FFFFFF;
 $box-background-color: #2F4F4F;
 
 .background-test {
@@ -22,6 +22,10 @@ $box-background-color: #2F4F4F;
   color: #FFFFFF;
 }
 .poptext {
+  color: black;
+}
+
+label {
   color: black;
 }
 
@@ -45,6 +49,7 @@ $box-background-color: #2F4F4F;
 
 .checkboxRadio {
   margin-right: 8px;
+  color: #FFFFFF;
 }
 
 .hero-body {

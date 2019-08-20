@@ -68,9 +68,9 @@ class PlotsNew extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <h2 className="title is-2">Sign up your Plot!</h2>
-          <hr />
-          <h2 className="subtitle is-4">The Plot Details</h2>
+          <div className="box">
+            <h2 className="title is-3 has-white-text">Add your plot</h2>
+          </div>
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label">Plot Name</label>
