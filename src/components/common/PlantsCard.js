@@ -11,15 +11,15 @@ const PlantsCard = (props) => {
           <img src={props.image} alt={props.name}/>
         </figure>
         <div className="card-content">
-          <p> Germination: {props.germination} </p>
-          <p> Days Of Maturation: {props.daysOfMaturation} </p>
-          <p> Spacing: {props.spacing} </p>
-          <p> Sow under glass: {props.sowUnderGlass ? '✅' : '❌'} </p>
-          <p> Sow under direct sunlight : {props.sowUnderDirectSunlight ? '✅' : '❌'} </p>
-          <p> Seed period: {props.seedPeriod.map(month => month + ' ')} </p>
-          <p> Harvest period: {props.harvestPeriod.map(month => month + ' ')} </p>
-          <p> Destroyed by: {props.destroyedBy.map(pest => pest + ' ')} </p>
-          <p> Propogator: {props.propagator ? '✅' : '❌'} </p>
+          <p className="notes"> Germination: {props.germination} </p>
+          <p className="notes"> Days Of Maturation: {props.daysOfMaturation} </p>
+          <p className="notes"> Spacing: {props.spacing} </p>
+          <p className="notes"> Sow under glass: {props.sowUnderGlass ? '✅' : '❌'} </p>
+          <p className="notes"> Sow under direct sunlight : {props.sowUnderDirectSunlight ? '✅' : '❌'} </p>
+          <p className="notes"> Seed period: {props.seedPeriod.map(month => month + ' ')} </p>
+          <p className="notes"> Harvest period: {props.harvestPeriod.map(month => month + ' ')} </p>
+          <p className="notes"> Destroyed by: {props.destroyedBy.map(pest => pest + ' ')} </p>
+          <p className="notes"> Propagator: {props.propagator ? '✅' : '❌'} </p>
         </div>
       </div>
     </div>
