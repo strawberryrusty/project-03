@@ -1,5 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Walter+Turncoat&display=swap');
+
+$family-primary: 'Walter Turncoat', cursive;
+$family-secondary: 'Roboto', sans-serif;
+$title-color: #FFFFFF;
+$navbar-background-color: #2F4F4F;
+$navbar-item-color: #FFFFFF;
+$text: #FFFFFF;
+$table-background-color: #2F4F4F;
+$table-color: #FFFFFF;
+$dark: #FFFFFF;
+$box-background-color: #2F4F4F;
+
+.background-test {
+    background-repeat: repeat;
+    background-image: url('https://i.imgur.com/ikjUrBd.jpg?1');
+    min-height: auto;
+}
+
+.commentUser {
+  color: #FFFFFF;
+}
+
+.ShowImage {
+  box-shadow: 1px 1px 1px 1px #FFFFFF;
+}
+
 .card {
   height: 100%;
+  box-shadow: 1px 1px 1px 1px #FFFFFF;
+  border: 1px solid #2F4F4F;
+}
+
+.notes {
+  color: #2F4F4F;
 }
 
 .checkboxRadio {
@@ -16,3 +49,5 @@
     text-align: center;
   }
 }
+
+@import "~bulma"

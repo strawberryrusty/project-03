@@ -74,7 +74,7 @@ class PlotsShow extends React.Component {
   render() {
     console.log(this.state.plot)
     return (
-      <section className="section">
+      <section className="section background-test">
         <div className="container">
 
           {!this.state.plot && <h2 className="title is-2">Loading...</h2>}
@@ -92,52 +92,82 @@ class PlotsShow extends React.Component {
                   onClick={this.handleDelete}>Delete</button>
               </div>}
             </header>
-            <hr />
-            <div className="columns is-multiline">
-              <div className="column is-one-third">
-                <img src={this.state.plot.image} alt={this.state.plot.name}/>
-              </div>
-              <div className="column is-one-third">
-                <p>Plot Type: {this.state.plot.plotType}</p>
-                <p>Facilities: {this.state.plot.facilities.map(thing => thing + ' ')}</p>
-                <p>Number of Slots: {this.state.plot.numOfSlots}</p>
-                <p>Bio Waste accepted? {this.state.bioWasteAccepted ? '✅' : '❌'}</p>
-                <p>Costs involved? {this.state.plot.costInvolved ? '✅' : '❌'}</p>
-                <p>Volunteers needed? {this.state.plot.volunteer ? '✅' : '❌'}</p>
-
-                <div>
-                  <p>Average rating:</p>
-                  <StarRatingComponent
-                    name="Average rating"
-                    editing={false}
-                    renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
-                    starCount={5}
-                    starColor={'rgb(255,140,0)'}
-                    emptyStarColor={'rgb(192,192,192)'}
-                    value={this.state.plot.averageRating}
-                  />
-                </div>
-              </div>
-              <div className="column is-one-third">
-                <p> Name: {this.state.plot.primaryContactName}</p>
-                <p> Email: {this.state.plot.primaryContactEmail}</p>
-                <hr/>
-                <h1>Address</h1>
-                <p>{this.state.plot.streetAddress}</p>
-                <p> {this.state.plot.postCode}</p>
-              </div>
-            </div>
-            <hr/>
 
             <div>
-              <h1> Description </h1>
               <p>{this.state.plot.description}</p>
             </div>
 
-            <hr/>
+            <hr />
+            <div className="columns is-multiline">
+              <div className="column is-half">
+                <img className="ShowImage" src={this.state.plot.image} alt={this.state.plot.name}/>
+              </div>
+
+              <div className="column is-half">
+                <div className="table-container">
+                  <table className="table">
+                    <tr>
+                      <td><p>Plot Type:</p></td>
+                      <td><p>{this.state.plot.plotType}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Facilities:</p></td>
+                      <td><p>{this.state.plot.facilities.map(thing => thing + ', ')}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Number of Slots:</p></td>
+                      <td><p>{this.state.plot.numOfSlots}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Bio-waste accepted?</p></td>
+                      <td><p>{this.state.bioWasteAccepted ? '✅' : '❌'}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Costs involved?</p></td>
+                      <td><p>{this.state.plot.costInvolved ? '✅' : '❌'}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Volunteers needed?</p></td>
+                      <td><p>{this.state.plot.volunteer ? '✅' : '❌'}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Contact details:</p></td>
+                      <td>{this.state.plot.primaryContactName}</td>
+                    </tr>
+                    <tr>
+                      <td><p>Email:</p></td>
+                      <td><p>{this.state.plot.primaryContactEmail}</p></td>
+                    </tr>
+                    <tr>
+                      <td><p>Rating:</p></td>
+                      <td><div>
+                        <StarRatingComponent
+                          name="Average rating"
+                          editing={false}
+                          renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
+                          starCount={5}
+                          starColor={'rgb(255,140,0)'}
+                          emptyStarColor={'rgb(192,192,192)'}
+                          value={this.state.plot.averageRating}
+                        />
+                      </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+
+            </div>
 
             <div className="container">
-              <h1 className="title is-4">Location</h1>
+
+              <div>
+                <h2 className="title is-3 has-white-text">Location</h2>
+                <p>{this.state.plot.streetAddress}</p>
+                <p> {this.state.plot.postCode}</p>
+              </div>
+
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
                 scrollZoom= {true}
@@ -168,30 +198,42 @@ class PlotsShow extends React.Component {
                 )}
                 {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
 
-                  <hr />
-                  <div className="field">
-                    <label className="label">Comment</label>
-                    <textarea
-                      name="content"
-                      className="textarea"
-                      placeholder="Add a comment..."
-                      onChange={this.handleChange}
-                      value={this.state.formData.content}
-                    />
+
+                  <div className="table-container">
+                    <table className="table is-fullwidth">
+                      <tr>
+                        <td>
+                          <div className="field">
+                            <label className="label"><h3 className="commentUser">Comment</h3></label>
+                            <textarea
+                              name="content"
+                              className="textarea"
+                              placeholder="Add a comment..."
+                              onChange={this.handleChange}
+                              value={this.state.formData.content}
+                            />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div>
+                            <h2>Rating: {this.state.formData.rating}</h2>
+                            <StarRatingComponent
+                              name="rating"
+                              renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
+                              starCount={5}
+                              onStarClick={this.handleStarClick}
+                              starColor={'rgb(255,140,0)'}
+                              emptyStarColor={'rgb(192,192,192)'}
+                              value={this.state.formData.rating}
+                            />
+                          </div>
+                          <button className="button">Submit</button>
+                        </td>
+                      </tr>
+                    </table>
                   </div>
-                  <div>
-                    <h2>Rating: {this.state.formData.rating}</h2>
-                    <StarRatingComponent
-                      name="rating"
-                      renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
-                      starCount={5}
-                      onStarClick={this.handleStarClick}
-                      starColor={'rgb(255,140,0)'}
-                      emptyStarColor={'rgb(192,192,192)'}
-                      value={this.state.formData.rating}
-                    />
-                  </div>
-                  <button className="button is-info">Submit</button>
                 </form>}
               </div>
             </div>
