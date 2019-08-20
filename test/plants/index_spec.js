@@ -50,7 +50,7 @@ describe('GET /plants', () => {
             'germination',
             'daysOfMaturation',
             'spacing',
-            'sowUnderGrass',
+            'sowUnderGlass',
             'sowUnderDirectSunlight',
             'propagator',
             'seedPeriod',
@@ -71,7 +71,7 @@ describe('GET /plants', () => {
           expect(plant.germination).to.be.a('number')
           expect(plant.daysOfMaturation).to.be.a('number')
           expect(plant.spacing).to.be.a('number')
-          expect(plant.sowUnderGrass).to.be.a('boolean')
+          expect(plant.sowUnderGlass).to.be.a('boolean')
           expect(plant.sowUnderDirectSunlight).to.be.a('boolean')
           expect(plant.propagator).to.be.a('boolean')
           expect(plant.seedPeriod).to.be.a('array')
