@@ -112,7 +112,7 @@ class PlotsShow extends React.Component {
                     </tr>
                     <tr>
                       <td><p>Facilities:</p></td>
-                      <td><p>{this.state.plot.facilities.map(thing => thing + ', ')}</p></td>
+                      <td><p>{this.state.plot.facilities.map((facility, i) => (i === facility.length-1)? facility + '.' : facility + ', ')}</p></td>
                     </tr>
                     <tr>
                       <td><p>Number of Slots:</p></td>
