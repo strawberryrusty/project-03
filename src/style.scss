@@ -14,7 +14,8 @@ $box-background-color: #2F4F4F;
 
 .background-test {
     background-repeat: repeat;
-    background-image: url('https://i.imgur.com/ikjUrBd.jpg?1');
+    background: radial-gradient(ellipse at top, #2F4F4F, transparent),
+            radial-gradient(ellipse at bottom, #2F4F4F, transparent);
     min-height: auto;
 }
 

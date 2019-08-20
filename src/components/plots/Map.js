@@ -1,6 +1,3 @@
-
-
-
 import React from 'react'
 import ReactMapboxGl, { Layer, Feature, ZoomControl, Popup } from 'react-mapbox-gl'
 import axios from 'axios'
@@ -54,8 +51,9 @@ class PlotsMap extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <h1 className="title is-4">Find your plot in London...</h1>
-
+          <div className="box">
+            <h2 className="title is-3 has-white-text">Find your plot</h2>
+          </div>
           <Map
             style="mapbox://styles/mapbox/streets-v9"
             scrollZoom={true}
