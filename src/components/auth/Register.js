@@ -23,6 +23,7 @@ class Register extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    
 
     axios.post('/api/register', this.state.formData)
       .then(res => {
@@ -87,6 +88,18 @@ class Register extends React.Component {
                 />
               </div>
               {this.state.errors.passwordConfirmation && <small className="help is-danger">{this.state.errors.passwordConfirmation}</small>}
+            </div>
+            <div className="field">
+              <label className="label">Post Code</label>
+              <div className="control">
+                <input
+                  className="input"
+                  name="postCode"
+                  placeholder="ie: W10 6JJ"
+                  onChange={this.handleChange}
+                />
+              </div>
+              {this.state.errors.postCode && <small className="help is-danger">{this.state.errors.postCode}</small>}
             </div>
 
             <button className="button">Submit</button>
