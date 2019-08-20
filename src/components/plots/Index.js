@@ -180,74 +180,75 @@ class PlotsIndex extends React.Component {
     return(
       <section className="section background-test">
         <div className="container">
-          <h2 className="title is-3 has-white-text">Find a plot</h2>
-          <div className="field">
-            <input className="input is-fullwidth" placeholder="search" onKeyUp={this.handleSearchKeyUp}/>
-          </div>
-          <div className="field">
-            <div className="select is-fullwidth">
-              <select onChange={this.handleSortChange}>
-                <option value="name|asc">Name A-Z</option>
-                <option value="name|desc">Name Z-A</option>
-                <option value="averageRating|asc">Rated Lo-Hi</option>
-                <option value="averageRating|desc">Rated Hi-Lo</option>
-                <option value="numOfSlots|asc">Number of slots Lo-Hi</option>
-                <option value="numOfSlots|desc">Number of slots Hi-Lo</option>
-                <option value="costPerAnnum|asc">Cost Lo-Hi</option>
-                <option value="costPerAnnum|desc">Cost Hi-Lo</option>
-              </select>
+          <div className="box">
+            <h2 className="title is-3 has-white-text">Find a plot</h2>
+            <div className="field">
+              <input className="input is-fullwidth" placeholder="search" onKeyUp={this.handleSearchKeyUp}/>
             </div>
-          </div>
-          <div className="columns">
-            <div className="column is-half">
-              <div className="field">
-                <label className="checkbox has-text-white" >
-                  <input type="checkbox"  className="checkboxRadio" value="costInvolved" onClick={this.handleCostInvolvedBoolean} />
-                  No costs involved
-                </label>
-              </div>
-              <div className="field">
-                <label className="checkbox has-text-white" >
-                  <input type="checkbox"  className="checkboxRadio" value="Volunteer" onClick={this.handleVolunteerBoolean} />
-                  Volunteer opportunities
-                </label>
-              </div>
-              <div className="field">
-                <label className="checkbox has-text-white" >
-                  <input type="checkbox"  className="checkboxRadio" value="bioWasteAccepted" onClick={this.handleBioWasteBoolean}/>
-                  Bio-waste accepted
-                </label>
+            <div className="field">
+              <div className="select is-fullwidth">
+                <select onChange={this.handleSortChange}>
+                  <option value="name|asc">Name A-Z</option>
+                  <option value="name|desc">Name Z-A</option>
+                  <option value="averageRating|asc">Rated Lo-Hi</option>
+                  <option value="averageRating|desc">Rated Hi-Lo</option>
+                  <option value="numOfSlots|asc">Number of slots Lo-Hi</option>
+                  <option value="numOfSlots|desc">Number of slots Hi-Lo</option>
+                  <option value="costPerAnnum|asc">Cost Lo-Hi</option>
+                  <option value="costPerAnnum|desc">Cost Hi-Lo</option>
+                </select>
               </div>
             </div>
-            <hr />
-            <div className="column is-half">
-              <div className="control">
-                <label className="radio has-text-white" >
-                  <input type="radio" name="plotType" className="checkboxRadio" value="All" defaultChecked onClick={this.handlePlotType} />
-                All plot types
-                </label>
+            <div className="columns">
+              <div className="column is-half">
+                <div className="field">
+                  <label className="checkbox has-text-white" >
+                    <input type="checkbox"  className="checkboxRadio" value="costInvolved" onClick={this.handleCostInvolvedBoolean} />
+                    No costs involved
+                  </label>
+                </div>
+                <div className="field">
+                  <label className="checkbox has-text-white" >
+                    <input type="checkbox"  className="checkboxRadio" value="Volunteer" onClick={this.handleVolunteerBoolean} />
+                    Volunteer opportunities
+                  </label>
+                </div>
+                <div className="field">
+                  <label className="checkbox has-text-white" >
+                    <input type="checkbox"  className="checkboxRadio" value="bioWasteAccepted" onClick={this.handleBioWasteBoolean}/>
+                    Bio-waste accepted
+                  </label>
+                </div>
               </div>
-              <div className="control">
-                <label className="radio has-text-white" >
-                  <input type="radio" name="plotType"  className="checkboxRadio" value="Community Garden" onClick={this.handlePlotType} />
-                  Community Garden
-                </label>
-              </div>
-              <div className="control">
-                <label className="radio has-text-white" >
-                  <input type="radio" name="plotType"  className="checkboxRadio" value="Private Plot" onClick={this.handlePlotType} />
-                  Share of private garden
-                </label>
-              </div>
-              <div className="control">
-                <label className="radio has-text-white" >
-                  <input type="radio" name="plotType"  className="checkboxRadio" value="Allotment" onClick={this.handlePlotType}/>
-                  Allotment
-                </label>
+              <hr />
+              <div className="column is-half">
+                <div className="control">
+                  <label className="radio has-text-white" >
+                    <input type="radio" name="plotType" className="checkboxRadio" value="All" defaultChecked onClick={this.handlePlotType} />
+                  All plot types
+                  </label>
+                </div>
+                <div className="control">
+                  <label className="radio has-text-white" >
+                    <input type="radio" name="plotType"  className="checkboxRadio" value="Community Garden" onClick={this.handlePlotType} />
+                    Community Garden
+                  </label>
+                </div>
+                <div className="control">
+                  <label className="radio has-text-white" >
+                    <input type="radio" name="plotType"  className="checkboxRadio" value="Private Plot" onClick={this.handlePlotType} />
+                    Share of private garden
+                  </label>
+                </div>
+                <div className="control">
+                  <label className="radio has-text-white" >
+                    <input type="radio" name="plotType"  className="checkboxRadio" value="Allotment" onClick={this.handlePlotType}/>
+                    Allotment
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-
           <div className="columns is-multiline">
 
             {!this.state.allPlots && <h2 className="title is-2">Loading ...</h2>}

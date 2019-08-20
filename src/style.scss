@@ -5,15 +5,17 @@ $family-secondary: 'Roboto', sans-serif;
 $title-color: #FFFFFF;
 $navbar-background-color: #2F4F4F;
 $navbar-item-color: #FFFFFF;
+$box-color: #FFFFFF;
 $text: #FFFFFF;
 $table-background-color: #2F4F4F;
 $table-color: #FFFFFF;
-$dark: #FFFFFF;
+// $dark: #FFFFFF;
 $box-background-color: #2F4F4F;
 
 .background-test {
     background-repeat: repeat;
-    background-image: url('https://i.imgur.com/ikjUrBd.jpg?1');
+    background: radial-gradient(ellipse at top, #2F4F4F, transparent),
+            radial-gradient(ellipse at bottom, #2F4F4F, transparent);
     min-height: auto;
 }
 
@@ -22,6 +24,14 @@ $box-background-color: #2F4F4F;
 }
 .poptext {
   color: black;
+}
+
+label {
+  color: black;
+}
+
+.content.fightbulma {
+  color: #FFFFFF;
 }
 
 .ShowImage {
@@ -40,6 +50,7 @@ $box-background-color: #2F4F4F;
 
 .checkboxRadio {
   margin-right: 8px;
+  color: #FFFFFF;
 }
 
 .hero-body {
@@ -51,6 +62,82 @@ $box-background-color: #2F4F4F;
     text-shadow: 0 2px 3px #000;
     text-align: center;
   }
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', serif;
+	-webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.hero-body h1 {
+	position: relative;
+	display: block;
+	margin: 0;
+	font-size: 4rem;
+	line-height: 1;
+	transform: translateY(6rem);
+	animation: up 500ms linear forwards;
+	z-index: 1;
+	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+
+	&::before,
+	&::after {
+		position: absolute;
+		content: '';
+		width: 0px;
+		height: 1px;
+		left: 0;
+		background-color: rgba(0,0,0,0.2);
+		z-index: -1;
+	}
+
+	&::before {
+		top: 1.4rem;
+		animation: draw 500ms linear 1s forwards;
+	}
+
+	&::after {
+		bottom: 0.4rem;
+		animation: draw 500ms linear 1s forwards;
+	}
+
+}
+
+.title-container {
+	font-size: 0;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0.4rem;
+}
+
+@keyframes up {
+
+	100% {
+		transform: translateY(0);
+	}
+
+}
+
+@keyframes draw {
+
+	100% {
+		width: 100%;
+	}
+
 }
 
 @import "~bulma"
