@@ -9,7 +9,7 @@ module.exports = [{
   propagator: true,
   seedPeriod: ['April, May, June, July'],
   harvestPeriod: ['June, July, August, September'],
-  destroyedBy: ['']
+  destroyedBy: ['None']
 },{
   name: 'Brocolli',
   image: 'https://www.health.harvard.edu/media/content/images/p7_Broccoli_HH1812_gi905351392.jpg',
