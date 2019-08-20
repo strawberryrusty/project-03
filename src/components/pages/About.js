@@ -20,7 +20,7 @@ const About = () => {
               <AboutCard
                 name="Sian Alcock"
                 image={'https://i.imgur.com/wusyZOE.jpg'}
-                link="https://github.com/sian-alcock"
+                link={<a href="https://github.com/sian-alcock"> <i className="fab fa-github-square"></i></a>}
               />
             </div>
 
@@ -28,7 +28,7 @@ const About = () => {
               <AboutCard
                 name="Ejike Chiboka"
                 image={'https://i.imgur.com/owdRqwP.jpg'}
-                link="https://github.com/sian-alcock"
+                link={<a href="https://github.com/agkayster"> <i className="fab fa-github-square"></i></a>}
               />
             </div>
 
@@ -36,7 +36,7 @@ const About = () => {
               <AboutCard
                 name="Freddie Hoy"
                 image={'https://i.imgur.com/mObm02y.jpg'}
-                link="https://github.com/FreddieHoy"
+                link={<a href="https://github.com/FreddieHoy"> <i className="fab fa-github-square"></i></a>}
               />
             </div>
 
@@ -44,7 +44,7 @@ const About = () => {
               <AboutCard
                 name="Prash Mohan"
                 image={'https://i.imgur.com/vlFtdWv.jpg'}
-                link="https://github.com/strawberryrusty"
+                link={<a href="https://github.com/strawberryrusty"> <i className="fab fa-github-square"></i></a>}
               />
             </div>
 
