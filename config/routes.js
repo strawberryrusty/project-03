@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const plotsController = require('../controllers/plots')
+const plantsController = require('../controllers/plants')
 const authController = require('../controllers/auth')
 const secureRoute = require('../lib/secureRoute')
 
@@ -13,6 +14,9 @@ router.get('/', (req, res) => {
 router.route('/plots')
   .get(plotsController.index)
   .post(secureRoute, plotsController.create)
+
+router.route('/plants')
+  .get(plantsController.index)
 
 // plots SHOW, UPDATE & DELETE route handlers: EXPRESS
 router.route('/plots/:id')

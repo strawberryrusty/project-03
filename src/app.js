@@ -9,8 +9,10 @@ import Home from './components/pages/Home'
 import Navbar from './components/common/Navbar'
 import SecureRoute from './components/common/SecureRoute'
 //
+import PlantsIndex from './components/plants/Index'
 import PlotsIndex from './components/plots/Index'
 import PlotsShow from './components/plots/Show'
+import PlotsMap from './components/plots/Map'
 import PlotsEdit from './components/plots/Edit'
 import PlotsNew from './components/plots/New'
 import Register from './components/auth/Register'
@@ -35,8 +37,10 @@ class App extends React.Component {
         <Switch>
           <SecureRoute path="/plots/:id/edit" component={PlotsEdit} />
           <SecureRoute path="/plots/new" component={PlotsNew} />
+          <Route path="/plots/map" component={PlotsMap} />
           <Route path="/plots/:id" component={PlotsShow} />
           <Route path="/plots" component={PlotsIndex} />
+          <Route path="/plants" component={PlantsIndex} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
           <Route path="/about" component={About} />
