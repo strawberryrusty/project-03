@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const _ = require('lodash').runInContext()
 
 import Card from '../common/Card'
+import Auth from '../../lib/Auth'
 
 class PlotsIndex extends React.Component {
 
@@ -16,7 +17,8 @@ class PlotsIndex extends React.Component {
       volunteerBoolean: false,
       bioWasteBoolean: false,
       costInvolvedBoolean: false,
-      plotType: 'All'
+      plotType: 'All',
+      userInfo: {}
     }
 
     this.truncate = this.truncate.bind(this)
@@ -33,8 +35,6 @@ class PlotsIndex extends React.Component {
   componentDidMount() {
     axios.get('/api/plots')
       .then(res => this.setState({ allPlots: res.data, plotsToDisplay: res.data }))
-    axios.get(`/api/users/${this.props.match.params.id}`)
-      .then(res => console.log(res.data))
   }
 
   truncate(str, limit) {
@@ -151,6 +151,9 @@ class PlotsIndex extends React.Component {
 
   calculateDistance(plot) {
 
+    const user = Auth.getUser()
+    console.log(user)
+
     const lat1 = plot.latitude
     const lon1 = plot.longitude
 
@@ -159,18 +162,17 @@ class PlotsIndex extends React.Component {
 
 
     const earthRadius = 6371e3
-    const φ1 = lat1.toRadians()
-    const φ2 = lat2.toRadians()
-    const Δφ = (lat2-lat1).toRadians()
-    const Δλ = (lon2-lon1).toRadians()
+    const φ1 = lat1 * (Math.PI / 180)
+    const φ2 = lat2 * (Math.PI / 180)
+    const Δφ = (lat2-lat1) * (Math.PI / 180)
+    const Δλ = (lon2-lon1) * (Math.PI / 180)
 
     const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
             Math.cos(φ1) * Math.cos(φ2) *
             Math.sin(Δλ/2) * Math.sin(Δλ/2)
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
     const d = earthRadius * c
-
-    return d
+    return Math.round( (d * 0.000621371) * 10 ) / 10
   }
 
   render() {

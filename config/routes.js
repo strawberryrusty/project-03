@@ -4,8 +4,6 @@ const plantsController = require('../controllers/plants')
 const authController = require('../controllers/auth')
 const secureRoute = require('../lib/secureRoute')
 
-const userController = require('../controllers/user')
-
 // app.get('/') - define a GET request handler for the homepage: EXPRESS
 router.get('/', (req, res) => {
   // res.json() - send back a JSON response: EXPRESS
@@ -31,8 +29,5 @@ router.delete('/plots/:id/comments/:commentId', secureRoute, plotsController.com
 
 router.post('/register', authController.register)
 router.post('/login', authController.login)
-
-router.get('/users/:id', userController.show)
-router.get('/users', userController.index)
 
 module.exports = router

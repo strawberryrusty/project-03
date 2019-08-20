@@ -26,7 +26,7 @@ const Card = (props) => {
         </div>
         <p className="notes">{props.plotType}</p>
         <p className="notes">{props.postCode}</p>
-        <p className="notes">{props.distanceApart}</p>
+        <p className="notes">Distance away: {props.distanceApart} miles</p>
       </div>
     </div>
   )
