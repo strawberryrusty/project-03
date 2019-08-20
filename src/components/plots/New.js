@@ -290,33 +290,7 @@ class PlotsNew extends React.Component {
 
 
             <hr />
-            <h2 className="subtitle is-4">For Location Data</h2>
-            <div className="columns">
-              <div className="column field">
-                <label className="label">Latitude</label>
-                <input
-                  className="input"
-                  type="number"
-                  placeholder="-0.235"
-                  name="latitude"
-                  value={this.state.formData.latitude || ''}
-                  onChange={this.handleChange}
-                />
-                {this.state.errors.latitude && <small className="help is-danger">{this.state.errors.latitude}</small>}
-              </div>
-              <div className="column field">
-                <label className="label">Longitude</label>
-                <input
-                  className="input"
-                  type="number"
-                  name="longitude"
-                  value={this.state.formData.longitude || ''}
-                  onChange={this.handleChange}
-                  placeholder="51.573"
-                />
-                {this.state.errors.longitude && <small className="help is-danger">{this.state.errors.longitude}</small>}
-              </div>
-            </div>
+
 
             <button className="button">Submit</button>
           </form>

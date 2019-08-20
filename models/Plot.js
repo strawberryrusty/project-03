@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const axios = require('axios')
 
 const commentSchema = new mongoose.Schema({
   content: { type: String, required: false, maxlength: 380 },
@@ -15,8 +16,8 @@ const plotSchema = new mongoose.Schema({
   image: { type: String, required: 'Please provide a {PATH}' },
   streetAddress: { type: String, required: 'Please provide a {PATH}' },
   postCode: { type: String, required: 'Please provide a {PATH}' },
-  latitude: { type: Number,  required: 'Please provide a {PATH}' },
-  longitude: { type: Number, required: 'Please provide a {PATH}' },
+  latitude: { type: Number, required: 'Could not find your {PATH}' },
+  longitude: { type: Number, required: 'Could not find your {PATH}' },
   numOfSlots: {type: Number},
   slotsAvailable: {type: Boolean, default: false},
   bioWasteAccepted: {type: Boolean, default: false},
@@ -38,5 +39,20 @@ plotSchema.virtual('averageRating')
     if(this.comments.length === 0) return 0
     return this.comments.reduce((total, comment) => comment.rating + total, 0) / this.comments.length
   })
+
+plotSchema.pre('validate', function getGeolocation(done) {
+  if(!this.isModified('postCode')) return done()
+
+  axios.post('https://postcodes.io/postcodes?filter=longitude,latitude', { postcodes: [this.postCode] })
+    .then((res) => {
+      if(!res.data.result[0].result) return done()
+      const { latitude, longitude } = res.data.result[0].result
+      this.latitude = latitude
+      this.longitude = longitude
+
+      done()
+    })
+})
+
 
 module.exports = mongoose.model('Plot', plotSchema)
