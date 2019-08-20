@@ -51,9 +51,9 @@ class Edit extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <h2 className="title is-2">Sign up your Plot!</h2>
-          <hr />
-          <h2 className="subtitle is-4">The Plot Details</h2>
+          <div className="box">
+            <h2 className="title is-3 has-white-text">Plot details</h2>
+          </div>
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label">Plot Name</label>
@@ -126,7 +126,7 @@ class Edit extends React.Component {
             </div>
             {this.state.errors.plotType && <small className="help is-danger">{this.state.errors.plotType}</small>}
             <hr />
-            <h2 className="subtitle is-4">Using the plot.</h2>
+            <h2 className="subtitle is-4">Using the plot</h2>
             <div className="columns">
               <div className="column field">
                 <label className="checkbox">
@@ -135,7 +135,7 @@ class Edit extends React.Component {
                     type="checkbox"
                     name="slotsAvailable"
                     onChange={this.handleCheckbox}
-                  /> Are there slots available?
+                  /><p>Are there slots available?</p>
                 </label>
                 {this.state.errors.slotsAvailable && <small className="help is-danger">{this.state.errors.slotsAvailable}</small>}
               </div>

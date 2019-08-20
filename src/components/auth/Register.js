@@ -36,6 +36,9 @@ class Register extends React.Component {
     return (
       <section className="section">
         <div className="container">
+          <div className="box">
+            <h2 className="title is-3 has-white-text">Register</h2>
+          </div>
           <form onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label">Username</label>

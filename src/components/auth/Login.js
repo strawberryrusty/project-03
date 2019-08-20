@@ -41,7 +41,9 @@ class Login extends React.Component {
       <section className="section">
         <div className="container">
           <form onSubmit={this.handleSubmit}>
-            <h1 className="subtitle is-3">Login</h1>
+            <div className="box">
+              <h2 className="title is-3 has-white-text">Login</h2>
+            </div>
             <div className="field">
               <label className="label">Email</label>
               <div className="control">
