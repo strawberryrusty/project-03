@@ -59,7 +59,7 @@ class PlantsIndex extends React.Component {
                       <td><p>{plant.spacing}</p></td>
                       <td><p>{plant.potSize}</p></td>
                       <td><p>{plant.sowUnderGlass ? '✅' : '❌'}</p></td>
-                      <td><p>{plant.sowUnderDirectSunlight ? '✅' : '❌'}</p></td>
+                      <td><p>{plant.sowUnderDirectSunlight ? '☀️' : '❌'}</p></td>
                       <td><p>{plant.propagator ? '✅' : '❌'}</p></td>
                       <td><p>{plant.harvestPeriod.map(month => month + ' ')}</p></td>
                       <td><p>{plant.seedPeriod.map(month => month + ' ')}</p></td>
