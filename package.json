@@ -9,7 +9,7 @@
     "serve:frontend": "webpack-dev-server --mode development",
     "test": "mocha test/**/*_spec.js --require test/helper --recursive --exit",
     "build": "webpack -p",
-    "start": "yarn build && node index"
+    "start": "node index"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
