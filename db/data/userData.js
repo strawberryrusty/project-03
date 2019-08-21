@@ -4,6 +4,16 @@ module.exports = [{
   password: 'test',
   passwordConfirmation: 'test'
 },{
+  username: 'Sonny',
+  email: 'sonny@sonny.sonny',
+  password: 'sonny',
+  passwordConfirmation: 'sonny'
+},{
+  username: 'Jim',
+  email: 'jim@jim.jim',
+  password: 'jim',
+  passwordConfirmation: 'jim'
+},{
   username: 'sian-alcock',
   email: 'sian.alcock@lawana.org',
   password: 'test',

@@ -16,7 +16,11 @@ module.exports = [{
   conditionsForUse: ['Work with a smile!'],
   volunteer: true,
   primaryContactName: 'Mageret Smith',
-  primaryContactEmail: 'ediable@Landscapes.org'
+  primaryContactEmail: 'ediable@Landscapes.org',
+  comments: [
+    {content: 'This was a great Plot', rating: 4},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Rainbow Grow HCVS',
   description: 'Rainbow Grow is an LGBTQI+ led community gardening initiative open to all who support their aims of providing a welcoming space for members of this community to grow edible plants and take part in gardening-related activities.',
@@ -35,7 +39,10 @@ module.exports = [{
   conditionsForUse: ['waiting list is currently 14 years long.'],
   volunteer: false,
   primaryContactName: 'Islington Council',
-  primaryContactEmail: 'contact@islington.gov.uk'
+  primaryContactEmail: 'contact@islington.gov.uk',
+  comments: [
+    {content: 'poor soil, very chalky, water never works', rating: 1}
+  ]
 },{
   name: 'The Holly Trees',
   description: 'The Commons boasts around 170 hectares of beautiful secondary woodland. Thanks to the fertile soil over London Clay on the Commons’ western slopes, visitors can enjoy and explore dense woodland as well as discover the Commons’ oldest trees that have stood the test of time and neatly border the area.',
