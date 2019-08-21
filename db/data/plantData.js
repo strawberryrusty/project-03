@@ -2,7 +2,8 @@ module.exports = [{
   name: 'Beetroot',
   image: 'https://cdn-prod.medicalnewstoday.com/content/images/articles/277/277432/beetroot-on-a-white-background.jpg',
   germination: 7,
-  daysOfMaturation: 55,
+  potSize: 35,
+  daysToMaturation: 55,
   spacing: 5,
   sowUnderGlass: true,
   sowUnderDirectSunlight: true,
@@ -14,7 +15,8 @@ module.exports = [{
   name: 'Brocolli',
   image: 'https://www.health.harvard.edu/media/content/images/p7_Broccoli_HH1812_gi905351392.jpg',
   germination: 10,
-  daysOfMaturation: 80,
+  potSize: 65,
+  daysToMaturation: 80,
   spacing: 2,
   sowUnderGlass: false,
   sowUnderDirectSunlight: true,
@@ -22,4 +24,17 @@ module.exports = [{
   seedPeriod: ['April, May'],
   harvestPeriod: ['July, August, September'],
   destroyedBy: ['Caterpillars']
+},{
+  name: 'Borlloti Beans',
+  image: 'https://ichef.bbci.co.uk/food/ic/food_16x9_832/foods/p/pinto_bean_16x9.jpg',
+  germination: 12,
+  potSize: 0,
+  daysToMaturation: 70,
+  spacing: 2,
+  sowUnderGlass: false,
+  sowUnderDirectSunlight: true,
+  propagator: true,
+  seedPeriod: ['April, May, June'],
+  harvestPeriod: ['July, August, September', 'October'],
+  destroyedBy: ['Slugs']
 }]

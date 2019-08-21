@@ -22,62 +22,53 @@ class PlantsIndex extends React.Component {
     // if(!this.state.plants) return null
     console.log(this.state.plants)
     return (
-      <section className="section">
-        <div className="container">
-          <div className="columns is-multiline">
-            {this.state.plants.map(plant =>
-              <div key={plant._id} >
-                <div className="column is-half">
-                  <img className="PutImage" src={plant.image} alt={plant.name}/>
-                </div>
-                <div className="column is-half">
-                  <div className="table-container">
-                    <table className="table">
-                      <tr>
-                        <td><p>Name:</p></td>
-                        <td><p>{plant.name}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Germination:</p></td>
-                        <td><p>{plant.germination}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Days of Maturation:</p></td>
-                        <td><p>{plant.daysOfMaturation}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Spacing:</p></td>
-                        <td><p>{plant.spacing}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Sow under glass:</p></td>
-                        <td><p>{plant.sowUnderGlass ? '✅' : '❌'}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Sow under direct sunlight:</p></td>
-                        <td><p>{plant.sowUnderDirectSunlight ? '✅' : '❌'}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Seed Period:</p></td>
-                        <td><p>{plant.seedPeriod.map(month => month + ' ')}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Harvest Period:</p></td>
-                        <td><p>{plant.harvestPeriod.map(month => month + ' ')}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Destroyed By:</p></td>
-                        <td><p>{plant.destroyedBy.map(pest => pest + ' ')}</p></td>
-                      </tr>
-                      <tr>
-                        <td><p>Propagator:</p></td>
-                        <td><p>{plant.propagator ? '✅' : '❌'}</p></td>
-                      </tr>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            )}
+      <section className="section plant-section">
+        <div className="plant-container">
+          <div>
+
+            <div>
+
+            
+              <table className="table plant-table is-bordered is-hoverable">
+                <thead className="plant-head">
+                  <tr>
+                    <th className="plant-font">Plant Name</th>
+                    <th>Image</th>
+                    <th><abbr title="Destroyed By">Destroyed By</abbr></th>
+                    <th><abbr title="Days to Maturation">Days to Maturation</abbr></th>
+                    <th><abbr title="Germination">Germination</abbr></th>
+                    <th><abbr title="Spacing">Spacing</abbr></th>
+                    <th><abbr title="Pot Size">Pot Size</abbr></th>
+                    <th><abbr title="Sow under Glass">Sow under Glass</abbr></th>
+                    <th><abbr title="Sow under direct sunlight">Sow under direct sunlight</abbr></th>
+                    <th><abbr title="Propagator">Propagator</abbr></th>
+                    <th>Harvest Period</th>
+                    <th>Seed Period</th>
+                  </tr>
+                </thead>
+
+
+                <tbody>
+                  {this.state.plants.map(plant =>
+                    <tr key={plant._id}>
+                      <td><p>{plant.name}</p></td>
+                      <td><img src={plant.image} alt={plant.name}/></td>
+                      <td><p>{plant.destroyedBy.map(pest => pest + ' ')}</p></td>
+                      <td><p>{plant.daysToMaturation}</p></td>
+                      <td><p>{plant.germination}</p></td>
+                      <td><p>{plant.spacing}</p></td>
+                      <td><p>{plant.potSize}</p></td>
+                      <td><p>{plant.sowUnderGlass ? '✅' : '❌'}</p></td>
+                      <td><p>{plant.sowUnderDirectSunlight ? '✅' : '❌'}</p></td>
+                      <td><p>{plant.propagator ? '✅' : '❌'}</p></td>
+                      <td><p>{plant.harvestPeriod.map(month => month + ' ')}</p></td>
+                      <td><p>{plant.seedPeriod.map(month => month + ' ')}</p></td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+
           </div>
         </div>
       </section>
