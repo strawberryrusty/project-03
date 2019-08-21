@@ -8,12 +8,14 @@ module.exports = [{
   username: 'Sonny',
   email: 'sonny@sonny.sonny',
   password: 'sonny',
-  passwordConfirmation: 'sonny'
+  passwordConfirmation: 'sonny',
+  postCode: 'E1 7PT'
 },{
   username: 'Jim',
   email: 'jim@jim.jim',
   password: 'jim',
-  passwordConfirmation: 'jim'
+  passwordConfirmation: 'jim',
+  postCode: ' EC3A 8BF'
 },{
   username: 'sian-alcock',
   email: 'sian.alcock@lawana.org',
