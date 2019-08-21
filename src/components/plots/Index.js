@@ -6,6 +6,7 @@ const _ = require('lodash').runInContext()
 import Card from '../common/Card'
 import PlotsMap from '../common/Map'
 import Auth from '../../lib/Auth'
+import { truncate } from '../../../lib/helpers'
 
 class PlotsIndex extends React.Component {
 
@@ -24,7 +25,6 @@ class PlotsIndex extends React.Component {
       mapTab: false
     }
 
-    this.truncate = this.truncate.bind(this)
     this.handleSearchKeyUp = this.handleSearchKeyUp.bind(this)
     this.handleSortChange = this.handleSortChange.bind(this)
     this.handlePlotType = this.handlePlotType.bind(this)
@@ -40,18 +40,6 @@ class PlotsIndex extends React.Component {
   componentDidMount() {
     axios.get('/api/plots')
       .then(res => this.setState({ allPlots: res.data, plotsToDisplay: res.data }))
-  }
-
-  truncate(str, limit) {
-    const stringLimit = limit
-    const truncated = _.truncate(str, {length: stringLimit, separator: /,? +/, omission: ''})
-    if(str === undefined) {
-      return ''
-    } else if (stringLimit < str.length) {
-      return `${truncated} ...`
-    } else {
-      return truncated
-    }
   }
 
   handleSearchKeyUp(e){
@@ -141,8 +129,6 @@ class PlotsIndex extends React.Component {
     } else {
       filteredByBioWaste = this.state.allPlots
     }
-
-    //The lodash intersection function did not work at first because array of objects - this code works
 
     _.indexOf = _.findIndex
     filteredPlots = _.intersection(this.state.allPlots, filteredByVolunteer, filteredByBioWaste, filteredByCostsInvolved, filteredByPlotType, filterBySearchText)
@@ -273,7 +259,7 @@ class PlotsIndex extends React.Component {
                 <div className="column is-one-third-desktop" key={plot._id}>
                   <Link to={`/plots/${plot._id}`}>
                     <Card
-                      name={this.truncate(plot.name, 30)}
+                      name={truncate(plot.name, 30)}
                       plotType={plot.plotType}
                       image={plot.image}
                       averageRating={plot.averageRating}

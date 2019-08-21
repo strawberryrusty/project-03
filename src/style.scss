@@ -12,12 +12,14 @@ $table-color: #FFFFFF;
 $box-background-color: rgba(47,79,79, 0.5);
 $table-row-hover-background-color:yellow;
 
-.background-test {
+section {
 background-color: #778899;
 background-image: url('https://i.imgur.com/jnXlcIH.jpg');
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-attachment: fixed;
+min-width: 100vh;
+min-height: 100vh;
 }
 
 .commentUser {
