@@ -112,7 +112,7 @@ class PlotsShow extends React.Component {
                     </tr>
                     <tr>
                       <td><p>Facilities:</p></td>
-                      <td><p>{this.state.plot.facilities.map((facility, i) => (i === facility.length-1)? facility + '.' : facility + ', ')}</p></td>
+                      <td><p>{this.state.plot.facilities.map((facility, i) => (i !== facility.length-1)? facility + ', ' : facility + '.')}</p></td>
                     </tr>
                     <tr>
                       <td><p>Number of Slots:</p></td>
@@ -201,37 +201,39 @@ class PlotsShow extends React.Component {
 
                   <div className="table-container">
                     <table className="table is-fullwidth">
-                      <tr>
-                        <td>
-                          <div className="field">
-                            <label className="label"><h3 className="commentUser">Comment</h3></label>
-                            <textarea
-                              name="content"
-                              className="textarea"
-                              placeholder="Add a comment..."
-                              onChange={this.handleChange}
-                              value={this.state.formData.content}
-                            />
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div>
-                            <h2>Rating: {this.state.formData.rating}</h2>
-                            <StarRatingComponent
-                              name="rating"
-                              renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
-                              starCount={5}
-                              onStarClick={this.handleStarClick}
-                              starColor={'rgb(255,140,0)'}
-                              emptyStarColor={'rgb(192,192,192)'}
-                              value={this.state.formData.rating}
-                            />
-                          </div>
-                          <button className="button">Submit</button>
-                        </td>
-                      </tr>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div className="field">
+                              <label className="label"><h3 className="commentUser">Comment</h3></label>
+                              <textarea
+                                name="content"
+                                className="textarea"
+                                placeholder="Add a comment..."
+                                onChange={this.handleChange}
+                                value={this.state.formData.content}
+                              />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div>
+                              <h2>Rating: {this.state.formData.rating}</h2>
+                              <StarRatingComponent
+                                name="rating"
+                                renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
+                                starCount={5}
+                                onStarClick={this.handleStarClick}
+                                starColor={'rgb(255,140,0)'}
+                                emptyStarColor={'rgb(192,192,192)'}
+                                value={this.state.formData.rating}
+                              />
+                            </div>
+                            <button className="button">Submit</button>
+                          </td>
+                        </tr>
+                      </tbody>
                     </table>
                   </div>
                 </form>}
