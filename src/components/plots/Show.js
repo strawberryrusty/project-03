@@ -107,53 +107,55 @@ class PlotsShow extends React.Component {
               <div className="column is-half is-centered">
                 <div className="table-container">
                   <table className="table">
-                    <tr>
-                      <td><p>Plot Type:</p></td>
-                      <td><p>{this.state.plot.plotType}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Facilities:</p></td>
-                      <td><p>{this.state.plot.facilities.map((facility, i) => (i !== facility.length-1)? facility + ', ' : facility + '.')}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Number of Slots:</p></td>
-                      <td><p>{this.state.plot.numOfSlots}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Bio-waste accepted?</p></td>
-                      <td><p>{this.state.bioWasteAccepted ? '✅' : '❌'}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Costs involved?</p></td>
-                      <td><p>{this.state.plot.costInvolved ? '✅' : '❌'}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Volunteers needed?</p></td>
-                      <td><p>{this.state.plot.volunteer ? '✅' : '❌'}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Contact details:</p></td>
-                      <td>{this.state.plot.primaryContactName}</td>
-                    </tr>
-                    <tr>
-                      <td><p>Email:</p></td>
-                      <td><p>{this.state.plot.primaryContactEmail}</p></td>
-                    </tr>
-                    <tr>
-                      <td><p>Rating:</p></td>
-                      <td><div>
-                        <StarRatingComponent
-                          name="Average rating"
-                          editing={false}
-                          renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
-                          starCount={5}
-                          starColor={'rgb(255,140,0)'}
-                          emptyStarColor={'rgb(192,192,192)'}
-                          value={this.state.plot.averageRating}
-                        />
-                      </div>
-                      </td>
-                    </tr>
+                    <tbody>
+                      <tr>
+                        <td><p>Plot Type:</p></td>
+                        <td><p>{this.state.plot.plotType}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Facilities:</p></td>
+                        <td><p>{this.state.plot.facilities.map((facility, i) => (i !== facility.length-1)? facility + ', ' : facility + '.')}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Number of Slots:</p></td>
+                        <td><p>{this.state.plot.numOfSlots}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Bio-waste accepted?</p></td>
+                        <td><p>{this.state.bioWasteAccepted ? '✅' : '❌'}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Costs involved?</p></td>
+                        <td><p>{this.state.plot.costInvolved ? '✅' : '❌'}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Volunteers needed?</p></td>
+                        <td><p>{this.state.plot.volunteer ? '✅' : '❌'}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Contact details:</p></td>
+                        <td>{this.state.plot.primaryContactName}</td>
+                      </tr>
+                      <tr>
+                        <td><p>Email:</p></td>
+                        <td><p>{this.state.plot.primaryContactEmail}</p></td>
+                      </tr>
+                      <tr>
+                        <td><p>Rating:</p></td>
+                        <td><div>
+                          <StarRatingComponent
+                            name="Average rating"
+                            editing={false}
+                            renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
+                            starCount={5}
+                            starColor={'rgb(255,140,0)'}
+                            emptyStarColor={'rgb(192,192,192)'}
+                            value={this.state.plot.averageRating}
+                          />
+                        </div>
+                        </td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
               </div>
