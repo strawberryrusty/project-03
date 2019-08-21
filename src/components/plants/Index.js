@@ -24,7 +24,7 @@ class PlantsIndex extends React.Component {
     return (
       <section className="section plant-section">
         <div className="container scroll-x">
-          <table className="table plant-table is-bordered is-hoverable">
+          <table className="table plant-table is-bordered is-hoverable is-fullwidth">
             <thead className="plant-head">
               <tr>
                 <th className="plant-font tableoption">Plant Name</th>
