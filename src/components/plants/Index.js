@@ -3,6 +3,8 @@ import axios from 'axios'
 // import { Link } from 'react-router-dom'
 // import PlantsCard from '../common/PlantsCard'
 
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
 class PlantsIndex extends React.Component {
   constructor(){
 
@@ -37,8 +39,18 @@ class PlantsIndex extends React.Component {
                 <th className="tableoption" title="Sow under Glass">Sow under Glass</th>
                 <th className="tableoption" title="Sow under direct sunlight">Sow under direct sunlight</th>
                 <th className="tableoption" title="Propagator">Propagator</th>
-                <th className="tableoption">Seed Period</th>
-                <th className="tableoption">Harvest Period</th>
+                <th className="tableoption">January</th>
+                <th className="tableoption">February</th>
+                <th className="tableoption">March</th>
+                <th className="tableoption">April</th>
+                <th className="tableoption">May</th>
+                <th className="tableoption">June</th>
+                <th className="tableoption">July</th>
+                <th className="tableoption">August</th>
+                <th className="tableoption">September</th>
+                <th className="tableoption">October</th>
+                <th className="tableoption">November</th>
+                <th className="tableoption">December</th>
               </tr>
             </thead>
 
@@ -56,8 +68,12 @@ class PlantsIndex extends React.Component {
                   <td><p>{plant.sowUnderGlass ? '✅' : '❌'}</p></td>
                   <td><p>{plant.sowUnderDirectSunlight ? '☀️' : '❌'}</p></td>
                   <td><p>{plant.propagator ? '✅' : '❌'}</p></td>
-                  <td><p>{plant.harvestPeriod.map(month => month + ' ')}</p></td>
-                  <td><p>{plant.seedPeriod.map(month => month + ' ')}</p></td>
+                  {months.map(month =>
+                    <td key={month}>
+                      {<div className={`${plant.seedPeriod.includes(month) ? 'is-seed-period' : ''}`} />}
+                      {<div className={`${plant.harvestPeriod.includes(month) ? 'is-harvest-period' : ''}`} />}
+                    </td>
+                  )}
                 </tr>
               )}
             </tbody>

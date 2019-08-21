@@ -20,6 +20,34 @@ background-repeat: no-repeat;
 background-attachment: fixed;
 }
 
+.is-seed-period {
+  background-color: green;
+  width: 60px;
+  height: 20px;
+  margin: 5px;
+}
+
+table td div {
+  width: 60px;
+  height: 20px;
+
+  &.is-harvest-period {
+    background-color: red;
+    margin: 5px;
+  }
+
+  &.is-seed-period {
+    padding: 10px;
+    justify-content:center;
+  }
+}
+
+div.is-harvest-period-period {
+  padding: 600px;
+  justify-content:center;
+}
+
+
 .commentUser {
   color: #FFFFFF;
 }

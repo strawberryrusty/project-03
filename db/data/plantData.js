@@ -8,8 +8,8 @@ module.exports = [{
   sowUnderGlass: true,
   sowUnderDirectSunlight: true,
   propagator: true,
-  seedPeriod: ['April, May, June, July'],
-  harvestPeriod: ['June, July, August, September'],
+  seedPeriod: ['April', 'May', 'June', 'July'],
+  harvestPeriod: ['June', 'July', 'August', 'September'],
   destroyedBy: ['None']
 },{
   name: 'Brocolli',
@@ -21,8 +21,8 @@ module.exports = [{
   sowUnderGlass: false,
   sowUnderDirectSunlight: true,
   propagator: false,
-  seedPeriod: ['April, May'],
-  harvestPeriod: ['July, August, September'],
+  seedPeriod: ['April', 'May'],
+  harvestPeriod: ['July', 'August', 'September'],
   destroyedBy: ['Caterpillars']
 },{
   name: 'Borlloti Beans',
@@ -34,7 +34,7 @@ module.exports = [{
   sowUnderGlass: false,
   sowUnderDirectSunlight: true,
   propagator: true,
-  seedPeriod: ['April, May, June'],
-  harvestPeriod: ['July, August, September', 'October'],
+  seedPeriod: ['April', 'May', 'June'],
+  harvestPeriod: ['July', 'August', 'September', 'October'],
   destroyedBy: ['Slugs']
 }]
