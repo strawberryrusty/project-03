@@ -81,7 +81,7 @@ label {
 table.table.plant-table{
   background-color: white;
   width: 600px;
-  margin: -30px;
+  margin: -10px;
   color: black;
 }
 
@@ -156,6 +156,10 @@ body {
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 0.4rem;
+}
+
+.scroll-x {
+  overflow-x: scroll;
 }
 
 @keyframes up {
