@@ -13,10 +13,7 @@ $table-color: #FFFFFF;
 $box-background-color: #2F4F4F;
 
 .background-test {
-    background-repeat: repeat;
-    background: radial-gradient(ellipse at top, #2F4F4F, transparent),
-            radial-gradient(ellipse at bottom, #2F4F4F, transparent);
-    min-height: auto;
+    background-color: #778899;
 }
 
 .commentUser {
