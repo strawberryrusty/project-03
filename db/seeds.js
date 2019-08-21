@@ -14,8 +14,14 @@ mongoose.connect(dbURI, { useNewUrlParser: true })
   .then(users => {
     plotData = plotData.map(plot => {
       plot.user = users[0]
-      return plot
 
+      if(plot.comments) {
+        plot.comments = plot.comments.map((comment, index) => {
+          comment.user = index % 2 === 0 ? users[1] : users[2]
+          return comment
+        })
+      }
+      return plot
     })
 
     return Plot.create(plotData)

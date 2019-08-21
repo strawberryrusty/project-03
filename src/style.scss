@@ -9,8 +9,8 @@ $box-color: #FFFFFF;
 $text: #FFFFFF;
 $table-background-color: rgba(47,79,79, 0.5);
 $table-color: #FFFFFF;
-// $dark: #FFFFFF;
 $box-background-color: rgba(47,79,79, 0.5);
+$table-row-hover-background-color:yellow;
 
 .background-test {
 background-color: #778899;
@@ -63,6 +63,39 @@ label {
     text-shadow: 0 2px 3px #000;
     text-align: center;
   }
+}
+
+.plant-section {
+  padding: 20px;
+  margin-right: 40px;
+  color: #FFFFFF;
+}
+
+.plant-container {
+  padding: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  color: #FFFFFF;
+}
+
+table.table.plant-table{
+  background-color: white;
+  width: 600px;
+  margin: -30px;
+  color: black;
+}
+
+table thead.plant-head{
+  background-color:#2F4F4F;
+  color: white;
+}
+
+.table thead tr th{
+  color: white;
+}
+
+.tableoption {
+  width: 40px;
 }
 
 *,

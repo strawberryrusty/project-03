@@ -12,6 +12,7 @@ const PlantsCard = (props) => {
         </figure>
         <div className="card-content">
           <p className="notes"> Germination: {props.germination} </p>
+          <p className="notes"> Pot Size: {props.potSize} </p>
           <p className="notes"> Days Of Maturation: {props.daysOfMaturation} </p>
           <p className="notes"> Spacing: {props.spacing} </p>
           <p className="notes"> Sow under glass: {props.sowUnderGlass ? '✅' : '❌'} </p>

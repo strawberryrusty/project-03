@@ -48,7 +48,8 @@ describe('GET /plants', () => {
             '_id',
             'name',
             'germination',
-            'daysOfMaturation',
+            'potSize',
+            'daysToMaturation',
             'spacing',
             'sowUnderGlass',
             'sowUnderDirectSunlight',
@@ -69,7 +70,8 @@ describe('GET /plants', () => {
           expect(plant._id).to.be.a('string')
           expect(plant.name).to.be.a('string')
           expect(plant.germination).to.be.a('number')
-          expect(plant.daysOfMaturation).to.be.a('number')
+          expect(plant.potSize).to.be.a('number')
+          expect(plant.daysToMaturation).to.be.a('number')
           expect(plant.spacing).to.be.a('number')
           expect(plant.sowUnderGlass).to.be.a('boolean')
           expect(plant.sowUnderDirectSunlight).to.be.a('boolean')

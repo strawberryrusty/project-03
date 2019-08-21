@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const _ = require('lodash').runInContext()
 
 import Card from '../common/Card'
+import PlotsMap from '../common/Map'
 import Auth from '../../lib/Auth'
 
 class PlotsIndex extends React.Component {
@@ -18,7 +19,9 @@ class PlotsIndex extends React.Component {
       bioWasteBoolean: false,
       costInvolvedBoolean: false,
       plotType: 'All',
-      userInfo: {}
+      userInfo: {},
+      indexTab: true,
+      mapTab: false
     }
 
     this.truncate = this.truncate.bind(this)
@@ -30,6 +33,8 @@ class PlotsIndex extends React.Component {
     this.handleCostInvolvedBoolean = this.handleCostInvolvedBoolean.bind(this)
     this.combineFiltersAndSort = this.combineFiltersAndSort.bind(this)
     this.calculateDistance = this.calculateDistance.bind(this)
+    this.handleIndexTab = this.handleIndexTab.bind(this)
+    this.handleMapTab = this.handleMapTab.bind(this)
   }
 
   componentDidMount() {
@@ -55,45 +60,48 @@ class PlotsIndex extends React.Component {
       searchTerm: e.target.value
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
-
-
   handleSortChange(e){
     this.setState({ sortTerm: e.target.value }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
-
   handleCostInvolvedBoolean(e) {
     this.setState({
       costInvolvedBoolean: e.target.checked
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
-
   handleVolunteerBoolean(e) {
     this.setState({
       volunteerBoolean: e.target.checked
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
-
   handleBioWasteBoolean(e) {
     this.setState({
       bioWasteBoolean: e.target.checked
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
-
   handlePlotType(e) {
     console.log(e.target.value)
     this.setState({
       plotType: e.target.value
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
-
+  handleIndexTab() {
+    this.setState({
+      indexTab: true,
+      mapTab: false
+    })
+  }
+  handleMapTab() {
+    this.setState({
+      indexTab: false,
+      mapTab: true
+    })
+  }
   combineFiltersAndSort(filteredPlots) {
-
     let filteredByVolunteer
     let filteredByBioWaste
     let filteredByCostsInvolved
     let filteredByPlotType
     let filterBySearchText
-
 
     // Create filter based on Regular expression of the search term
     const re= new RegExp(this.state.searchTerm, 'i')
@@ -103,8 +111,6 @@ class PlotsIndex extends React.Component {
     } else {
       filterBySearchText = this.state.allPlots.filter(plot => re.test(plot.name))
     }
-
-
 
     if(this.state.plotType === 'All') {
       filteredByPlotType = this.state.allPlots
@@ -121,7 +127,6 @@ class PlotsIndex extends React.Component {
     } else {
       filteredByCostsInvolved = this.state.allPlots
     }
-
 
     if(this.state.volunteerBoolean) {
       filteredByVolunteer = this.state.allPlots.filter(plot => plot.volunteer)
@@ -142,7 +147,6 @@ class PlotsIndex extends React.Component {
     _.indexOf = _.findIndex
     filteredPlots = _.intersection(this.state.allPlots, filteredByVolunteer, filteredByBioWaste, filteredByCostsInvolved, filteredByPlotType, filterBySearchText)
 
-
     const [field, order] = this.state.sortTerm.split('|')
     const sortedPlots = _.orderBy(filteredPlots, [field], [order])
     console.log('sorted plts', sortedPlots)
@@ -150,16 +154,12 @@ class PlotsIndex extends React.Component {
   }
 
   calculateDistance(plot) {
-
     const user = Auth.getUser()
-    console.log(user)
 
     const lat1 = plot.latitude
     const lon1 = plot.longitude
-
     const lat2 = user.latitude
     const lon2 = user.longitude
-
 
     const earthRadius = 6371e3
     const φ1 = lat1 * (Math.PI / 180)
@@ -254,23 +254,36 @@ class PlotsIndex extends React.Component {
               </div>
             </div>
           </div>
-          <div className="columns is-multiline">
+          <div className="background-test">
+            <div className="tabs">
+              <ul>
+                <li onClick={this.handleIndexTab}><a>By Index</a></li>
+                <li onClick={this.handleMapTab}><a>By Map</a></li>
+              </ul>
+            </div>
 
-            {!this.state.allPlots && <h2 className="title is-2">Loading ...</h2>}
-            {this.state.plotsToDisplay && this.state.plotsToDisplay.map(plot =>
-              <div className="column is-one-third-desktop" key={plot._id}>
-                <Link to={`/plots/${plot._id}`}>
-                  <Card
-                    name={this.truncate(plot.name, 30)}
-                    plotType={plot.plotType}
-                    image={plot.image}
-                    averageRating={plot.averageRating}
-                    postCode={plot.postCode}
-                    distanceApart={this.calculateDistance(plot)}
-                  />
-                </Link>
-              </div>
-            )}
+            {this.state.mapTab && <PlotsMap plotsToDisplay={this.state.plotsToDisplay}/>}
+
+
+
+            {this.state.indexTab && <div className="columns is-multiline">
+
+              {!this.state.allPlots && <h2 className="title is-2">Loading ...</h2>}
+              {this.state.plotsToDisplay && this.state.plotsToDisplay.map(plot =>
+                <div className="column is-one-third-desktop" key={plot._id}>
+                  <Link to={`/plots/${plot._id}`}>
+                    <Card
+                      name={this.truncate(plot.name, 30)}
+                      plotType={plot.plotType}
+                      image={plot.image}
+                      averageRating={plot.averageRating}
+                      postCode={plot.postCode}
+                      distanceApart={this.calculateDistance(plot)}
+                    />
+                  </Link>
+                </div>
+              )}
+            </div>}
           </div>
         </div>
       </section>
