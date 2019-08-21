@@ -6,17 +6,14 @@ import image from '../../assets/logo.png'
 
 class Navbar extends React.Component {
 
-
   constructor() {
     super()
 
     this.state = {
       navbarOpen: false
     }
-
     this.logout = this.logout.bind(this)
     this.toggleNavbar = this.toggleNavbar.bind(this)
-
   }
 
   logout() {
@@ -34,8 +31,6 @@ class Navbar extends React.Component {
       this.setState({ navbarOpen: false })
     }
   }
-
-
 
   render() {
     return (
@@ -61,14 +56,13 @@ class Navbar extends React.Component {
           <div className={`navbar-menu ${this.state.navbarOpen ? 'is-active' : ''}`}>
             <div className="navbar-start">
               <Link to="/plots" className="navbar-item">Our plots</Link>
-              <Link to="/plots/map" className="navbar-item">Plots Map</Link>
 
               {Auth.isAuthenticated() && <Link to="/plots/new" className="navbar-item">Add Plot</Link>}
               <Link to="/about" className="navbar-item">About</Link>
+              <Link to="/plants" className="navbar-item">Plants</Link>
             </div>
 
             <div className="navbar-end">
-              <Link to="/plants" className="navbar-item">Plants</Link>
               {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
               {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
               {Auth.isAuthenticated() && <a onClick={this.logout} className="navbar-item">Logout</a>}
