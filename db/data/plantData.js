@@ -37,4 +37,30 @@ module.exports = [{
   seedPeriod: ['April, May, June'],
   harvestPeriod: ['July, August, September', 'October'],
   destroyedBy: ['Slugs']
+},{
+  name: 'Broad Beans',
+  image: 'https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2017/05/vegan-ravioli-broad-beans-800x1200.jpg',
+  germination: 14,
+  potSize: 30,
+  daysToMaturation: 100,
+  spacing: 0,
+  sowUnderGlass: false,
+  sowUnderDirectSunlight: true,
+  propagator: true,
+  seedPeriod: ['Feb, March, April', 'Oct', 'Nov'],
+  harvestPeriod: ['July, August, September', 'October'],
+  destroyedBy: ['Flies', 'Mice']
+},{
+  name: 'Brussel Sprouts',
+  image: 'https://i5.walmartimages.ca/images/Large/622/657/6000198622657.jpg',
+  germination: 10,
+  potSize: 1.5,
+  daysToMaturation: 90,
+  spacing: 0,
+  sowUnderGlass: true,
+  sowUnderDirectSunlight: true,
+  propagator: false,
+  seedPeriod: ['March', 'April'],
+  harvestPeriod: ['Jan, August, September', 'October','November', 'December' ],
+  destroyedBy: ['Slugs']
 }]

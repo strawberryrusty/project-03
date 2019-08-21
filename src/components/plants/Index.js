@@ -27,18 +27,18 @@ class PlantsIndex extends React.Component {
           <table className="table plant-table is-bordered is-hoverable is-fullwidth">
             <thead className="plant-head">
               <tr>
-                <th className="plant-font tableoption">Plant Name</th>
+                <th className="plant-font">Plant Name</th>
                 <th>Image</th>
-                <th className="tableoption" title="Destroyed By">Destroyed By</th>
-                <th className="tableoption" title="Days to Maturation">Days to Maturation</th>
-                <th className="tableoption" title="Germination">Germination</th>
-                <th className="tableoption" title="Spacing">Spacing</th>
-                <th className="tableoption" title="Pot Size">Pot Size</th>
-                <th className="tableoption" title="Sow under Glass">Sow under Glass</th>
-                <th className="tableoption" title="Sow under direct sunlight">Sow under direct sunlight</th>
-                <th className="tableoption" title="Propagator">Propagator</th>
-                <th className="tableoption">Seed Period</th>
-                <th className="tableoption">Harvest Period</th>
+                <th>Destroyed By</th>
+                <th>Days to Maturation</th>
+                <th>Germination</th>
+                <th>Spacing</th>
+                <th>Pot Size</th>
+                <th>Sow under Glass</th>
+                <th>Sow under direct sunlight</th>
+                <th>Propagator</th>
+                <th>Seed Period</th>
+                <th>Harvest Period</th>
               </tr>
             </thead>
 
@@ -47,7 +47,7 @@ class PlantsIndex extends React.Component {
               {this.state.plants.map(plant =>
                 <tr key={plant._id}>
                   <td><p>{plant.name}</p></td>
-                  <td><img src={plant.image} alt={plant.name} height="200" width="200"/></td>
+                  <td><img src={plant.image} alt={plant.name} height="100" width="200"/></td>
                   <td><p>{plant.destroyedBy.map(pest => pest + ' ')}</p></td>
                   <td><p>{plant.daysToMaturation}</p></td>
                   <td><p>{plant.germination}</p></td>
