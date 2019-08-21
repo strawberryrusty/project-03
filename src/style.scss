@@ -173,7 +173,6 @@ body {
 	100% {
 		transform: translateY(0);
 	}
-
 }
 
 @keyframes draw {
@@ -181,7 +180,6 @@ body {
 	100% {
 		width: 100%;
 	}
-
 }
 
 @import "~bulma"
