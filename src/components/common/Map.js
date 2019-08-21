@@ -48,10 +48,10 @@ class PlotsMap extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="box">
         <Map
           style="mapbox://styles/mapbox/streets-v9"
-          scrollZoom={true}
+          scrollZoom={this.disable}
           zoom={this.state.zoom}
           center={this.state.center}
           onClick={this.mapClick}

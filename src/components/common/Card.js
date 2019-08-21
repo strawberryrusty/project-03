@@ -5,7 +5,7 @@ import Auth from '../../lib/Auth'
 
 const Card = (props) => {
   return (
-    <div className="card">
+    <div className="card tableBorder">
       <div className="card-header">
         <div className="card-header-title">{props.name}</div>
       </div>
