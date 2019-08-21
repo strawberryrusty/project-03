@@ -182,9 +182,14 @@ class PlotsIndex extends React.Component {
         <div className="container">
           <div className="box">
             <h2 className="title is-3 has-white-text">Find a plot</h2>
-            <div className="field">
-              <input className="input is-fullwidth" placeholder="search" onKeyUp={this.handleSearchKeyUp}/>
+            <div className="field control has-icons-left">
+              <span className="icon is-left">
+                <i className="fas fa-search"></i>
+              </span>
+              <input className="input is-fullwidth" placeholder="search" onKeyUp={this.handleSearchKeyUp} />
+
             </div>
+
             <div className="field">
               <div className="select is-fullwidth">
                 <select onChange={this.handleSortChange}>
