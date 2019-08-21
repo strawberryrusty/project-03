@@ -166,7 +166,7 @@ class PlotsIndex extends React.Component {
     return(
       <section className="section">
         <div className="container">
-          <div className="box">
+          <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Find a plot</h2>
             <div className="field control has-icons-left">
               <span className="icon is-left">
@@ -240,17 +240,15 @@ class PlotsIndex extends React.Component {
               </div>
             </div>
           </div>
-          <div className="box">
-            <div className="tabs">
+          <div className="box tableBorder">
+            <div className="tabs is-toggle is-large is-centered">
               <ul>
                 <li onClick={this.handleIndexTab}><a>By Index</a></li>
                 <li onClick={this.handleMapTab}><a>By Map</a></li>
               </ul>
             </div>
-
+            <hr />
             {this.state.mapTab && <PlotsMap plotsToDisplay={this.state.plotsToDisplay}/>}
-
-
 
             {this.state.indexTab && <div className="columns is-multiline">
 

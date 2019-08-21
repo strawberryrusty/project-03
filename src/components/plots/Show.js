@@ -79,7 +79,7 @@ class PlotsShow extends React.Component {
 
           {!this.state.plot && <h2 className="title is-2">Loading...</h2>}
 
-          {this.state.plot && <div>
+          {this.state.plot && <div className="box tableBorder">
             <header>
               <h1 className="title is-2">{this.state.plot.name}</h1>
               {Auth.isCurrentUser(this.state.plot.user) && <div className="buttons">
@@ -105,7 +105,7 @@ class PlotsShow extends React.Component {
 
               <div className="column is-half is-centered">
                 <div className="table-container">
-                  <table className="table">
+                  <table className="table tableBorder">
                     <tbody>
                       <tr>
                         <td><p>Plot Type:</p></td>
@@ -171,6 +171,7 @@ class PlotsShow extends React.Component {
                 <p>{this.state.plot.streetAddress}</p>
                 <p> {this.state.plot.postCode}</p>
               </div>
+              <br />
 
               <Map
                 style="mapbox://styles/mapbox/streets-v9"
@@ -193,7 +194,8 @@ class PlotsShow extends React.Component {
                   isEnabled= 'true' />
               </Map>
             </div>
-
+            <hr />
+            <h2 className="title is-3 has-white-text">Comments</h2>
             <div className="column is-full">
               <div className="column is-full">
                 {this.state.plot.comments.map(comment =>
@@ -201,8 +203,7 @@ class PlotsShow extends React.Component {
                     handleCommentDelete={this.handleCommentDelete} />
                 )}
                 {Auth.isAuthenticated() && <form onSubmit={this.handleSubmit}>
-
-
+                  <hr />
                   <div className="table-container">
                     <table className="table is-fullwidth">
                       <tbody>
@@ -222,6 +223,7 @@ class PlotsShow extends React.Component {
                         </tr>
                         <tr>
                           <td>
+
                             <div>
                               <h2>Rating: {this.state.formData.rating}</h2>
                               <StarRatingComponent
@@ -235,6 +237,7 @@ class PlotsShow extends React.Component {
                               />
                             </div>
                             <button className="button">Submit</button>
+
                           </td>
                         </tr>
                       </tbody>

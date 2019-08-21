@@ -68,12 +68,12 @@ class PlotsNew extends React.Component {
     return (
       <section className="section">
         <div className="container">
-          <div className="box">
+          <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Add your plot</h2>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form className="container box tableBorder" onSubmit={this.handleSubmit}>
             <div className="field">
-              <label className="label">Plot Name</label>
+              <label className="label has-white-text">Plot Name</label>
               <input
                 className="input"
                 name="name"
@@ -158,10 +158,10 @@ class PlotsNew extends React.Component {
             </div>
             {this.state.errors.plotType && <small className="help is-danger">{this.state.errors.plotType}</small>}
             <hr />
-            <h2 className="subtitle is-4">Using the plot</h2>
+            <h2 className="subtitle is-4 has-text-white">Using the plot</h2>
             <div className="columns">
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -173,7 +173,7 @@ class PlotsNew extends React.Component {
               </div>
 
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -184,7 +184,7 @@ class PlotsNew extends React.Component {
               </div>
 
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -195,7 +195,7 @@ class PlotsNew extends React.Component {
               </div>
 
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -260,7 +260,7 @@ class PlotsNew extends React.Component {
             </div>
 
             <hr />
-            <h2 className="subtitle is-4">Personal details</h2>
+            <h2 className="subtitle is-4 has-text-white">Personal details</h2>
             <div className="columns">
               <div className="column field">
                 <label className="label">Primary Contact Name </label>

@@ -42,36 +42,38 @@ class Login extends React.Component {
       <section className="section">
         <div className="container">
           <form onSubmit={this.handleSubmit}>
-            <div className="box">
+            <div className="box tableBorder">
               <h2 className="title is-3 has-white-text">Login</h2>
             </div>
-            <div className="field">
-              <label className="label">Email</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="email"
-                  name="email"
-                  placeholder="eg: greeny@gardensaremylife.co.uk"
-                  onChange={this.handleChange}
-                />
+            <div className="box tableBorder">
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="email"
+                    name="email"
+                    placeholder="eg: greeny@gardensaremylife.co.uk"
+                    onChange={this.handleChange}
+                  />
+                </div>
               </div>
-            </div>
-            <div className="field">
-              <label className="label">Password</label>
-              <div className="control">
-                <input
-                  className="input"
-                  type="password"
-                  name="password"
-                  placeholder="eg: ••••••••"
-                  onChange={this.handleChange}
-                />
+              <div className="field">
+                <label className="label">Password</label>
+                <div className="control">
+                  <input
+                    className="input"
+                    type="password"
+                    name="password"
+                    placeholder="eg: ••••••••"
+                    onChange={this.handleChange}
+                  />
+                </div>
+                {this.state.error && <small className="help is-danger">{this.state.error}</small>}
               </div>
-              {this.state.error && <small className="help is-danger">{this.state.error}</small>}
+              <hr />
+              <button className="button">Submit</button>
             </div>
-
-            <button className="button">Submit</button>
           </form>
         </div>
       </section>
