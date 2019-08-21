@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ReactMapboxGl, { Layer, Feature, ZoomControl, Popup } from 'react-mapbox-gl'
 import axios from 'axios'
 import icon from '../../assets/Carrot.png'
-console.log(icon)
+
 
 
 const Map = ReactMapboxGl({
@@ -29,11 +30,17 @@ class PlotsMap extends React.Component {
     }
 
     this.markerClick = this.markerClick.bind(this)
+    this.mapClick = this.mapClick.bind(this)
+
   }
 
   componentDidMount() {
     axios.get('/api/plots')
       .then(res => this.setState({ plots: res.data }))
+  }
+
+  mapClick() {
+    if(this.state.popPlot) return this.setState({ popPlot: null})
   }
 
   markerClick(obj) {
@@ -59,6 +66,7 @@ class PlotsMap extends React.Component {
             scrollZoom={true}
             zoom={this.state.zoom}
             center={this.state.center}
+            onClick={this.mapClick}
             containerStyle={{
               height: '70vh',
               width: '100%'
@@ -83,6 +91,7 @@ class PlotsMap extends React.Component {
               <br />
               <h1 className="poptext is-size-6">Plot type: {this.state.popPlot.plotType}</h1>
               <h1 className="poptext is-size-6">Av Rating: {this.state.popPlot.averageRating}</h1>
+              <h1 className="poptext is-size-6"><Link to={`/plots/${this.state.popPlot._id}`}>See more here..</Link></h1>
             </Popup>}
 
 

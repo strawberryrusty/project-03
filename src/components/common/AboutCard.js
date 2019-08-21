@@ -11,8 +11,9 @@ const AboutCard = (props) => {
           <img src={props.image} alt={props.name}/>
         </figure>
       </div>
-      <div>
-        <p className="notes">{props.link}</p>
+      <div className="card-content">
+        <span className="notes">{props.githubLink}</span>
+        <span className="notes">{props.link}</span>
       </div>
     </div>
   )

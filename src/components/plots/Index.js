@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const _ = require('lodash').runInContext()
 
 import Card from '../common/Card'
+import Auth from '../../lib/Auth'
 
 class PlotsIndex extends React.Component {
 
@@ -16,7 +17,8 @@ class PlotsIndex extends React.Component {
       volunteerBoolean: false,
       bioWasteBoolean: false,
       costInvolvedBoolean: false,
-      plotType: 'All'
+      plotType: 'All',
+      userInfo: {}
     }
 
     this.truncate = this.truncate.bind(this)
@@ -27,6 +29,7 @@ class PlotsIndex extends React.Component {
     this.handleBioWasteBoolean = this.handleBioWasteBoolean.bind(this)
     this.handleCostInvolvedBoolean = this.handleCostInvolvedBoolean.bind(this)
     this.combineFiltersAndSort = this.combineFiltersAndSort.bind(this)
+    this.calculateDistance = this.calculateDistance.bind(this)
   }
 
   componentDidMount() {
@@ -146,7 +149,31 @@ class PlotsIndex extends React.Component {
     return this.setState({ plotsToDisplay: sortedPlots })
   }
 
+  calculateDistance(plot) {
 
+    const user = Auth.getUser()
+    console.log(user)
+
+    const lat1 = plot.latitude
+    const lon1 = plot.longitude
+
+    const lat2 = user.latitude
+    const lon2 = user.longitude
+
+
+    const earthRadius = 6371e3
+    const φ1 = lat1 * (Math.PI / 180)
+    const φ2 = lat2 * (Math.PI / 180)
+    const Δφ = (lat2-lat1) * (Math.PI / 180)
+    const Δλ = (lon2-lon1) * (Math.PI / 180)
+
+    const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+            Math.cos(φ1) * Math.cos(φ2) *
+            Math.sin(Δλ/2) * Math.sin(Δλ/2)
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a))
+    const d = earthRadius * c
+    return Math.round( (d * 0.000621371) * 10 ) / 10
+  }
 
   render() {
     if(!this.state.allPlots) return <h2 className="title is-2">Loading ...</h2>
@@ -155,9 +182,14 @@ class PlotsIndex extends React.Component {
         <div className="container">
           <div className="box">
             <h2 className="title is-3 has-white-text">Find a plot</h2>
-            <div className="field">
-              <input className="input is-fullwidth" placeholder="search" onKeyUp={this.handleSearchKeyUp}/>
+            <div className="field control has-icons-left">
+              <span className="icon is-left">
+                <i className="fas fa-search"></i>
+              </span>
+              <input className="input is-fullwidth" placeholder="search" onKeyUp={this.handleSearchKeyUp} />
+
             </div>
+
             <div className="field">
               <div className="select is-fullwidth">
                 <select onChange={this.handleSortChange}>
@@ -234,6 +266,7 @@ class PlotsIndex extends React.Component {
                     image={plot.image}
                     averageRating={plot.averageRating}
                     postCode={plot.postCode}
+                    distanceApart={this.calculateDistance(plot)}
                   />
                 </Link>
               </div>
