@@ -14,7 +14,7 @@ const Home = () => {
       <div className="flexbox">
         <h3 className="is-size-2 herotext poptext">Sustainable Food</h3>
         <p className="is-size-4 herotext poptext">
-        Be apart of the growing sustainable food movement in London & become the master of your own Kitchen by eating food you have produced yourself!<br />
+        Be a part of the growing sustainable food movement in London and become the master of your own kitchen by eating food you have produced yourself!<br />
         </p>
       </div>
       <div className="hero-sub image-two">
@@ -27,13 +27,13 @@ const Home = () => {
       <div className="flexbox">
         <h3 className="is-size-2 herotext poptext">Share your garden</h3>
         <p className="is-size-4 herotext poptext">
-        Share your garden with others or join the local community garden! <br />This online community will connect you with others allowing you to share your planting knowledge and feed yourself with your own families with local British produce!
+        Share your garden with others or join the local community garden! <br />This online community will connect you with others allowing you to share your planting knowledge and feed yourself and your family with local British produce!
         </p>
       </div>
       <div className="hero-sub image-three">
         <section className="hero is-large">
           <div className="title-container">
-            <h2 className="secondTitle title is-3">Whats are the issues?</h2>
+            <h2 className="secondTitle title is-3">What are the issues?</h2>
           </div>
         </section>
       </div>
