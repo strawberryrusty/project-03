@@ -61,7 +61,11 @@ module.exports = [{
   conditionsForUse: ['Owner request plot tenants mow the lawn once a month'],
   volunteer: false,
   primaryContactName: 'Eva Green',
-  primaryContactEmail: 'eva@gmail.com'
+  primaryContactEmail: 'eva@gmail.com',
+  comments: [
+    {content: 'Eva is an amazing host.  We often have a cup of tea and a chat when we see each other.  We all take it in turns to mow the lawns and often tend to the hedges etc.', rating: 5},
+    {content: 'Love this place.  So sad we are moving away soon.', rating: 5}
+  ]
 },{
   name: 'Ravenscourt Park Glasshouse',
   description: 'Ravenscourt Park Glasshouses are situated in Ravenscourt Park next to the cafe.  They were formerly used by the local authority and fell into disrepair. HCGA received permission to take over the management of the two large glasshouses and with support from the London Borough of Hammersmith and Fulham we have brought the glasshouses back to life. We have secured a lease for the site and have planning permission to replace the glasshouses so they can be used year-round and by more members of the local community. In May 2019 we launched a crowdfunding campaign to raise the funds to redevelop the glasshouses.',
@@ -80,7 +84,10 @@ module.exports = [{
   conditionsForUse: ['There is a long waiting list'],
   volunteer: true,
   primaryContactName: 'Katie Shaw',
-  primaryContactEmail: 'info@hcga.org.uk'
+  primaryContactEmail: 'info@hcga.org.uk',
+  comments: [
+    {content: 'The facilities here are looking a bit tired now.  Hoping to organize some refurbishments.  Otherwise, pretty good plot.', rating: 3}
+  ]
 },{
   name: 'Woodmans Mews',
   description: 'Since taking on the renovation of Woodmans Mews Community Garden in 2017 we have transformed the site with the help of local residents, volunteers and corporate volunteers. We have planted hundreds of plants, taken down unsafe structures, created new raised beds, refurbished the pergola and installed a greenhouse. Residents were proud to have the tallest sunflower grown on any of our sites! The work has been funded by a grant from the Mayor’s Green City Fund and donations from Mace Group and the London Borough of Hammersmith and Fulham.',
@@ -99,7 +106,11 @@ module.exports = [{
   conditionsForUse: ['None'],
   volunteer: true,
   primaryContactName: 'Katie Shaw',
-  primaryContactEmail: 'info@hcga.org.uk'
+  primaryContactEmail: 'info@hcga.org.uk',
+  comments: [
+    {content: 'I\'ve been volunteering here now for 8 years.  I have met loads of friends and love being outdoors.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Communal Gardens of the Ladbroke Estate',
   description: 'This 6 hectare communal garden lies between the south side of Arundel Gardens and the north side of Ladbroke Gardens.  Private gardens lead onto the steeply sloping communal garden, planted with 19th century planes and other large trees including a catalpa, horse chestnut, and two Turkey oaks; and underplanted by small flowering trees and woodland shrubs. The mid 19th century path layout, some of the original internal railings, and eleven large plane trees survive.',
@@ -118,7 +129,11 @@ module.exports = [{
   conditionsForUse: [],
   volunteer: true,
   primaryContactName: 'Gregory Jean',
-  primaryContactEmail: 'Facebook: Rainbow Grow'
+  primaryContactEmail: 'Facebook: Rainbow Grow',
+  comments: [
+    {content: 'Great space.  Feel like your in the countryside.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Bonnington Square Garden',
   description: 'The Square boasts 2 wonderful community gardens and the unique Italo Deli where refreshments can be obtained during the performance. We are delighted to be supporting the Community Garden project.',
@@ -137,7 +152,11 @@ module.exports = [{
   conditionsForUse: ['No fires, BBQs, camping stoves or fireworks are allowed in the garden'],
   volunteer: true,
   primaryContactName: 'Neeson Armitage',
-  primaryContactEmail: 'mail@thebgarden.org'
+  primaryContactEmail: 'mail@thebgarden.org',
+  comments: [
+    {content: 'Great space.  Feel like your in the countryside.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Skip Garden',
   description: 'This sustainable urban garden really is a charming oasis with wild flowers, vegetables and herbs, beehives and chicken coops. What started as a moveable vegetable garden built in skips, has grown into a community project that provides all kinds of opportunities for local young people.',
@@ -156,7 +175,11 @@ module.exports = [{
   conditionsForUse: [],
   volunteer: true,
   primaryContactName: 'Contact website - https://www.globalgeneration.org.uk/',
-  primaryContactEmail: 'generate@globalgeneration.org.uk'
+  primaryContactEmail: 'generate@globalgeneration.org.uk',
+  comments: [
+    {content: 'Amazing place.  My kids love it.', rating: 5},
+    {content: 'Great place, love the cafe, cool vibe.', rating: 4}
+  ]
 },{
   name: 'Culpeper Community Garden',
   description: 'A green oasis in the midst of streets, estates and inner city bustle, Culpeper Community Garden is one of the most valued green public spaces in Islington. Culpeper is a beautiful public open space which is both a city park and an environmental community project. Managed by and for local people, it is an award winning project where people from all walks of life come together to appreciate and enhance their environment.',
@@ -232,7 +255,11 @@ module.exports = [{
   conditionsForUse: ['Work with a smile!'],
   volunteer: true,
   primaryContactName: 'David Gill',
-  primaryContactEmail: ' info@wathamforest.co.uk'
+  primaryContactEmail: ' info@wathamforest.co.uk',
+  comments: [
+    {content: 'Great space.  Feel like your in the countryside.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Normadic Community Garden',
   description: 'The new Nomadic gardens located in Brick Lane are home to 100 Allotment spaces, sculptures, artwork, bees and bee keepers alike and most importantly, a community of people that have collided from all walks of life. ',
@@ -251,7 +278,11 @@ module.exports = [{
   conditionsForUse: [],
   volunteer: true,
   primaryContactName: 'Nomadic Jimmy',
-  primaryContactEmail: 'nomadicjimmy@gmail.com'
+  primaryContactEmail: 'nomadicjimmy@gmail.com',
+  comments: [
+    {content: 'Overall, this is a good plot, but there are one or two plotholders who are letting their plots get very overgrown and untidy.', rating: 3},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Tabard Community Allotments',
   description: 'Our allotments have a very low annual subscription of £5. We are keen to keep this as low as possible to make sure that nobody is excluded from having a plot to grow vegetables',
@@ -270,7 +301,11 @@ module.exports = [{
   conditionsForUse: [],
   volunteer: true,
   primaryContactName: 'Gregory White',
-  primaryContactEmail: 'tabardgrowers@gmail.com'
+  primaryContactEmail: 'tabardgrowers@gmail.com',
+  comments: [
+    {content: 'Overall, this is a good plot, but there are one or two plotholders who are letting their plots get very overgrown and untidy.', rating: 3},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Martin Way Allotment Gardens',
   description: 'We are a very active de facto self-managed site with a relatively short waiting list; currently we have around 95% of our plots let. We have a shop which is open at weekends during the growing season from February to October (Sundays only during July and August), along with an adjacent accessible toilet.',
@@ -289,7 +324,11 @@ module.exports = [{
   conditionsForUse: ['Work with a smile!'],
   volunteer: true,
   primaryContactName: 'Jadzia Bruton',
-  primaryContactEmail: 'sue_tickner@yahoo.co.uk'
+  primaryContactEmail: 'sue_tickner@yahoo.co.uk',
+  comments: [
+    {content: 'Great space.  Feel like your in the countryside.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Grange Lane Allotments',
   description: 'Situated on a hill with sweeping views over London and surrounded by ancient woodland, playing fields, an historic school and a renowned golf course, Grange Lane Allotments are an important resource for its members, for wildlife and for the local community.  Members recognise their responsibility to conserve and develop these allotments.',
@@ -346,7 +385,11 @@ module.exports = [{
   conditionsForUse: ['Sunnyside Community Gardens is a massive back garden for local people who live in near by flats with no or very small gardens'],
   volunteer: true,
   primaryContactName: 'See our facebook page - www.facebook.com/SunnysideCommunityGardensN19',
-  primaryContactEmail: ' community@tate.org.uk'
+  primaryContactEmail: ' community@tate.org.uk',
+  comments: [
+    {content: 'Overall, this is a good plot, but there are one or two plotholders who are letting their plots get very overgrown and untidy.', rating: 3},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Share of plot - Fulham Palace Meadow Allotments',
   description: 'I am looking for someone to share this plot with me as I am too old to tend to the plants and vegetables every day.  The waiting list for new plotholders is 5 to 7 years so if you have put your name down but are keen to get going, then contact me jim@memail.com and we can start growing together.',
@@ -384,7 +427,11 @@ module.exports = [{
   conditionsForUse: ['Water supply, Waiting list - 3 years'],
   volunteer: false,
   primaryContactName: 'See website - https://www.merton.gov.uk/leisure-recreation-and-culture/parks-and-open-spaces/allotments/waiting-list',
-  primaryContactEmail: 'allotments@merton.gov.uk ​'
+  primaryContactEmail: 'allotments@merton.gov.uk​',
+  comments: [
+    {content: 'Great space.  Feel like your in the countryside.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Dom & Helens Allotment',
   description: 'We grow a various things on our wonderful plot. We are looking for sharer as not able to get down there everyday.',
@@ -403,7 +450,11 @@ module.exports = [{
   conditionsForUse: ['Spade', 'Pitch Fork', 'soil', 'Water'],
   volunteer: false,
   primaryContactName: 'Helen Meecham',
-  primaryContactEmail: 'helsbels@gmail.com​'
+  primaryContactEmail: 'helsbels@gmail.com​',
+  comments: [
+    {content: 'We love this place.  Lots of events and meetups with locals.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Kevin City Garden',
   description: 'Looking for keen gardener to help tend my beautiful city garden in return for growing space',
@@ -441,7 +492,11 @@ module.exports = [{
   conditionsForUse: ['Share of yield on adhoc basis'],
   volunteer: false,
   primaryContactName: 'Asif Mammadov',
-  primaryContactEmail: 'amdooby@memail.com'
+  primaryContactEmail: 'amdooby@memail.com',
+  comments: [
+    {content: 'Overall, this is a good plot, but there are one or two plotholders who are letting their plots get very overgrown and untidy.', rating: 3},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Kensington Gardens Allotment',
   description: 'The Kensington Garden Allotment is a beautiful space run by a small group of regular volunteers. It is open daily and members of the public are welcome to wander in anytime to enjoy and relax at the allotment, as well as pick up useful tips for growing their own fruit and vegetables. The allotment is also open to schools and community groups who want to learn more about sustainability and growing vegetables organically.',
@@ -479,7 +534,11 @@ module.exports = [{
   conditionsForUse: ['Work with a smile!'],
   volunteer: false,
   primaryContactName: 'Katie Shaw',
-  primaryContactEmail: 'info@hcga.org.uk'
+  primaryContactEmail: 'info@hcga.org.uk',
+  comments: [
+    {content: 'Great space.  Feel like your in the countryside.', rating: 5},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'William Hobbayne Community Garden',
   description: 'The Billets Hart Site at the bottom of Green Lane is the elder and larger of the 2 sites. The Community Gardens are smaller growing spaces situated just off St Margaret’s road overlooking the Grand Union Canal. A West London growing space for local people to grow their own fruit and vegetables and as a community space',
@@ -498,7 +557,11 @@ module.exports = [{
   conditionsForUse: [],
   volunteer: false,
   primaryContactName: 'Paul Savident',
-  primaryContactEmail: 'paul@savident'
+  primaryContactEmail: 'paul@savident',
+  comments: [
+    {content: 'Overall, this is a good plot, but there are one or two plotholders who are letting their plots get very overgrown and untidy.', rating: 3},
+    {content: 'This was an ok Plot', rating: 3}
+  ]
 },{
   name: 'Grow Mayow',
   description: 'Once a old park keepers depot, is now an award winning not for profit community garden. Its run and maintained by volunteers.',
@@ -517,7 +580,11 @@ module.exports = [{
   conditionsForUse: [],
   volunteer: true,
   primaryContactName: 'InfoEmail',
-  primaryContactEmail: 'Growmayow@gmail.com'
+  primaryContactEmail: 'Growmayow@gmail.com',
+  comments: [
+    {content: 'Council needs to invest in this place.', rating: 1},
+    {content: 'Not great', rating: 1}
+  ]
 },{
   name: 'Tamworth Farm Allotment',
   description: 'Our plot holders are a group of South Londoners who grow a huge variety of fruit, vegetables, herbs, flowers and other plants on 170 plots split over three different areas (the Horseshoe, the Farm and Rose Avenue) which together make up Tamworth Farm.',
@@ -536,7 +603,11 @@ module.exports = [{
   conditionsForUse: ['Work with a smile!'],
   volunteer: true,
   primaryContactName: 'TFAS - Tamworth Farm Allotment Society',
-  primaryContactEmail: 'TFAS Website - https://tamworthfarm.wordpress.com/'
+  primaryContactEmail: 'TFAS Website - https://tamworthfarm.wordpress.com/',
+  comments: [
+    {content: 'Council needs to invest in this place.', rating: 2},
+    {content: 'Not great', rating: 1}
+  ]
 },{
   name: 'South Croydon Allotment Society',
   description: 'Small Allotment located in South Croydon. There is a short waiting list of about one year.',

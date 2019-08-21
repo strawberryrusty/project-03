@@ -7,17 +7,19 @@ $navbar-background-color: rgba(47,79,79, 1);
 $navbar-item-color: #FFFFFF;
 $box-color: #FFFFFF;
 $text: #FFFFFF;
-$table-background-color: rgba(47,79,79, 0.5);
+$table-background-color: rgba(47,79,79, 0.3);
 $table-color: #FFFFFF;
-$box-background-color: rgba(47,79,79, 0.5);
+$box-background-color: rgba(47,79,79, 0.3);
 $table-row-hover-background-color:yellow;
 
-.background-test {
+section {
 background-color: #778899;
-background-image: url('https://i.imgur.com/jnXlcIH.jpg');
+background-image: url('https://i.imgur.com/ikjUrBd.jpg?1');
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-attachment: fixed;
+min-width: 100vh;
+min-height: 100vh;
 }
 
 .commentUser {
@@ -36,7 +38,11 @@ label {
 }
 
 .ShowImage {
-  box-shadow: 1px 1px 1px 1px #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.deleteContainer {
+  text-align: right;
 }
 
 .card {
@@ -114,7 +120,7 @@ label {
 
 .plant-section {
   padding: 20px;
-  margin-right: 40px;
+  margin-right: 0px;
   color: #FFFFFF;
 }
 
@@ -127,7 +133,7 @@ label {
 
 table.table.plant-table{
   background-color: white;
-  width: 600px;
+  width: 0px;
   margin: -10px;
   color: black;
 }
@@ -214,7 +220,6 @@ body {
 	100% {
 		transform: translateY(0);
 	}
-
 }
 
 @keyframes draw {
@@ -222,7 +227,6 @@ body {
 	100% {
 		width: 100%;
 	}
-
 }
 
 @import "~bulma"
