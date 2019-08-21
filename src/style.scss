@@ -7,14 +7,14 @@ $navbar-background-color: rgba(47,79,79, 1);
 $navbar-item-color: #FFFFFF;
 $box-color: #FFFFFF;
 $text: #FFFFFF;
-$table-background-color: rgba(47,79,79, 0.5);
+$table-background-color: rgba(47,79,79, 0.3);
 $table-color: #FFFFFF;
-$box-background-color: rgba(47,79,79, 0.5);
+$box-background-color: rgba(47,79,79, 0.3);
 $table-row-hover-background-color:yellow;
 
 section {
 background-color: #778899;
-background-image: url('https://i.imgur.com/jnXlcIH.jpg');
+background-image: url('https://i.imgur.com/ikjUrBd.jpg?1');
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-attachment: fixed;
@@ -38,7 +38,11 @@ label {
 }
 
 .ShowImage {
-  box-shadow: 1px 1px 1px 1px #FFFFFF;
+  border: 1px solid #FFFFFF;
+}
+
+.deleteContainer {
+  text-align: right;
 }
 
 .card {

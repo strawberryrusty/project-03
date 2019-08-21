@@ -30,8 +30,8 @@ const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) 
                 </div>
               </td>
 
-              <td text-align="right">
-                {Auth.isAuthenticated() && <div>
+              <td>
+                {Auth.isAuthenticated() && <div className="deleteContainer">
                   <button className="delete" id={_id} onClick= {handleCommentDelete}></button>
                 </div>}
               </td>

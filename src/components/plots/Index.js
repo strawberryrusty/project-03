@@ -164,7 +164,7 @@ class PlotsIndex extends React.Component {
   render() {
     if(!this.state.allPlots) return <h2 className="title is-2">Loading ...</h2>
     return(
-      <section className="section background-test">
+      <section className="section">
         <div className="container">
           <div className="box">
             <h2 className="title is-3 has-white-text">Find a plot</h2>

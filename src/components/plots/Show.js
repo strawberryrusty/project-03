@@ -74,7 +74,7 @@ class PlotsShow extends React.Component {
   render() {
     console.log(this.state.plot)
     return (
-      <section className="section background-test">
+      <section className="section">
         <div className="container">
 
           {!this.state.plot && <h2 className="title is-2">Loading...</h2>}
@@ -97,13 +97,14 @@ class PlotsShow extends React.Component {
               <p>{this.state.plot.description}</p>
             </div>
 
+
             <hr />
             <div className="columns is-multiline">
-              <div className="column is-half">
+              <div className="column is-half is-centered">
                 <img className="ShowImage" src={this.state.plot.image} alt={this.state.plot.name}/>
               </div>
 
-              <div className="column is-half">
+              <div className="column is-half is-centered">
                 <div className="table-container">
                   <table className="table">
                     <tr>
@@ -159,6 +160,8 @@ class PlotsShow extends React.Component {
 
 
             </div>
+
+            <hr />
 
             <div className="container">
 
