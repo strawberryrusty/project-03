@@ -1,5 +1,7 @@
 import React from 'react'
 import StarRatingComponent from 'react-star-rating-component'
+import Auth from '../../lib/Auth'
+
 
 const Card = (props) => {
   return (
@@ -26,7 +28,7 @@ const Card = (props) => {
         </div>
         <p className="notes">{props.plotType}</p>
         <p className="notes">{props.postCode}</p>
-        <p className="notes">Distance away: {props.distanceApart} miles</p>
+        {Auth.isAuthenticated() && <p className="notes">Distance away: {props.distanceApart} miles</p>}
       </div>
     </div>
   )
