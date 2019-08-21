@@ -41,7 +41,7 @@ const About = () => {
                 name="Freddie Hoy"
                 image={'https://i.imgur.com/mObm02y.jpg'}
                 githubLink={<a href="https://github.com/FreddieHoy"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="https://linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
+                link={<a href="https://www.linkedin.com/in/freddie-hoy-192807168/"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
