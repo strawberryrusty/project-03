@@ -164,7 +164,8 @@ table.table.plant-table{
   width: 0px;
   margin: -10px;
   color: black;
-  border-radius: thick;
+  border: 5px solid black;
+  border-radius: 15px;
 }
 
 table thead.plant-head{
@@ -242,6 +243,23 @@ body {
 
 .scroll-x {
   overflow-x: scroll;
+}
+
+p{
+  text-align: center;
+  color: black;
+}
+
+p.copyright{
+  color: white;
+}
+
+#menu-footer-menu{
+  text-align: center;
+  color: white;
+}
+div.footer-bottom{
+  background-color: #2F4F4F;
 }
 
 @keyframes up {
