@@ -97,7 +97,6 @@ class PlotsShow extends React.Component {
               <p>{this.state.plot.description}</p>
             </div>
 
-
             <hr />
             <div className="columns is-multiline">
               <div className="column is-half is-centered">

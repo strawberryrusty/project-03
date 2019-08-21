@@ -240,7 +240,7 @@ class PlotsIndex extends React.Component {
               </div>
             </div>
           </div>
-          <div className="background-test">
+          <div className="box">
             <div className="tabs">
               <ul>
                 <li onClick={this.handleIndexTab}><a>By Index</a></li>
