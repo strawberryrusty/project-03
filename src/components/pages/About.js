@@ -12,6 +12,7 @@ const About = () => {
           <p>This site has been developed by Sian Alcock, Ejike Chiboka, Prash Mohan and Freddie Hoy as part of a learning module in General Assembly&lsquo;s Software Engineering Immersive Course using JavaScript and React. </p>
 
         </div>
+
         <div className="box">
 
           <h2>About Developers</h2>
@@ -21,7 +22,7 @@ const About = () => {
                 name="Sian Alcock"
                 image={'https://i.imgur.com/wusyZOE.jpg'}
                 githubLink={<a href="https://github.com/sian-alcock"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="www.linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
+                link={<a href="https://linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
 
               />
             </div>
@@ -31,7 +32,7 @@ const About = () => {
                 name="Ejike Chiboka"
                 image={'https://i.imgur.com/owdRqwP.jpg'}
                 githubLink={<a href="https://github.com/agkayster"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="www.linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
+                link={<a href="https://linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
@@ -40,7 +41,7 @@ const About = () => {
                 name="Freddie Hoy"
                 image={'https://i.imgur.com/mObm02y.jpg'}
                 githubLink={<a href="https://github.com/FreddieHoy"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="www.linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
+                link={<a href="https://linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
@@ -49,11 +50,15 @@ const About = () => {
                 name="Prash Mohan"
                 image={'https://i.imgur.com/vlFtdWv.jpg'}
                 githubLink={<a href="https://github.com/strawberryrusty"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="www.linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
+                link={<a href="https://linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
           </div>
+        </div>
+        <div className="box">
+          <h2>Acknowledgements</h2>
+          <p>Background image - organic carrots - Harshal S. Hirve</p>
         </div>
       </div>
 

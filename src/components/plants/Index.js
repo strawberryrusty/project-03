@@ -26,10 +26,10 @@ class PlantsIndex extends React.Component {
     return (
       <section className="section plant-section">
         <div className="container scroll-x">
-          <table className="table plant-table is-bordered is-hoverable">
+          <table className="table plant-table is-bordered is-hoverable is-fullwidth">
             <thead className="plant-head">
               <tr>
-                <th className="plant-font tableoption">Plant Name</th>
+                <th className="plant-font">Plant Name</th>
                 <th>Image</th>
                 <th className="tableoption" title="Destroyed By">Destroyed By</th>
                 <th className="tableoption" title="Days to Maturation">Days to Maturation</th>
@@ -59,7 +59,7 @@ class PlantsIndex extends React.Component {
               {this.state.plants.map(plant =>
                 <tr key={plant._id}>
                   <td><p>{plant.name}</p></td>
-                  <td><img src={plant.image} alt={plant.name} height="200" width="200"/></td>
+                  <td><img src={plant.image} alt={plant.name} height="100" width="200"/></td>
                   <td><p>{plant.destroyedBy.map(pest => pest + ' ')}</p></td>
                   <td><p>{plant.daysToMaturation}</p></td>
                   <td><p>{plant.germination}</p></td>
