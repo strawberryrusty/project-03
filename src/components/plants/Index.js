@@ -28,22 +28,22 @@ class PlantsIndex extends React.Component {
 
             <div>
 
-            
+
               <table className="table plant-table is-bordered is-hoverable">
                 <thead className="plant-head">
                   <tr>
-                    <th className="plant-font">Plant Name</th>
+                    <th className="plant-font tableoption">Plant Name</th>
                     <th>Image</th>
-                    <th><abbr title="Destroyed By">Destroyed By</abbr></th>
-                    <th><abbr title="Days to Maturation">Days to Maturation</abbr></th>
-                    <th><abbr title="Germination">Germination</abbr></th>
-                    <th><abbr title="Spacing">Spacing</abbr></th>
-                    <th><abbr title="Pot Size">Pot Size</abbr></th>
-                    <th><abbr title="Sow under Glass">Sow under Glass</abbr></th>
-                    <th><abbr title="Sow under direct sunlight">Sow under direct sunlight</abbr></th>
-                    <th><abbr title="Propagator">Propagator</abbr></th>
-                    <th>Harvest Period</th>
-                    <th>Seed Period</th>
+                    <th className="tableoption" title="Destroyed By">Destroyed By</th>
+                    <th className="tableoption" title="Days to Maturation">Days to Maturation</th>
+                    <th className="tableoption" title="Germination">Germination</th>
+                    <th className="tableoption" title="Spacing">Spacing</th>
+                    <th className="tableoption" title="Pot Size">Pot Size</th>
+                    <th className="tableoption" title="Sow under Glass">Sow under Glass</th>
+                    <th className="tableoption" title="Sow under direct sunlight">Sow under direct sunlight</th>
+                    <th className="tableoption" title="Propagator">Propagator</th>
+                    <th className="tableoption">Seed Period</th>
+                    <th className="tableoption">Harvest Period</th>
                   </tr>
                 </thead>
 
