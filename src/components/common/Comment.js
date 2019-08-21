@@ -9,37 +9,39 @@ const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) 
     <div className="content">
       <div>
         <table className="table">
-          <tr>
-            <td><span className="commentUser">{user.username}</span>
-              {' '}
-              <small>{(new Date(createdAt)).toLocaleDateString()}</small>
-            </td>
+          <tbody>
+            <tr>
+              <td><span className="commentUser">{user.username}</span>
+                {' '}
+                <small>{(new Date(createdAt)).toLocaleDateString()}</small>
+              </td>
 
-            <td>
-              <div>
-                <StarRatingComponent
-                  name="rate2"
-                  editing={false}
-                  renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
-                  starColor={'rgb(255,140,0)'}
-                  emptyStarColor={'rgb(192,192,192)'}
-                  starCount={5}
-                  value={rating}
-                />
-              </div>
-            </td>
+              <td>
+                <div>
+                  <StarRatingComponent
+                    name="rate2"
+                    editing={false}
+                    renderStarIcon={() => <span><i className="fas fa-carrot"></i></span>}
+                    starColor={'rgb(255,140,0)'}
+                    emptyStarColor={'rgb(192,192,192)'}
+                    starCount={5}
+                    value={rating}
+                  />
+                </div>
+              </td>
 
-            <td>
-              {Auth.isAuthenticated() && <div>
-                <button className="delete" id={_id} onClick= {handleCommentDelete}></button>
-              </div>}
-            </td>
+              <td text-align="right">
+                {Auth.isAuthenticated() && <div>
+                  <button className="delete" id={_id} onClick= {handleCommentDelete}></button>
+                </div>}
+              </td>
 
-          </tr>
-          <tr>
-            <td colSpan="3">{content}
-            </td>
-          </tr>
+            </tr>
+            <tr>
+              <td colSpan="3">{content}
+              </td>
+            </tr>
+          </tbody>
         </table>
 
         <hr />

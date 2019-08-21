@@ -3,18 +3,21 @@
 $family-primary: 'Walter Turncoat', cursive;
 $family-secondary: 'Roboto', sans-serif;
 $title-color: #FFFFFF;
-$navbar-background-color: #2F4F4F;
+$navbar-background-color: rgba(47,79,79, 1);
 $navbar-item-color: #FFFFFF;
 $box-color: #FFFFFF;
 $text: #FFFFFF;
-$table-background-color: #2F4F4F;
+$table-background-color: rgba(47,79,79, 0.5);
 $table-color: #FFFFFF;
-// $dark: #FFFFFF;
-$box-background-color: #2F4F4F;
+$box-background-color: rgba(47,79,79, 0.5);
 $table-row-hover-background-color:yellow;
 
 .background-test {
-    background-color: #778899;
+background-color: #778899;
+background-image: url('https://i.imgur.com/jnXlcIH.jpg');
+background-position: 50% 50%;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 
 .commentUser {
