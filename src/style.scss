@@ -170,17 +170,17 @@ label {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
 
-//Media query to set background-attachment to scroll on mobiles
+//Media query to handle background images on mobile
+// Background-attachment = fixed not supported so no section images on mobile
+//hero images on Home page set to scroll
 @media only screen and (max-width: 600px) {
   .hero-body {
     background-position: center;
-    // background-size: cover;
     background-repeat: repeat;
     background-attachment: scroll;
   }
   .hero-sub {
     background-position: center;
-    // background-size: cover;
     background-repeat: repeat;
     background-attachment: scroll;
   }
@@ -189,7 +189,10 @@ label {
     background-position: center;
     background-repeat: repeat;
     background-attachment: scroll;
-    // background-size: cover;
+
+  }
+  .index-background, .about-background, .plants-background, .add-background,  .register-background,  .login-background,   .show-background,  .edit-background  {
+    background-image:linear-gradient(#EB8921, white);
   }
   }
 
