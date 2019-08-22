@@ -213,7 +213,7 @@ class Edit extends React.Component {
                     name="Volunteer"
                     onChange={this.handleCheckbox}
                   /> Offer volunteering?</label>
-                {this.state.errors.Volunteer && <small className="help is-danger">{this.state.errors.Volunteer}</small>}
+                {this.state.errors.volunteer && <small className="help is-danger">{this.state.errors.volunteer}</small>}
               </div>
             </div>
 

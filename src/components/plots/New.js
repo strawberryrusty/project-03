@@ -12,7 +12,7 @@ class PlotsNew extends React.Component {
         slotsAvailable: false,
         bioWasteAccepted: false,
         costInvolved: false,
-        Volunteer: false
+        volunteer: false
       },
       dropdownOpen: false,
       errors: {}
