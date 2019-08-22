@@ -120,6 +120,10 @@ class PlotsShow extends React.Component {
                         <td><p>{this.state.plot.numOfSlots}</p></td>
                       </tr>
                       <tr>
+                        <td><p>slots available?</p></td>
+                        <td><p>{this.state.plot.slotsAvailable ? '✅' : '❌'}</p></td>
+                      </tr>
+                      <tr>
                         <td><p>Bio-waste accepted?</p></td>
                         <td><p>{this.state.plot.bioWasteAccepted ? '✅' : '❌'}</p></td>
                       </tr>
@@ -140,7 +144,7 @@ class PlotsShow extends React.Component {
                         <td><p>{this.state.plot.primaryContactEmail}</p></td>
                       </tr>
                       <tr>
-                        <td><p>Rating:</p></td>
+                        <td><p>Average Rating:</p></td>
                         <td><div>
                           <StarRatingComponent
                             name="Average rating"
