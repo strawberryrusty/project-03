@@ -39,7 +39,7 @@ min-height: 100vh;
   height: 20px;
 
   &.is-harvest-period {
-    background-color: red;
+    background-color: orange;
     margin: 5px;
   }
 
@@ -251,22 +251,38 @@ form {
   overflow-x: scroll;
 }
 
-p{
-  text-align: center;
-  color: black;
-}
 
 p.copyright{
   color: white;
+  text-align: center;
 }
 
 #menu-footer-menu{
   text-align: center;
   color: white;
 }
+
+li#menu-item{
+  display: inline;
+  margin:0 10px 10px;
+}
 div.footer-bottom{
   background-color: #2F4F4F;
 }
+
+#footer-social{
+  text-align: center;
+}
+
+.fa-3x{
+  margin:5px;
+}
+
+svg.path{
+  margin:5px;
+}
+
+
 
 @keyframes up {
 
