@@ -20,8 +20,8 @@ background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-attachment: fixed;
-min-width: 100vh;
-min-height: 100vh;
+// min-width: 100vh;
+// min-height: 100vh;
 }
 
 .is-seed-period {
@@ -141,7 +141,7 @@ label {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 60%;
+  width: 90%;
   height: 300px;
   padding: auto 0;
   margin: 100px auto;
@@ -279,10 +279,8 @@ div.footer-bottom{
 }
 
 svg.path{
-  margin:5px;
+  margin-top: 5px;
 }
-
-
 
 @keyframes up {
 
