@@ -169,6 +169,14 @@ class PlotsIndex extends React.Component {
       <section className="section index-background">
         <div className="container">
           <div className="box tableBorder">
+            <h2 className="title is-3 has-white-text">Ours Plots</h2>
+            <p>Our community is growing everyday. As the movment builds more and more people are registering there plots on the site.<br />
+            Use this page to find a plot near you. Or register to post your own plot where people. This will allow people to find your plot and either share your space or help you with your garden!</p>
+          </div>
+        </div>
+        <br />
+        <div className="container">
+          <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Find a plot</h2>
             <div className="field control has-icons-left">
               <span className="icon is-left">
