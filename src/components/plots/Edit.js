@@ -15,6 +15,9 @@ class Edit extends React.Component {
     this.handleArrayChange = this.handleArrayChange.bind(this)
     this.handleCheckbox = this.handleCheckbox.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.toggleDropdown = this.toggleDropdown.bind(this)
+    this.handlePlotTypeChange = this.handlePlotTypeChange.bind(this)
+
   }
 
   componentDidMount() {
@@ -46,6 +49,13 @@ class Edit extends React.Component {
     const formData = { ...this.state.formData, [e.target.name]: e.target.checked }
     this.setState({ formData })
   }
+  toggleDropdown() {
+    this.setState({ dropdownOpen: !this.state.dropdownOpen})
+  }
+  handlePlotTypeChange(e) {
+    const formData = {...this.state.formData, plotType: e.target.value }
+    this.setState({ formData, dropdownOpen: false })
+  }
 
   render() {
     return (
@@ -53,6 +63,7 @@ class Edit extends React.Component {
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Plot details</h2>
+            <p> Got some thing worng? No worries bro, hakuna matata.. fix it here!</p>
           </div>
           <form className="container box tableBorder" onSubmit={this.handleSubmit}>
             <div className="field">
@@ -92,7 +103,34 @@ class Edit extends React.Component {
                 />
                 {this.state.errors.postCode && <small className="help is-danger">{this.state.errors.postCode}</small>}
               </div>
+              <div className="column field">
+                <label className="label">Description</label>
+                <input
+                  className="input"
+                  type="string"
+                  name="description"
+                  placeholder="A lovley private garden in South london. Looking to get help with growing cabbages and carrots..."
+                  value={this.state.formData.description || ''}
+                  onChange={this.handleChange}
+                />
+                {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
+              </div>
             </div>
+            <div>
+              <div className="field">
+                <label className="label">Description</label>
+                <input
+                  className="input"
+                  type="string"
+                  name="description"
+                  placeholder="A lovley private garden in South london. Looking to get help with growing cabbages and carrots..."
+                  value={this.state.formData.description || ''}
+                  onChange={this.handleChange}
+                />
+                {this.state.errors.description && <small className="help is-danger">{this.state.errors.description}</small>}
+              </div>
+            </div>
+            <br />
             <div className="field">
               <label className="label">Image</label>
               <input
@@ -105,7 +143,7 @@ class Edit extends React.Component {
               />
               {this.state.errors.image && <small className="help is-danger">{this.state.errors.image}</small>}
             </div>
-
+            <br />
             <label className="label">Choose Plot Type:</label>
             <div className={`dropdown ${this.state.dropdownOpen ? 'is-active' : ''}`} onClick={this.toggleDropdown}>
               <div className="dropdown-trigger">
@@ -125,6 +163,11 @@ class Edit extends React.Component {
               </div>
             </div>
             {this.state.errors.plotType && <small className="help is-danger">{this.state.errors.plotType}</small>}
+
+
+
+
+
             <hr />
             <h2 className="subtitle is-4 has-text-white">Using the plot</h2>
             <div className="columns">
@@ -228,7 +271,7 @@ class Edit extends React.Component {
             </div>
 
             <hr />
-            <h2 className="subtitle is-4">Personal details</h2>
+            <h2 className="subtitle is-4 has-text-white">Personal details</h2>
             <div className="columns">
               <div className="column field">
                 <label className="label">Primary Contact Name </label>
@@ -253,36 +296,6 @@ class Edit extends React.Component {
                   value={this.state.formData.primaryContactEmail || ''}
                 />
                 {this.state.errors.primaryContactEmail && <small className="help is-danger">{this.state.errors.primaryContactEmail}</small>}
-              </div>
-            </div>
-
-
-            <hr />
-            <h2 className="subtitle is-4">For Location Data</h2>
-            <div className="columns">
-              <div className="column field">
-                <label className="label">Latitude</label>
-                <input
-                  className="input"
-                  type="number"
-                  placeholder="-0.235"
-                  name="latitude"
-                  value={this.state.formData.latitude || ''}
-                  onChange={this.handleChange}
-                />
-                {this.state.errors.latitude && <small className="help is-danger">{this.state.errors.latitude}</small>}
-              </div>
-              <div className="column field">
-                <label className="label">Longitude</label>
-                <input
-                  className="input"
-                  type="number"
-                  name="longitude"
-                  value={this.state.formData.longitude || ''}
-                  onChange={this.handleChange}
-                  placeholder="51.573"
-                />
-                {this.state.errors.longitude && <small className="help is-danger">{this.state.errors.longitude}</small>}
               </div>
             </div>
 
