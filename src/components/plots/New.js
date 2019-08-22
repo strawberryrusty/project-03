@@ -34,7 +34,7 @@ class PlotsNew extends React.Component {
     axios.post('/api/plots', this.state.formData, {
       headers: { Authorization: `Bearer ${Auth.getToken()}`}
     })
-      .then(() => this.props.history.push('/plots'))
+      .then((res) => this.props.history.push(`/plots/${res.data._id}`))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
@@ -70,6 +70,7 @@ class PlotsNew extends React.Component {
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Add your plot</h2>
+            <p>Add a food plot that you want to share with the community. Be apart of the sustainable Movment!</p>
           </div>
           <form className="container box tableBorder" onSubmit={this.handleSubmit}>
             <div className="field">

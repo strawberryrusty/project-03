@@ -31,7 +31,7 @@ class PlantsIndex extends React.Component {
             <div className="column is-one-half">
               <div className="box tableBorder">
                 <h1>Plant Index:</h1>
-                <p>This a vegetable growing cheatsheet that you can use to grow your plants</p>
+                <p>This is a vegetable growing cheatsheet that you can use to grow your plants</p>
               </div>
             </div>
             <div className="column is-one-half">

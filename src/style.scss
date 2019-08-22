@@ -66,6 +66,7 @@ $gap: 80px;
 
 .is-seed-period {
   background-color: green;
+  border-radius: 15px;
   width: 60px;
   height: 20px;
   margin: 5px;
@@ -80,6 +81,7 @@ $gap: 80px;
 
   &.is-harvest-period {
     background-color: orange;
+    border-radius: 15px;
     margin: 5px;
   }
 
@@ -92,6 +94,7 @@ $gap: 80px;
 div.is-harvest-period-period {
   padding: 600px;
   justify-content:center;
+  border-radius: 15px;
 }
 .commentUser {
   color: #FFFFFF;
@@ -205,17 +208,24 @@ label {
 .orange{
   background-color: orange;
   color: white;
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
 }
 
 .green{
   background-color: green;
   color: white;
+  text-align: center;
+  border-radius: 15px;
+  margin: 10px;
 }
 
 span.seed{
   width: 2000px;
   border: 10px solid green;
 }
+
 .tableBorder {
   border: 1px solid black;
 }
@@ -239,6 +249,10 @@ table thead.plant-head{
 
 .tableoption {
   width: 40px;
+}
+
+.afterlogin{
+  height: 150px;
 }
 
 
@@ -324,6 +338,7 @@ li.tabs{
 h2.key{
   text-align: center;
 }
+
 div.footer-bottom{
   background-color: #2F4F4F;
 }
@@ -344,6 +359,10 @@ img.plantimage {
     height: 60px;
     max-width: 120%;
     padding:0;
+}
+
+div.box.tableKey{
+  border: 1px solid black;
 }
 
 

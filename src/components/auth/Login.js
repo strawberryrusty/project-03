@@ -76,6 +76,8 @@ class Login extends React.Component {
             </div>
           </form>
         </div>
+        <div className="afterlogin">
+        </div>
       </section>
     )
   }

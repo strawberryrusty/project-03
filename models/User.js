@@ -25,7 +25,10 @@ userSchema.pre('validate', function getGeolocation(done) {
 
   axios.post('https://postcodes.io/postcodes?filter=longitude,latitude', { postcodes: [this.postCode] })
     .then((res) => {
-      if(!res.data.result[0].result) return done()
+      if(!res.data.result[0].result) {
+        this.invalidate('postCode', 'Invalid post code')
+        return done()
+      }
       const { latitude, longitude } = res.data.result[0].result
       this.latitude = latitude
       this.longitude = longitude
