@@ -63,7 +63,7 @@ class Edit extends React.Component {
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Plot details</h2>
-            <p> Got some thing worng? No worries bro, hakuna matata.. fix it here!</p>
+            <p> Got some thing wrong? No worries bro, hakuna matata.. fix it here!</p>
           </div>
           <form className="container box tableBorder" onSubmit={this.handleSubmit}>
             <div className="field">

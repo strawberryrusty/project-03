@@ -70,7 +70,7 @@ class PlotsNew extends React.Component {
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Add your plot</h2>
-            <p>Add a food plot that you want to share with the community. Be apart of the sustainable Movment!</p>
+            <p>Add a food plot that you want to share with the community. Be a part of the sustainable movement!</p>
           </div>
           <form className="container box tableBorder" onSubmit={this.handleSubmit}>
             <div className="field">
@@ -118,7 +118,7 @@ class PlotsNew extends React.Component {
                   className="input"
                   type="string"
                   name="description"
-                  placeholder="A lovley private garden in South london. Looking to get help with growing cabbages and carrots..."
+                  placeholder="A lovely private garden in South london. Looking to get help with growing cabbages and carrots..."
                   value={this.state.formData.description || ''}
                   onChange={this.handleChange}
                 />
