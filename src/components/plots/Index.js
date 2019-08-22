@@ -39,7 +39,10 @@ class PlotsIndex extends React.Component {
 
   componentDidMount() {
     axios.get('/api/plots')
-      .then(res => this.setState({ allPlots: res.data, plotsToDisplay: res.data }))
+      .then(res => this.setState(
+        { allPlots: res.data, plotsToDisplay: res.data },
+        () => this.combineFiltersAndSort(this.state.allPlots))
+      )
   }
 
   handleSearchKeyUp(e){
@@ -135,7 +138,6 @@ class PlotsIndex extends React.Component {
 
     const [field, order] = this.state.sortTerm.split('|')
     const sortedPlots = _.orderBy(filteredPlots, [field], [order])
-    console.log('sorted plts', sortedPlots)
     return this.setState({ plotsToDisplay: sortedPlots })
   }
 
