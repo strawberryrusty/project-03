@@ -74,7 +74,7 @@ class PlotsShow extends React.Component {
   render() {
     console.log(this.state.plot)
     return (
-      <section className="section">
+      <section className="section show-background">
         <div className="container">
 
           {!this.state.plot && <h2 className="title is-2">Loading...</h2>}
