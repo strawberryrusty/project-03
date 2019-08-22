@@ -49,12 +49,12 @@ class Edit extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section edit-background">
         <div className="container">
-          <div className="box">
+          <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Plot details</h2>
           </div>
-          <form onSubmit={this.handleSubmit}>
+          <form className="container box tableBorder" onSubmit={this.handleSubmit}>
             <div className="field">
               <label className="label">Plot Name</label>
               <input
@@ -126,22 +126,22 @@ class Edit extends React.Component {
             </div>
             {this.state.errors.plotType && <small className="help is-danger">{this.state.errors.plotType}</small>}
             <hr />
-            <h2 className="subtitle is-4">Using the plot</h2>
+            <h2 className="subtitle is-4 has-text-white">Using the plot</h2>
             <div className="columns">
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
                     name="slotsAvailable"
                     onChange={this.handleCheckbox}
-                  /><p>Are there slots available?</p>
+                  /> Are there slots available?
                 </label>
                 {this.state.errors.slotsAvailable && <small className="help is-danger">{this.state.errors.slotsAvailable}</small>}
               </div>
 
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -152,7 +152,7 @@ class Edit extends React.Component {
               </div>
 
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
@@ -163,7 +163,7 @@ class Edit extends React.Component {
               </div>
 
               <div className="column field">
-                <label className="checkbox">
+                <label className="checkbox has-text-white">
                   <input
                     className="checkbox"
                     type="checkbox"
