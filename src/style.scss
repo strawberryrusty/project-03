@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 }
 
-body {
+html {
 	font-family: 'Roboto', serif;
 	-webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
@@ -28,58 +28,52 @@ $table-row-hover-background-color:yellow;
 $label-color: #FFFFFF;
 $gap: 80px;
 
-.section {
-  background-color: #778899;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .index-background {
-  background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80');
-  background-color: #778899;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-.about-background {
-  background-image: url('https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-  background-color: #778899;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.plants-background {
-  background-image: url('https://images.unsplash.com/photo-1557207562-a3157143784e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
 
-background-color: #778899;
-background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80');
-background-position: 50% 50%;
-background-repeat: no-repeat;
-background-attachment: fixed;
+.about-background {
+  background-image: url('https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.plants-background {
+  background-image: url('https://images.unsplash.com/photo-1557207562-a3157143784e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .add-background {
-  background-image: url('https://images.unsplash.com/photo-1558717738-12f5dde036a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
-  background-color: #778899;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image: url('https://images.unsplash.com/photo-1558717738-12f5dde036a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .register-background {
-  background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
-  background-color: #778899;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .login-background {
-  background-image: url('https://images.unsplash.com/photo-1505692794401-b371fa865622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
-  background-color: #778899;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-image: url('https://images.unsplash.com/photo-1505692794401-b371fa865622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -260,7 +254,7 @@ table thead.plant-head{
 	transform: translateY(6rem);
 	animation: up 500ms linear forwards;
 	z-index: 1;
-	text-shadow: 0px 1px 1px rgba(255,255,255,1);
+	// text-shadow: 0px 1px 1px rgba(255,255,255,1);
 
 	&::before,
 	&::after {
