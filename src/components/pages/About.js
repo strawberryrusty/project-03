@@ -68,6 +68,7 @@ const About = () => {
             <li>• Apples - Akshay Nanavati</li>
           </ul>
           <p>Icons made by smalllikeart from www.flaticon.com</p>
+          <p>Smiling Carrot from www.vegetableislands.com</p>
         </div>
       </div>
 

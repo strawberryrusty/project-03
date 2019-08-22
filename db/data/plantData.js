@@ -39,7 +39,7 @@ module.exports = [{
   destroyedBy: ['Slugs']
 },{
   name: 'Broad Beans',
-  image: 'https://cdn77-s3.lazycatkitchen.com/wp-content/uploads/2017/05/vegan-ravioli-broad-beans-800x1200.jpg',
+  image: 'https://www.balconeuropa.com/en/images/HABAS.jpg',
   germination: 14,
   potSize: 30,
   daysToMaturation: 100,
