@@ -60,6 +60,7 @@ class PlotsIndex extends React.Component {
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
   handleVolunteerBoolean(e) {
+    console.log('volunteer', e.target.checked)
     this.setState({
       volunteerBoolean: e.target.checked
     }, () => this.combineFiltersAndSort(this.state.allPlots))
@@ -108,27 +109,28 @@ class PlotsIndex extends React.Component {
     } else {
       filteredByPlotType = this.state.allPlots.filter(plot => plot.plotType === this.state.plotType)
 
-      console.log(this.state.plotType)
-      console.log(filteredByPlotType)
+      // console.log(this.state.plotType)
+      // console.log(filteredByPlotType)
     }
 
     if(this.state.costInvolvedBoolean) {
       filteredByCostsInvolved = this.state.plotsToDisplay.filter(plot => !plot.costInvolved)
-      console.log(filteredByCostsInvolved)
+      // console.log(filteredByCostsInvolved)
     } else {
       filteredByCostsInvolved = this.state.allPlots
     }
 
     if(this.state.volunteerBoolean) {
       filteredByVolunteer = this.state.allPlots.filter(plot => plot.volunteer)
-      console.log(filteredByVolunteer)
+      console.log(this.state.volunteerBoolean)
     } else {
+      console.log(this.state.volunteerBoolean)
       filteredByVolunteer = this.state.allPlots
     }
 
     if(this.state.bioWasteBoolean) {
       filteredByBioWaste = this.state.allPlots.filter(plot => plot.bioWasteAccepted)
-      console.log(filteredByBioWaste)
+      // console.log(filteredByBioWaste)
     } else {
       filteredByBioWaste = this.state.allPlots
     }
@@ -136,9 +138,18 @@ class PlotsIndex extends React.Component {
     _.indexOf = _.findIndex
     filteredPlots = _.intersection(this.state.allPlots, filteredByVolunteer, filteredByBioWaste, filteredByCostsInvolved, filteredByPlotType, filterBySearchText)
 
+    console.log('volunteer filter', filteredByVolunteer)
+    console.log('biowaste filter', filteredByBioWaste)
+    console.log('cost filter', filteredByCostsInvolved)
+
     const [field, order] = this.state.sortTerm.split('|')
+
     const sortedPlots = _.orderBy(filteredPlots, [field], [order])
+
+    console.log('sortedPlots', sortedPlots)
+
     return this.setState({ plotsToDisplay: sortedPlots })
+
   }
 
   calculateDistance(plot) {
@@ -169,9 +180,9 @@ class PlotsIndex extends React.Component {
       <section className="section index-background">
         <div className="container">
           <div className="box tableBorder">
-            <h2 className="title is-3 has-white-text">Ours Plots</h2>
-            <p>Our community is growing everyday. As the movment builds more and more people are registering there plots on the site.<br />
-            Use this page to find a plot near you. Or register to post your own plot where people. This will allow people to find your plot and either share your space or help you with your garden!</p>
+            <h2 className="title is-3 has-white-text">Our Plots</h2>
+            <p>Our community is growing everyday. As the movement builds, more and more people are registering their plots on the site.<br />
+            Use this page to find a plot near you. Or register a plot where people can grow stuff. This will allow people to find your plot and either share your space or help you with your garden!</p>
           </div>
         </div>
         <br />

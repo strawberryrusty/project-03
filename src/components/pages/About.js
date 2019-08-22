@@ -22,8 +22,8 @@ const About = () => {
               <AboutCard
                 name="Sian Alcock"
                 image={'https://i.imgur.com/wusyZOE.jpg'}
-                githubLink={<a href="https://github.com/sian-alcock"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="https://linkedin.com/in/sianalcock"> <i className="fab fa-linkedin-in"></i></a>}
+                githubLink={<a href="https://github.com/sian-alcock" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
+                link={<a href="https://linkedin.com/in/sianalcock" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
 
               />
             </div>
@@ -32,8 +32,8 @@ const About = () => {
               <AboutCard
                 name="Ejike Chiboka"
                 image={'https://i.imgur.com/owdRqwP.jpg'}
-                githubLink={<a href="https://github.com/agkayster"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="https://www.linkedin.com/in/ejike-chiboka-pmp-1879815a/"> <i className="fab fa-linkedin-in"></i></a>}
+                githubLink={<a href="https://github.com/agkayster" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
+                link={<a href="https://www.linkedin.com/in/ejike-chiboka-pmp-1879815a/" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
@@ -41,8 +41,8 @@ const About = () => {
               <AboutCard
                 name="Freddie Hoy"
                 image={'https://i.imgur.com/mObm02y.jpg'}
-                githubLink={<a href="https://github.com/FreddieHoy"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="https://www.linkedin.com/in/freddie-hoy-192807168/"> <i className="fab fa-linkedin-in"></i></a>}
+                githubLink={<a href="https://github.com/FreddieHoy" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
+                link={<a href="https://www.linkedin.com/in/freddie-hoy-192807168/" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
@@ -50,8 +50,8 @@ const About = () => {
               <AboutCard
                 name="Prash Mohan"
                 image={'https://i.imgur.com/vlFtdWv.jpg'}
-                githubLink={<a href="https://github.com/strawberryrusty"> <i className="fab fa-github-square"></i></a>}
-                link={<a href="https://www.linkedin.com/in/prash-mohan"> <i className="fab fa-linkedin-in"></i></a>}
+                githubLink={<a href="https://github.com/strawberryrusty" target="_blank" rel="noopener noreferrer"> <i className="fab fa-github-square"></i></a>}
+                link={<a href="https://www.linkedin.com/in/prash-mohan" target="_blank" rel="noopener noreferrer"> <i className="fab fa-linkedin-in"></i></a>}
               />
             </div>
 
