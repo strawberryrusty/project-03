@@ -18,6 +18,7 @@ import Register from './components/auth/Register'
 
 import Login from './components/auth/Login'
 import About from './components/pages/About'
+import Footer from './components/pages/Footer'
 
 
 // import 'react-toastify/dist/ReactToastify.css'
@@ -31,20 +32,23 @@ class App extends React.Component {
 
   render(){
     return(
-      <HashRouter>
-        <Navbar />
-        <Switch>
-          <SecureRoute path="/plots/:id/edit" component={PlotsEdit} />
-          <SecureRoute path="/plots/new" component={PlotsNew} />
-          <Route path="/plots/:id" component={PlotsShow} />
-          <Route path="/plots" component={PlotsIndex} />
-          <Route path="/plants" component={PlantsIndex} />
-          <Route path="/register" component={Register} />
-          <Route path="/login" component={Login} />
-          <Route path="/about" component={About} />
-          <Route path="/" component={Home} />
-        </Switch>
-      </HashRouter>
+      <div>
+        <HashRouter>
+          <Navbar />
+          <Switch>
+            <SecureRoute path="/plots/:id/edit" component={PlotsEdit} />
+            <SecureRoute path="/plots/new" component={PlotsNew} />
+            <Route path="/plots/:id" component={PlotsShow} />
+            <Route path="/plots" component={PlotsIndex} />
+            <Route path="/plants" component={PlantsIndex} />
+            <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
+            <Route path="/about" component={About} />
+            <Route path="/" component={Home} />
+          </Switch>
+        </HashRouter>
+        <Footer />
+      </div>
     )
   }
 }

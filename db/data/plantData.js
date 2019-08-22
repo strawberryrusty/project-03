@@ -47,7 +47,7 @@ module.exports = [{
   sowUnderGlass: false,
   sowUnderDirectSunlight: true,
   propagator: true,
-  seedPeriod: ['Feb, March, April', 'Oct', 'Nov'],
+  seedPeriod: ['February, March, April', 'October', 'November'],
   harvestPeriod: ['July, August, September', 'October'],
   destroyedBy: ['Flies', 'Mice']
 },{
@@ -61,6 +61,45 @@ module.exports = [{
   sowUnderDirectSunlight: true,
   propagator: false,
   seedPeriod: ['March', 'April'],
-  harvestPeriod: ['Jan, August, September', 'October','November', 'December' ],
+  harvestPeriod: ['January', 'August', 'September', 'October','November', 'December' ],
   destroyedBy: ['Slugs']
+},{
+  name: 'Cabbages',
+  image: 'https://cdn.pixabay.com/photo/2018/10/03/21/57/cabbage-3722498__340.jpg',
+  germination: 10,
+  potSize: 0.5,
+  daysToMaturation: 95,
+  spacing: 0,
+  sowUnderGlass: false,
+  sowUnderDirectSunlight: true,
+  propagator: false,
+  seedPeriod: ['March', 'April'],
+  harvestPeriod: ['January', 'August', 'September', 'October','November', 'December' ],
+  destroyedBy: ['Slugs','Caterpillars']
+},{
+  name: 'Carrots',
+  image: 'https://www.tasteofhome.com/wp-content/uploads/2019/01/carrots-shutterstock_789443206-800x450.jpg',
+  germination: 17,
+  potSize: 0.5,
+  daysToMaturation: 80,
+  spacing: 0,
+  sowUnderGlass: false,
+  sowUnderDirectSunlight: true,
+  propagator: false,
+  seedPeriod: ['April', 'May', 'June', 'July'],
+  harvestPeriod: ['July', 'August', 'September', 'October'],
+  destroyedBy: ['Flies']
+},{
+  name: 'Courgettes',
+  image: 'https://lel.s3.amazonaws.com/assets/images/recettes/courgettes.jpg',
+  germination: 8,
+  potSize: 50,
+  daysToMaturation: 60,
+  spacing: 0,
+  sowUnderGlass: true,
+  sowUnderDirectSunlight: true,
+  propagator: true,
+  seedPeriod: ['April', 'May'],
+  harvestPeriod: ['July', 'August', 'September', 'October'],
+  destroyedBy: ['']
 }]
