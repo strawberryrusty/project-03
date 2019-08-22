@@ -284,6 +284,10 @@ p.copyright{
   text-align: center;
 }
 
+p.plantprop{
+  text-align: center;
+}
+
 #menu-footer-menu{
   text-align: center;
   color: white;
@@ -308,6 +312,13 @@ div.footer-bottom{
 svg.path{
   margin-top: 5px;
 }
+
+img.plantimage {
+    height: 60px;
+    max-width: 120%;
+    padding:0;
+}
+
 
 @keyframes up {
 

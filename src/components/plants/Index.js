@@ -23,6 +23,7 @@ class PlantsIndex extends React.Component {
   render() {
     // if(!this.state.plants) return null
     console.log(this.state.plants)
+
     return (
       <section className="section plant-section plants-background">
         <div className="container scroll-x tableBorder">
@@ -58,16 +59,16 @@ class PlantsIndex extends React.Component {
             <tbody>
               {this.state.plants.map(plant =>
                 <tr key={plant._id}>
-                  <td><p>{plant.name}</p></td>
-                  <td><img src={plant.image} alt={plant.name} height="100" width="200"/></td>
-                  <td><p>{plant.destroyedBy.map(pest => pest + ' ')}</p></td>
-                  <td><p>{plant.daysToMaturation}</p></td>
-                  <td><p>{plant.germination}</p></td>
-                  <td><p>{plant.spacing}</p></td>
-                  <td><p>{plant.potSize}</p></td>
-                  <td><p>{plant.sowUnderGlass ? '✅' : '❌'}</p></td>
-                  <td><p>{plant.sowUnderDirectSunlight ? '☀️' : '❌'}</p></td>
-                  <td><p>{plant.propagator ? '✅' : '❌'}</p></td>
+                  <td><p className="plantprop">{plant.name}</p></td>
+                  <td><img src={plant.image} alt={plant.name} className="plantimage"/></td>
+                  <td><p className="plantprop">{plant.destroyedBy.map((pest, i) => i !== plant.destroyedBy.length - 1 ? pest + ', ' : pest)}</p></td>
+                  <td><p className="plantprop">{plant.daysToMaturation}</p></td>
+                  <td><p className="plantprop">{plant.germination}</p></td>
+                  <td><p className="plantprop">{plant.spacing}</p></td>
+                  <td><p className="plantprop">{plant.potSize}</p></td>
+                  <td><p className="plantprop">{plant.sowUnderGlass ? '✅' : '❌'}</p></td>
+                  <td><p className="plantprop">{plant.sowUnderDirectSunlight ? '☀️' : '❌'}</p></td>
+                  <td><p className="plantprop">{plant.propagator ? '✅' : '❌'}</p></td>
                   {months.map(month =>
                     <td key={month}>
                       {<div className={`${plant.seedPeriod.includes(month) ? 'is-seed-period' : ''}`} />}
