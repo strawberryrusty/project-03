@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Walter+Turncoat&display=swap');
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', serif;
+	-webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     min-width: 100vw;
+     min-height: 100vh;
+}
+
 $family-primary: 'Walter Turncoat', cursive;
 $family-secondary: 'Roboto', sans-serif;
 $title-color: #FFFFFF;
@@ -19,15 +33,20 @@ $gap: 80px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  min-width: 100vh;
-  min-height: 100vh;
 }
 .index-background {
   background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80');
+  background-color: #778899;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .about-background {
   background-image: url('https://images.unsplash.com/photo-1518977822534-7049a61ee0c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-  background-size: 100%;
+  background-color: #778899;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .plants-background {
   background-image: url('https://images.unsplash.com/photo-1557207562-a3157143784e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
@@ -37,17 +56,30 @@ background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e
 background-position: 50% 50%;
 background-repeat: no-repeat;
 background-attachment: fixed;
-// min-width: 100vh;
-// min-height: 100vh;
 }
+
 .add-background {
   background-image: url('https://images.unsplash.com/photo-1558717738-12f5dde036a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+  background-color: #778899;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 .register-background {
   background-image: url('https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+  background-color: #778899;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 .login-background {
   background-image: url('https://images.unsplash.com/photo-1505692794401-b371fa865622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+  background-color: #778899;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 
@@ -210,18 +242,6 @@ table thead.plant-head{
 
 .tableoption {
   width: 40px;
-}
-
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Roboto', serif;
-	-webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-body {
