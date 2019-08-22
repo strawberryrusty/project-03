@@ -366,6 +366,16 @@ div.box.tableKey{
 }
 
 
+
+canvas.mapboxgl-canvas {
+  border: 5px solid white;
+  border-radius: 5px;
+}
+
+table.table {
+  border-radius: 5px;
+}
+
 @keyframes up {
 
 	100% {

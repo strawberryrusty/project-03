@@ -121,7 +121,7 @@ class PlotsShow extends React.Component {
                       </tr>
                       <tr>
                         <td><p>Bio-waste accepted?</p></td>
-                        <td><p>{this.state.bioWasteAccepted ? '✅' : '❌'}</p></td>
+                        <td><p>{this.state.plot.bioWasteAccepted ? '✅' : '❌'}</p></td>
                       </tr>
                       <tr>
                         <td><p>Costs involved?</p></td>
@@ -185,7 +185,7 @@ class PlotsShow extends React.Component {
                 <Marker
                   coordinates={[this.state.plot.longitude, this.state.plot.latitude]}
                 >
-                  <img src={'../../assets/Carrot.png'}
+                  <img src={'../../assets/CarrotWave.gif'}
                     height='50'
                     width='50'
                   />
