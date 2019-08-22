@@ -11,10 +11,28 @@ const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) 
         <table className="table">
           <tbody>
             <tr>
+
               <td><span className="commentUser">{user.username}</span>
                 {' '}
                 <small>{(new Date(createdAt)).toLocaleDateString()}</small>
               </td>
+
+              <td>
+                {Auth.isAuthenticated() && <div className="deleteContainer">
+                  <button className="delete" id={_id} onClick= {handleCommentDelete}></button>
+                </div>}
+              </td>
+
+            </tr>
+
+            <tr>
+
+              <td colSpan="2">{content}
+              </td>
+
+            </tr>
+
+            <tr>
 
               <td>
                 <div>
@@ -30,16 +48,6 @@ const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) 
                 </div>
               </td>
 
-              <td>
-                {Auth.isAuthenticated() && <div className="deleteContainer">
-                  <button className="delete" id={_id} onClick= {handleCommentDelete}></button>
-                </div>}
-              </td>
-
-            </tr>
-            <tr>
-              <td colSpan="3">{content}
-              </td>
             </tr>
           </tbody>
         </table>
