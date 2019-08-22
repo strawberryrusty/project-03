@@ -4,7 +4,7 @@ import AboutCard from '../common/AboutCard'
 
 const About = () => {
   return(
-    <section className="section">
+    <section className="section about-background">
       <div className="container">
         <div className="box tableBorder">
 
@@ -59,7 +59,14 @@ const About = () => {
         </div>
         <div className="box tableBorder">
           <h2>Acknowledgements</h2>
-          <p>Background image - organic carrots - Harshal S. Hirve</p>
+          <hr />
+          <ul>Background images - Unsplash artists:
+            <li>• Organic carrots - Harshal S. Hirve</li>
+            <li>• Plant box - Markus Spiske</li>
+            <li>• Tomatos & Potatos - Lars Blankers</li>
+            <li>• Market Greens - Lou Liebau</li>
+          </ul>
+          <p>Icons made by smalllikeart from www.flaticon.com</p>
         </div>
       </div>
 

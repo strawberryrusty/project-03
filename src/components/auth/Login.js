@@ -39,7 +39,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section login-background">
         <div className="container">
           <form onSubmit={this.handleSubmit}>
             <div className="box tableBorder">

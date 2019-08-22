@@ -35,7 +35,7 @@ class Register extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section register-background">
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Register</h2>

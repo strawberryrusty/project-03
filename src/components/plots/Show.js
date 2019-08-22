@@ -185,7 +185,7 @@ class PlotsShow extends React.Component {
                 <Marker
                   coordinates={[this.state.plot.longitude, this.state.plot.latitude]}
                 >
-                  <img src={'https://image.flaticon.com/icons/svg/135/135687.svg'}
+                  <img src={'../../assets/Carrot.png'}
                     height='50'
                     width='50'
                   />

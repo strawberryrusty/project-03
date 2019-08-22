@@ -66,7 +66,7 @@ class PlotsNew extends React.Component {
 
   render() {
     return (
-      <section className="section">
+      <section className="section add-background">
         <div className="container">
           <div className="box tableBorder">
             <h2 className="title is-3 has-white-text">Add your plot</h2>
