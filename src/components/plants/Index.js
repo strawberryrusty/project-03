@@ -39,18 +39,18 @@ class PlantsIndex extends React.Component {
                 <th className="tableoption" title="Sow under Glass">Sow under Glass</th>
                 <th className="tableoption" title="Sow under direct sunlight">Sow under direct sunlight</th>
                 <th className="tableoption" title="Propagator">Propagator</th>
-                <th className="tableoption">Jan</th>
-                <th className="tableoption">Feb</th>
-                <th className="tableoption">Mar</th>
-                <th className="tableoption">Apr</th>
+                <th className="tableoption">January</th>
+                <th className="tableoption">February</th>
+                <th className="tableoption">March</th>
+                <th className="tableoption">April</th>
                 <th className="tableoption">May</th>
-                <th className="tableoption">Jun</th>
-                <th className="tableoption">Jul</th>
-                <th className="tableoption">Aug</th>
-                <th className="tableoption">Sep</th>
-                <th className="tableoption">Oct</th>
-                <th className="tableoption">Nov</th>
-                <th className="tableoption">Dec</th>
+                <th className="tableoption">June</th>
+                <th className="tableoption">July</th>
+                <th className="tableoption">August</th>
+                <th className="tableoption">September</th>
+                <th className="tableoption">October</th>
+                <th className="tableoption">November</th>
+                <th className="tableoption">December</th>
               </tr>
             </thead>
 
