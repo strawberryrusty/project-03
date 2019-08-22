@@ -6,16 +6,17 @@ const About = () => {
   return(
     <section className="section">
       <div className="container">
-        <div className="box">
+        <div className="box tableBorder">
 
           <h2>About the Site</h2>
           <p>This site has been developed by Sian Alcock, Ejike Chiboka, Prash Mohan and Freddie Hoy as part of a learning module in General Assembly&lsquo;s Software Engineering Immersive Course using JavaScript and React. </p>
 
         </div>
 
-        <div className="box">
+        <div className="box tableBorder">
 
           <h2>About Developers</h2>
+          <hr />
           <div className="columns is-multiline">
             <div className="column is-one-quarter-desktop is-offset-one-half">
               <AboutCard
@@ -56,7 +57,7 @@ const About = () => {
 
           </div>
         </div>
-        <div className="box">
+        <div className="box tableBorder">
           <h2>Acknowledgements</h2>
           <p>Background image - organic carrots - Harshal S. Hirve</p>
         </div>

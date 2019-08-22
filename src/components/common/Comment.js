@@ -43,9 +43,6 @@ const Comment = ({ user, createdAt, content, _id, handleCommentDelete, rating}) 
             </tr>
           </tbody>
         </table>
-
-        <hr />
-
       </div>
     </div>
 

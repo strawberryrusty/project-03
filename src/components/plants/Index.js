@@ -25,7 +25,7 @@ class PlantsIndex extends React.Component {
     console.log(this.state.plants)
     return (
       <section className="section plant-section">
-        <div className="container scroll-x">
+        <div className="container scroll-x tableBorder">
           <table className="table plant-table is-bordered is-hoverable is-fullwidth">
             <thead className="plant-head">
               <tr>
