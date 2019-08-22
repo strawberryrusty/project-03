@@ -47,6 +47,25 @@ $gap: 80px;
 .plants-background {
   background-image: url('https://images.unsplash.com/photo-1557207562-a3157143784e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
 }
+
+.subtitle.key {
+  color: $table-color;
+}
+
+.orange{
+  background-color: orange;
+  color: white;
+}
+
+.green{
+  background-color: green;
+  color: white;
+}
+
+span.seed{
+  width: 2000px;
+  border: 10px solid green;
+}
 .add-background {
   background-image: url('https://images.unsplash.com/photo-1558717738-12f5dde036a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
 }
@@ -166,6 +185,8 @@ label {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
 
+
+
 .herotext {
   margin: auto auto;
   align-content: center;
@@ -187,11 +208,6 @@ label {
 }
 
 
-.plant-section {
-  padding: 20px;
-  margin-right: 0px;
-  color: #FFFFFF;
-}
 
 .plant-container {
   padding: 20px;
@@ -304,6 +320,15 @@ p.copyright{
 li#menu-item{
   display: inline;
   margin:0 10px 10px;
+}
+
+li.tabs{
+  display: inline;
+  margin: 100px;
+}
+
+h2.key{
+  text-align: center;
 }
 div.footer-bottom{
   background-color: #2F4F4F;
