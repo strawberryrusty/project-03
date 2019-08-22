@@ -25,7 +25,7 @@ class PlotsMap extends React.Component {
       center: [-0.1108, 51.5014],
       plots: this.props.plotsToDisplay,
       popPlot: null,
-      zoom: [12, 12]
+      zoom: [10, 10]
     }
 
     this.markerClick = this.markerClick.bind(this)
