@@ -170,6 +170,28 @@ label {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
 
+//Media query to set background-attachment to scroll on mobiles
+@media only screen and (max-width: 600px) {
+  .hero-body {
+    background-position: center;
+    // background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+  }
+  .hero-sub {
+    background-position: center;
+    // background-size: cover;
+    background-repeat: repeat;
+    background-attachment: scroll;
+  }
+  .section {
+    background-color: red;
+    // background-position: 50% 50%;
+    // background-repeat: repeat;
+    // background-attachment: scroll;
+    // background-size: cover;
+  }
+  }
 
 
 .herotext {
