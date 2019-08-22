@@ -114,7 +114,7 @@ class PlotsIndex extends React.Component {
     }
 
     if(this.state.costInvolvedBoolean) {
-      filteredByCostsInvolved = this.state.plotsToDisplay.filter(plot => !plot.costInvolved)
+      filteredByCostsInvolved = this.state.allPlots.filter(plot => !plot.costInvolved)
       // console.log(filteredByCostsInvolved)
     } else {
       filteredByCostsInvolved = this.state.allPlots
@@ -221,7 +221,7 @@ class PlotsIndex extends React.Component {
                 </div>
                 <div className="field">
                   <label className="checkbox has-text-white" >
-                    <input type="checkbox"  className="checkboxRadio" value="Volunteer" onClick={this.handleVolunteerBoolean} />
+                    <input type="checkbox"  className="checkboxRadio" value="volunteer" onClick={this.handleVolunteerBoolean} />
                     Volunteer opportunities
                   </label>
                 </div>
