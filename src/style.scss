@@ -228,6 +228,7 @@ span.seed{
 
 .tableBorder {
   border: 1px solid black;
+  border-radius: 15px;
 }
 table.table.plant-table{
   background-color: white;
@@ -248,7 +249,8 @@ table thead.plant-head{
 }
 
 .tableoption {
-  width: 40px;
+  width: 200px;
+  border-radius: 5px;
 }
 
 .afterlogin{
@@ -356,9 +358,10 @@ svg.path{
 }
 
 img.plantimage {
-    height: 60px;
-    max-width: 120%;
+    height: auto;
+    max-width: 200px;
     padding:0;
+    border-radius: 5px;
 }
 
 div.box.tableKey{

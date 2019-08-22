@@ -30,13 +30,13 @@ class PlantsIndex extends React.Component {
           <div className="columns">
             <div className="column is-one-half">
               <div className="box tableBorder">
-                <h1>Plant Index:</h1>
+                <h1 className=" title is-3">Plant Index:</h1>
                 <p>This is a vegetable growing cheatsheet that you can use to grow your plants</p>
               </div>
             </div>
             <div className="column is-one-half">
               <div className="box tableKey">
-                <h2 className="subtitle key">Key</h2>
+                <h2 className="subtitle key title is-3">Key</h2>
                 <div className="key columns">
                   <div className="green column">Harvest Period</div>
                   <div className="orange column">Seed Period</div>
