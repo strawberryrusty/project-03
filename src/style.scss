@@ -24,6 +24,25 @@ min-width: 100vh;
 min-height: 100vh;
 }
 
+.subtitle.key {
+  color: $table-color;
+}
+
+.orange{
+  background-color: orange;
+  color: white;
+}
+
+.green{
+  background-color: green;
+  color: white;
+}
+
+span.seed{
+  width: 2000px;
+  border: 10px solid green;
+}
+
 .is-seed-period {
   background-color: green;
   width: 60px;
@@ -127,6 +146,8 @@ label {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
 
+
+
 .herotext {
   margin: auto auto;
   align-content: center;
@@ -148,11 +169,6 @@ label {
 }
 
 
-.plant-section {
-  padding: 20px;
-  margin-right: 0px;
-  color: #FFFFFF;
-}
 
 .plant-container {
   padding: 20px;
@@ -265,6 +281,15 @@ p.copyright{
 li#menu-item{
   display: inline;
   margin:0 10px 10px;
+}
+
+li.tabs{
+  display: inline;
+  margin: 100px;
+}
+
+h2.key{
+  text-align: center;
 }
 div.footer-bottom{
   background-color: #2F4F4F;
