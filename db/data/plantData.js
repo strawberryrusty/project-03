@@ -101,5 +101,5 @@ module.exports = [{
   propagator: true,
   seedPeriod: ['April', 'May'],
   harvestPeriod: ['July', 'August', 'September', 'October'],
-  destroyedBy: ['']
+  destroyedBy: ['None']
 }]

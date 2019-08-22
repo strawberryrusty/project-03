@@ -63,8 +63,9 @@ const About = () => {
           <ul>Background images - Unsplash artists:
             <li>• Organic carrots - Harshal S. Hirve</li>
             <li>• Plant box - Markus Spiske</li>
-            <li>• Tomatos & Potatos - Lars Blankers</li>
+            <li>• Tomatos, Onions & Potatos - Lars Blankers</li>
             <li>• Market Greens - Lou Liebau</li>
+            <li>• Apples - Akshay Nanavati</li>
           </ul>
           <p>Icons made by smalllikeart from www.flaticon.com</p>
         </div>

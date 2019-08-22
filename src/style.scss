@@ -19,8 +19,8 @@ $gap: 80px;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  // min-width: 100vh;
-  // min-height: 100vh;
+  min-width: 100vh;
+  min-height: 100vh;
 }
 .index-background {
   background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80');
@@ -31,14 +31,25 @@ $gap: 80px;
 }
 .plants-background {
   background-image: url('https://images.unsplash.com/photo-1557207562-a3157143784e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+}
 
-background-color: #778899;
-background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80');
-background-position: 50% 50%;
-background-repeat: no-repeat;
-background-attachment: fixed;
-// min-width: 100vh;
-// min-height: 100vh;
+.subtitle.key {
+  color: $table-color;
+}
+
+.orange{
+  background-color: orange;
+  color: white;
+}
+
+.green{
+  background-color: green;
+  color: white;
+}
+
+span.seed{
+  width: 2000px;
+  border: 10px solid green;
 }
 .add-background {
   background-image: url('https://images.unsplash.com/photo-1558717738-12f5dde036a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
@@ -49,7 +60,12 @@ background-attachment: fixed;
 .login-background {
   background-image: url('https://images.unsplash.com/photo-1505692794401-b371fa865622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
 }
-
+.show-background {
+  background-image: url('https://images.unsplash.com/photo-1518977956812-cd3dbadaaf31?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+}
+.edit-background {
+  background-image: url('https://images.unsplash.com/photo-1549301014-95d119f5c960?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+}
 
 .is-seed-period {
   background-color: green;
@@ -154,6 +170,8 @@ label {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
 
+
+
 .herotext {
   margin: auto auto;
   align-content: center;
@@ -175,11 +193,6 @@ label {
 }
 
 
-.plant-section {
-  padding: 20px;
-  margin-right: 0px;
-  color: #FFFFFF;
-}
 
 .plant-container {
   padding: 20px;
@@ -296,6 +309,15 @@ p.plantprop{
 li#menu-item{
   display: inline;
   margin:0 10px 10px;
+}
+
+li.tabs{
+  display: inline;
+  margin: 100px;
+}
+
+h2.key{
+  text-align: center;
 }
 div.footer-bottom{
   background-color: #2F4F4F;
