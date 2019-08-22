@@ -6,12 +6,12 @@
 	box-sizing: border-box;
 }
 
-html {
+body {
 	font-family: 'Roboto', serif;
 	-webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
-     min-width: 100vw;
-     min-height: 100vh;
+     // min-width: 100vw;
+     // min-height: 100vh;
 }
 
 $family-primary: 'Walter Turncoat', cursive;
@@ -241,17 +241,6 @@ table thead.plant-head{
   width: 40px;
 }
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Roboto', serif;
-	-webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-}
 
 .hero-body {
 	display: flex;
