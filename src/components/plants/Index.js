@@ -25,7 +25,7 @@ class PlantsIndex extends React.Component {
     console.log(this.state.plants)
 
     return (
-      <section className="section">
+      <section className="section plants-background">
         <div className="container">
           <div className="columns">
             <div className="column is-one-half">
