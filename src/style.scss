@@ -172,7 +172,7 @@ label {
 
 //Media query to handle background images on mobile
 // Background-attachment = fixed not supported so no section images on mobile
-//hero images on Home page set to scroll
+//hero images on Home page set to fixed height and scroll
 @media only screen and (max-width: 600px) {
   .hero-body {
     background-position: center;
@@ -194,9 +194,7 @@ label {
 
   }
   .index-background, .about-background, .plants-background, .add-background,  .register-background,  .login-background,   .show-background,  .edit-background  {
-    // background-image:linear-gradient(#e83635, #e83635);
-    height: 100vh;
-    background-attachment: local;
+    background-image:linear-gradient(#e83635, #e83635);
   }
   }
 
