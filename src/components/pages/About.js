@@ -9,7 +9,7 @@ const About = () => {
         <div className="box tableBorder">
 
           <h2 className="title is-3 has-white-text">About the Site</h2>
-          <p>This site has been developed by Sian Alcock, Ejike Chiboka, Prash Mohan and Freddie Hoy as part of a learning module in General Assembly&lsquo;s Software Engineering Immersive Course using JavaScript and React. </p>
+          <p>This site has been developed by Sian Alcock, Ejike Chiboka, Freddie Hoy and Prash Mohan as part of a learning module in General Assembly&lsquo;s Software Engineering Immersive Course using JavaScript and React. </p>
 
         </div>
 
