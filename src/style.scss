@@ -27,7 +27,7 @@ body {
 }
 
 // Controls background images in each section
-.section {
+.section:before {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
