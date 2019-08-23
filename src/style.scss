@@ -142,29 +142,39 @@ label {
 }
 
 .hero-body {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 400px;
   .title, .subtitle {
     color: white;
     text-shadow: 0 2px 3px #000;
     text-align: center;
   }
 }
+
 .hero-sub {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 500px;
   .title, .subtitle {
     color: white;
     text-shadow: 0 2px 3px #000;
     text-align: center;
   }
 }
+
+
+.hero-body:before, .hero-sub:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
 .image-one {
   background-image: url(https://images.unsplash.com/photo-1510844355160-2fb07bf9af75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
 }
@@ -181,18 +191,16 @@ label {
 //Media query to handle background images for home page on mobile
 // Background-attachment = fixed not supported on mobile
 // hero images on Home page set to fixed height and scroll
-@media only screen and (max-width: 600px) {
-  .hero-body {
-    background-repeat: repeat;
-    background-attachment: scroll;
-    height: 200px;
-  }
-  .hero-sub {
-    background-repeat: repeat;
-    background-attachment: scroll;
-    height: 250px;
-  }
-}
+// @media only screen and (max-width: 600px) {
+//   .hero-body {
+//     background-repeat: repeat;
+//     background-attachment: scroll;
+//   }
+//   .hero-sub {
+//     background-repeat: repeat;
+//     background-attachment: scroll;
+//   }
+// }
 
 
 .herotext {
