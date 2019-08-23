@@ -24,11 +24,9 @@ body {
 	font-family: 'Roboto', serif;
 	-webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
-     // min-width: 100vw;
-     // min-height: 100vh;
 }
 
-
+// Controls background images in each section because Background-attachment - fixed not supported for mobiles
 .section:before {
   content: "";
   display: block;
@@ -42,12 +40,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  //   background-color: #778899;
-//   background-attachment: fixed;
-//   background-size: cover;
 }
 
 .index-background {
@@ -184,33 +178,21 @@ label {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
 
-//Media query to handle background images on mobile
-// Background-attachment = fixed not supported so no section images on mobile
-//hero images on Home page set to fixed height and scroll
-// @media only screen and (max-width: 600px) {
-//   .hero-body {
-//     background-position: center;
-//     background-repeat: repeat;
-//     background-attachment: scroll;
-//     height: 200px;
-//   }
-//   .hero-sub {
-//     background-position: center;
-//     background-repeat: repeat;
-//     background-attachment: scroll;
-//     height: 250px;
-//   }
-//   .section {
-//
-//     background-position: center;
-//     background-repeat: repeat;
-//     background-attachment: scroll;
-//
-//   }
-//   .index-background, .about-background, .plants-background, .add-background,  .register-background,  .login-background,   .show-background,  .edit-background  {
-//     background-image:linear-gradient(#e83635, #e83635);
-//   }
-//   }
+//Media query to handle background images for home page on mobile
+// Background-attachment = fixed not supported on mobile
+// hero images on Home page set to fixed height and scroll
+@media only screen and (max-width: 600px) {
+  .hero-body {
+    background-repeat: repeat;
+    background-attachment: scroll;
+    height: 200px;
+  }
+  .hero-sub {
+    background-repeat: repeat;
+    background-attachment: scroll;
+    height: 250px;
+  }
+}
 
 
 .herotext {
