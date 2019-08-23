@@ -1,19 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Walter+Turncoat&display=swap');
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
-
-body {
-	font-family: 'Roboto', serif;
-	-webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
-     // min-width: 100vw;
-     // min-height: 100vh;
-}
-
 $family-primary: 'Walter Turncoat', cursive;
 $family-secondary: 'Roboto', sans-serif;
 $title-color: #FFFFFF;
@@ -28,13 +14,50 @@ $table-row-hover-background-color:yellow;
 $label-color: #FFFFFF;
 $gap: 80px;
 
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', serif;
+	-webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+}
+
+// Controls background images in each section
 .section {
-  background-color: #778899;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
 }
+
+// Media query to handle background images for intersection
+@media only screen and (max-width: 600px) {
+  .section:before {
+      content: "";
+      display: block;
+      position: fixed;
+      left: 0;
+      top: 0;
+      max-width: 100%;
+      // height: 100%;
+      z-index: -10;
+      background-repeat: repeat;
+      background-position: center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-attachment: scroll;
+  }
+}
+
 
 .index-background {
   background-image: url('https://images.unsplash.com/photo-1447175008436-054170c2e979?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2061&q=80');
@@ -134,29 +157,41 @@ label {
 }
 
 .hero-body {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 400px;
   .title, .subtitle {
     color: white;
     text-shadow: 0 2px 3px #000;
     text-align: center;
   }
 }
+
 .hero-sub {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 500px;
   .title, .subtitle {
     color: white;
     text-shadow: 0 2px 3px #000;
     text-align: center;
   }
 }
+
+
+.hero-body, .hero-sub {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+// Media query to handle background images for intersection
+@media only screen and (max-width: 600px) {
+  .hero-body, .hero-sub {
+    // width: 100%;
+    width: 100vw;
+    background-attachment: local;
+  }
+}
+
 .image-one {
   background-image: url(https://images.unsplash.com/photo-1510844355160-2fb07bf9af75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);
 }
@@ -169,8 +204,6 @@ label {
 .image-four {
   background-image: url(https://images.unsplash.com/photo-1519897831810-a9a01aceccd1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80);
 }
-
-
 
 .herotext {
   margin: auto auto;

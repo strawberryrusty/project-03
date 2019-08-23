@@ -19,6 +19,7 @@ class PlotsIndex extends React.Component {
       volunteerBoolean: false,
       bioWasteBoolean: false,
       costInvolvedBoolean: false,
+      slotsAvailableBoolean: false,
       plotType: 'All',
       userInfo: {},
       indexTab: true,
@@ -31,6 +32,7 @@ class PlotsIndex extends React.Component {
     this.handleVolunteerBoolean = this.handleVolunteerBoolean.bind(this)
     this.handleBioWasteBoolean = this.handleBioWasteBoolean.bind(this)
     this.handleCostInvolvedBoolean = this.handleCostInvolvedBoolean.bind(this)
+    this.handleSlotsAvailableBoolean = this.handleSlotsAvailableBoolean.bind(this)
     this.combineFiltersAndSort = this.combineFiltersAndSort.bind(this)
     this.calculateDistance = this.calculateDistance.bind(this)
     this.handleIndexTab = this.handleIndexTab.bind(this)
@@ -57,6 +59,11 @@ class PlotsIndex extends React.Component {
   handleCostInvolvedBoolean(e) {
     this.setState({
       costInvolvedBoolean: e.target.checked
+    }, () => this.combineFiltersAndSort(this.state.allPlots))
+  }
+  handleSlotsAvailableBoolean(e) {
+    this.setState({
+      slotsAvailableBoolean: e.target.checked
     }, () => this.combineFiltersAndSort(this.state.allPlots))
   }
   handleVolunteerBoolean(e) {
@@ -94,6 +101,7 @@ class PlotsIndex extends React.Component {
     let filteredByCostsInvolved
     let filteredByPlotType
     let filterBySearchText
+    let filteredBySlotsAvailable
 
     // Create filter based on Regular expression of the search term
     const re= new RegExp(this.state.searchTerm, 'i')
@@ -120,6 +128,14 @@ class PlotsIndex extends React.Component {
       filteredByCostsInvolved = this.state.allPlots
     }
 
+    if(this.state.slotsAvailableBoolean) {
+      filteredBySlotsAvailable = this.state.allPlots.filter(plot => plot.slotsAvailable)
+      console.log(this.state.slotsAvailable)
+    } else {
+      console.log(this.state.slotsAvailableBoolean)
+      filteredBySlotsAvailable = this.state.allPlots
+    }
+
     if(this.state.volunteerBoolean) {
       filteredByVolunteer = this.state.allPlots.filter(plot => plot.volunteer)
       console.log(this.state.volunteerBoolean)
@@ -136,7 +152,7 @@ class PlotsIndex extends React.Component {
     }
 
     _.indexOf = _.findIndex
-    filteredPlots = _.intersection(this.state.allPlots, filteredByVolunteer, filteredByBioWaste, filteredByCostsInvolved, filteredByPlotType, filterBySearchText)
+    filteredPlots = _.intersection(this.state.allPlots, filteredByVolunteer, filteredByBioWaste, filteredByCostsInvolved, filteredByPlotType, filterBySearchText, filteredBySlotsAvailable)
 
     console.log('volunteer filter', filteredByVolunteer)
     console.log('biowaste filter', filteredByBioWaste)
@@ -213,6 +229,12 @@ class PlotsIndex extends React.Component {
             </div>
             <div className="columns">
               <div className="column is-half">
+                <div className="field">
+                  <label className="checkbox has-text-white" >
+                    <input type="checkbox"  className="checkboxRadio" value="slotsAvailable" onClick={this.handleSlotsAvailableBoolean} />
+                    Slots available
+                  </label>
+                </div>
                 <div className="field">
                   <label className="checkbox has-text-white" >
                     <input type="checkbox"  className="checkboxRadio" value="costInvolved" onClick={this.handleCostInvolvedBoolean} />
