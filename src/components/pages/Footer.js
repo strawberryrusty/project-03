@@ -7,6 +7,7 @@ class Footer extends React.Component {
         <div className="footer-bottom">
           <div className="row">
             <div className="span">
+              <br />
               <div id="footer-social">
                 <a target="_blank" rel="noopener noreferrer" href="https://www.losttheplot.com" className="fab fa-3x fa-twitter-square"></a>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.losttheplot.com" className="fab fa-3x fa-facebook-square"></a>
@@ -24,6 +25,7 @@ class Footer extends React.Component {
                   <p className="copyright"> This website uses cookies. By using this website, you agree we can set and use cookies </p>
                 </div>
               </ul>
+              <br />
             </div>
           </div>
         </div>
