@@ -189,7 +189,7 @@ class PlotsShow extends React.Component {
                 <Marker
                   coordinates={[this.state.plot.longitude, this.state.plot.latitude]}
                 >
-                  <img src={'../../assets/CarrotWave.gif'}
+                  <img src={'../../assets/Carrot.png'}
                     height='50'
                     width='50'
                   />
