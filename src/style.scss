@@ -39,6 +39,16 @@ body {
 
 // Media query to handle background images for intersection
 @media only screen and (max-width: 600px) {
+  .section {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+  }
+
   .section:before {
       content: "";
       display: block;
