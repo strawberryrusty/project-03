@@ -56,16 +56,9 @@ Next, we created a Trello board and documented a list of tasks.  Each task was c
 The backend tests were built first so that we could employ test-driven development to build the backend.  We also made the decision to break up the backend tasks into chunks and to code in pairs.  After each pair completed their allotted 'chunk', the code was merged and tested.  This worked pretty well and we were able to complete the backend tasks for MVP in about a day and a half.
 Having completed the back end, we turned to the front end.  We wanted to make the application fully responsive.  To do this, we agreed that we would build the pages in mobile view first.  Once complete, we would then optimize them for desktop.
 We continued coding in our pairs whilst we completed the pages we needed to meet MVP.  Once we had completed all MVP tasks, we could then tackle additional features individually or in pairs depending on our preferences.
-My main individual contributions were to:
-* build the filter, sorting and search capabilities on the Plot Index page, including integration with the cluster map
-* devise the overall styling schema, including font, layout, colours, logo, favicon
-* finalize the Plants index and show pages
-* act as project co-ordinator and GitHub master.
+
 ## Functionality
-In the list below, I have listed the features included on each page.  I have labelled each feature using superscript characters as follows:
-<sup>1</sup> Coded by me
-<sup>2</sup> Coded individually by another team member
-<sup>3</sup> Coded collaboratively - mainly in pairs but in some cases, as a four.
+
 ### Landing / Home page
 The user is introduced to the website with an attractive welcome screen that has a parallax which explains the purpose of the site.
 ![image](https://user-images.githubusercontent.com/41432574/65395239-15a9f600-dd90-11e9-9d21-e8adf9fb7f0c.png)
